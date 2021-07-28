@@ -57,12 +57,12 @@ yaxis!("Proportion of shared links", (0, 1))
 title!("βst / βwn")
 
 # Simulation 2 - simulate networks and measure the turnover in species
-M = simplify(rand(BipartiteProbabilisticNetwork(rand(Float64, 35, 35) .* 0.3)))
+M = simplify(rand(BipartiteProbabilisticNetwork(rand(Float64, 55, 55) .* 0.3)))
 r = richness(M; dims=1)
 
 shared_nodes = 0:r
-proba_rewiring = LinRange(0.0, 1.0, 40)
-replicates = 25
+proba_rewiring = LinRange(0.0, 1.0, 50)
+replicates = 50
 
 OS = zeros(Float64, length(shared_nodes), length(proba_rewiring), replicates)
 WN = similar(OS)
