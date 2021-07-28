@@ -57,12 +57,12 @@ yaxis!("Proportion of shared links", (0, 1))
 title!("βst / βwn")
 
 # Simulation 2 - simulate networks and measure the turnover in species
-M = simplify(rand(BipartiteProbabilisticNetwork(rand(Float64, 25, 25) .* 0.3)))
+M = simplify(rand(BipartiteProbabilisticNetwork(rand(Float64, 35, 35) .* 0.3)))
 r = richness(M; dims=1)
 
 shared_nodes = 0:r
-proba_rewiring = LinRange(0.0, 1.0, 20)
-replicates = 12
+proba_rewiring = LinRange(0.0, 1.0, 40)
+replicates = 25
 
 OS = zeros(Float64, length(shared_nodes), length(proba_rewiring), replicates)
 WN = similar(OS)
@@ -112,18 +112,18 @@ end
 
 ST = WN.-OS
 
-heatmap(shared_links, shared_nodes./r, mean(WN; dims=(3))[:,:,1], aspectratio=1)
-xaxis!("Proportion of rewired links", (0,1))
+heatmap(proba_rewiring, shared_nodes./r, mean(WN; dims=(3))[:,:,1], aspectratio=1)
+xaxis!("Rewiring probability", (0,1))
 yaxis!("Proportion of shared species", (0,1))
 
-heatmap(shared_links, shared_nodes./r, mean(OS; dims=(3))[:,:,1], aspectratio=1)
-xaxis!("Proportion of rewired links", (0,1))
+heatmap(proba_rewiring, shared_nodes./r, mean(OS; dims=(3))[:,:,1], aspectratio=1)
+xaxis!("Rewiring probability", (0,1))
 yaxis!("Proportion of shared species", (0,1))
 
-heatmap(shared_links, shared_nodes./r, mean(ST; dims=(3))[:,:,1], aspectratio=1)
-xaxis!("Proportion of rewired links", (0,1))
+heatmap(proba_rewiring, shared_nodes./r, mean(ST; dims=(3))[:,:,1], aspectratio=1)
+xaxis!("Rewiring probability", (0,1))
 yaxis!("Proportion of shared species", (0,1))
 
-heatmap(shared_links, shared_nodes./r, mean(ST./WN; dims=(3))[:,:,1], aspectratio=1)
-xaxis!("Proportion of rewired links", (0,1))
+heatmap(proba_rewiring, shared_nodes./r, mean(ST./WN; dims=(3))[:,:,1], aspectratio=1)
+xaxis!("Rewiring probability", (0,1))
 yaxis!("Proportion of shared species", (0,1))
