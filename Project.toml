@@ -1,0 +1,5 @@
+[deps]
+EcologicalNetworks = "f03a62fe-f8ab-5b77-a061-bb599b765229"
+PlotThemes = "ccf2f8ad-2431-5c83-bf29-c5338b663b6a"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+StatsPlots = "f3b207a7-027a-5e70-b257-86293d7955fd"
