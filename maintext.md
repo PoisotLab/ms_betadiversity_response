@@ -67,12 +67,12 @@ The decomposition of $\beta$-diversity from @Poisot2012DisSpe uses these
 components to measure $\beta_{os}$ (the interaction dissimilarity between shared
 species, which @Frund2021DisSpe terms "rewiring"), and $\beta_{wn}$ (the overall
 dissimilarity including non-shared species). We can express the components $a$,
-$b$, and $c$ of @Koleff2003MeaBet as follows:
+$b$, and $c$ of @Koleff2003MeaBet as the cardinality of the following sets:
 
-| Component    | $a$ | $b$ | $c$ |
-| ------------ | --------- | ---------- | ---------- |
-| $\beta_{os}$ | $|E_c|$   | $|E_{sn}|$ | $|E_{sm}|$ |
-| $\beta_{wn}$ | $|E_c|$   | $| E_{sn} \cup E_{un}|$ | $|E_{sm} \cup E_{um}|$ |
+| Component    | $a$   | $b$                  | $c$                  |
+| ------------ | ----- | -------------------- | -------------------- |
+| $\beta_{os}$ | $E_c$ | $E_{sn}$             | $E_{sm}$             |
+| $\beta_{wn}$ | $E_c$ | $E_{sn} \cup E_{un}$ | $E_{sm} \cup E_{um}$ |
 
 Note that in *all* instances $a+b+c$ is equal to the total number of links in
 either $\mathcal{M}\cup\mathcal{N}$ (for $\beta_{wn}$) or
