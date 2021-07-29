@@ -1,17 +1,44 @@
 ---
 author: Timothée Poisot
 date: \today
-title: "Dissimilarity of species interaction networks: how to measure the effect of species turnover"
+title: "Dissimilarity of species interaction networks: how to quantify the impact of species turnover?"
 ---
 
+Ecological networks are variable both in time and space [@Poisot2015SpeWhy;
+@Trojelsgaard2016EcoNet] - this variability motivated the emergence of
+methodology to compare ecological networks, in a way that meshes with the usual
+approaches of comparison of ecological communities, *i.e.* $\beta$-diversity;
+although the definiton of $\beta$-diversity is a contentious topic amongst
+community ecologists [see *e.g.* @Tuomisto2010DivBet], the need to understand
+network variability is motivated by the fact that species that make up the
+networks do not react to their environment in the same way, and therefore the
+$\beta$-diversity of networks may behave in complex ways.
+
+@Poisot2012DisSpe and @Canard2014EmpEva have suggested an approach to
+$\beta$-diversity for ecological networks which is based on the comparison of
+shared and unique links among species, and differentiate this sharing of links
+between common and unique species. This framework has been widely adopted since
+its publication, with recent examples using it to understand the effect of fire
+on pollination systems [@Baronio2021NatFir]; the impact of rewiring on
+spatio-temporal network dynamics [@Campos-Moreno2021ImpInt]; the effects of
+farming on rural and urban landscapes on species interactions
+[@Olsson2021IntPla]; and as a tool to estimate the sampling completeness of
+networks [@Souza2021PlaSam]. It has, similarly, received a number of extensions,
+including the ability to account for interaction strength [@Magrach2017PlaNet],
+the ability to handle probabilistic ecological networks [@Poisot2016StrPro], and
+the integration into the Local Contribution to Beta Diversity
+[@Legendre2013BetDiv] approach to understand how environment changes drive
+network dissimilarity [@Poisot2017HosPar].
+
 In a  recent contribution, @Frund2021DisSpe argues that the calculation of
-network dissimilarity terms first introduced by @Poisot2012DisSpe is incorrect,
-as it can lead to over-estimating the role of interactions between shared
-species in a network, and therefore under-estimate the importance of species
-turnover across network. Here, I present an argument for why this is not the
-case, and urge network ecologists to exercise greater caution when attempting to
-"normalize" the effect of species turnover in network dissimilarity, as it may
-invalidate the calculation.
+network dissimilarity terms as outlined by @Poisot2012DisSpe is incorrect, as it
+can lead to over-estimating the role of interactions between shared species in a
+network ("rewiring"), and therefore underestimate the importance of species
+turnover across networks. Here, I present a more thorough justification of the
+methodological choices for the @Poisot2021DisSpe method, explain how information
+about species turnover can be extracted from its decomposition, and conduct
+numerical experiments to guide the interpretation of the $\beta$-diversity
+values thus obtained.
 
 ## Partitioning network dissimilarity
 
