@@ -253,7 +253,7 @@ it is a quantification of the relative impact of rewiring to overall
 dissimilarity, which, all non-turnover mechanisms being accounted for in the
 decomposition, can be explained by turnover mechanisms.
 
-### Illustration on ireallistically small networks are biased
+### Illustrations on arbitrarily small networks are biased
 
 We can re-calculate the illustration of @Frund2021DisSpe, wherein a pair of
 networks with two shared interactions ($A = 2$) receive either an interaction in
@@ -276,11 +276,18 @@ fact that this fraction is not exactly one-half comes from the fact that the
 $2A$ term), which over-amplifies the effect of shared interactions as the
 network is really small. Running the same calculations with $A = 10$ gives a
 relative importance of the turnover processes of 47%, and $\beta_{st}$ goes to
-$1/2$ as $A/(S+U)$ increases. As an additional caveat, the value of $\beta_{st}$ will depend on the measure of beta-diversity used. Measures that do not count the shared interaction twice are not going to amplify the effect of rewiring.
+$1/2$ as $A/(S+U)$ increases. As an additional caveat, the value of $\beta_{st}$
+will depend on the measure of beta-diversity used. Measures that do not count
+the shared interaction twice are not going to amplify the effect of rewiring.
 
 ### Numerical experiment: $\beta_{os}$ captures rewiring accurately
 
 ![dsds](numexp2.png){#fig:numexp2}
+
+### Numerical experiment: $\beta_{st}$ captures species turnover and connectance accurately
+
+![dsds](numexp3.png){#fig:numexp3}
+
 
 ## Does the partition of network dissimilarity needs a new normalization?
 
