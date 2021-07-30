@@ -1,8 +1,25 @@
 ---
-author: Timothée Poisot
-date: \today
-title: "Dissimilarity of species interaction networks: how to quantify the impact of species turnover?"
+title: "Dissimilarity of species interaction networks: quantifying the effect of turnover and rewiring"
 ---
+
+**Timothée Poisot**   
+Département de Sciences Biologiques, Université de Montréal   
+Québec Centre for Biodiversity Sciences   
+Correspondence to `timothee.poisot@umontreal.ca`
+
+\medskip
+
+**Abstract:** Despite having established its usefulness in the last ten years,
+the decomposition of ecological networks in components allowing to measure their
+$\beta$-diversity retains some methodological ambiguities. Notably, how to
+quantify the relative effect of mechanisms tied to interaction rewiring *vs.*
+species turnover has been interpreted differently by different authors. In this
+contribution, I present mathematical arguments and numerical experiments that
+should (i) establish that the decomposition of networks as it is currently done
+is indeed fit for purpose, and (ii) provide guidelines to interpret the values
+of the components tied to turnover and rewiring.
+
+\newpage
 
 Ecological networks are variable both in time and space [@Poisot2015SpeWhy;
 @Trojelsgaard2016EcoNet] - this variability motivated the emergence of
@@ -132,6 +149,10 @@ $b$, and $c$ of @Koleff2003MeaBet as the cardinality of the following sets:
 | ------------ | ----- | -------------------- | -------------------- |
 | $\beta_{os}$ | $E_c$ | $E_{sn}$             | $E_{sm}$             |
 | $\beta_{wn}$ | $E_c$ | $E_{sn} \cup E_{un}$ | $E_{sm} \cup E_{um}$ |
+
+These decompositions are used to perform the calculations of $\beta$-diversity
+in the `EcologicalNetworks.jl` package [@Banville2021ManJl] for Julia, which I
+use for the following numerical experiments.
 
 ## Quantifying the importance of species turnover
 
@@ -425,25 +446,32 @@ that the effect of turnover is based on a rigorous definition of networks as
 graphs (as opposed to networks as matrices), in which the induction of vertices
 from the edgelist being compared gives rise to biologically meaningful
 denominators. The advantage of this approach is that at no time does the
-turnover of species itself, or the connectance of the network, enter into the
-calculation. As such, it is possible to use $\beta_{os}$ and $\beta_{wn}$ in
+turnover of species itself (or indeed, as shown in many places in this
+manuscript, the network richness), or the connectance of the network, enter into
+the calculation. As such, it is possible to use $\beta_{os}$ and $\beta_{wn}$ in
 relationship to these terms, calculated externally [as was recently done by
-*e.g.* @Higino2021BetPhy] without creating circularities.
+*e.g.* @Higino2021BetPhy], without creating circularities.
 
 The choice of changing the denominator hinges on what one admits as a definition
 for $\beta_{st}$. If the point of $\beta_{st}$ is to be a component of overall
 $\beta$-diversity as advocated by @Frund2021DisSpe and @Novotny2009BetDiv, a
 change of numerator *might* be acceptable. Nevertheless, this change of
 numerator contributes to blurring the frontier between a measure of interaction
-dissimilarity and a measure of community dissimilarity, and may warrant a full
-methodological assessment. Conversely, if as we argue in @Poisot2012DisSpe,
-$\beta_{st}$ is to be meant as a *guide* to the interpretation of $\beta_{wn}$
-and $\beta_{os}$, and related to actual measures of species turnover and network
-connectance, one must not change the denominator. It is central to recognize
-that there are multiple reasons to calculate network dissimilarity, and it is
-our opinion that the arguments levied by @Frund2021DisSpe against the original
-partition stem from a misunderstanding of what it intends to do (and does,
-indeed, do well), not from intrinsic methodological issues in the partition
-itself.
+dissimilarity and a measure of community dissimilarity which starts to add the
+effect of relative richness; this later case warrants a thorough methodological
+assessment. Conversely, if as we argue in @Poisot2012DisSpe, $\beta_{st}$ is to
+be meant as a *guide* to the interpretation of $\beta_{wn}$ and $\beta_{os}$,
+and related to actual measures of species turnover and network connectance, one
+must not change the denominator.
+
+It is essential to recognize that there are multiple reasons to calculate
+network dissimilarity, and it is our opinion that the arguments levied by
+@Frund2021DisSpe against the original partition stem from a misunderstanding of
+what it intends to do (and does, indeed, do well), not from intrinsic
+methodological issues in the partition itself. Based on the results presented in
+this contribution, I argue that the original partition of network
+$\beta$-diversity from @Poisot2012DisSpe should remain the default.
 
 ## References
+
+\singlespacing
