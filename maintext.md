@@ -273,6 +273,18 @@ p_s\times L$, $S = (1-p_s)\times p_r\times L$, and $U = (1-p_s)\times
 $\beta_{st}/\beta_{wn}$ as a function of the proportion of rewired links and the
 proportion of shared links.](numexp1.png){#fig:numexp1}
 
+The rewiring component $\beta_{os}$ varies as a function of the proportion of
+shared links that are rewired; by contrast, $\beta_{wn}$ varies *only* as a
+function of the proportion of links that are shared: that the unshared links are
+established between common or unique species has no effect on overall network
+dissimilarity. The quadratic nature of the denominator for $\beta_{st}$ is clear
+here, with a maximum reach when there is no re-wiring, and a small number of
+shared links (*i.e.* the networks are almost entirely dissimilar except for the
+links between shared species). Althought the *raw* values of $\beta_{st}$ may
+seem low, the normalization using $\beta_{st}/\beta_{wn}$ magnifies this effect:
+its values are indeed maximized when the rewiring is lower, *i.e.* all of the
+network variation stems from turnover processes.
+
 ## Is this decomposition over-estimating the effect of "rewiring"?
 
 One of the arguments put forth by @Frund2021DisSpe is that the decomposition
@@ -472,6 +484,7 @@ methodological issues in the partition itself. Based on the results presented in
 this contribution, I argue that the original partition of network
 $\beta$-diversity from @Poisot2012DisSpe should remain the default.
 
+\newpage
 ## References
 
 \singlespacing
