@@ -10,7 +10,7 @@ using Statistics
 # This ensures the reproducibility of the results
 Random.seed!(90210)
 theme(:mute)
-default(frame=:box, dpi=600, size=(500, 500), c=:bamako)
+default(frame=:box, dpi=600, size=(500, 500))
 
 # Shortcut notation for the betadiv measure we use
 βₜ = EcologicalNetworks.KGL08
@@ -142,6 +142,7 @@ Co2 = LinRange(0.0, 1.0, 200)
 p = LinRange(0.0, 1.0, 204)'
 q = 0.15
 
+# The expressions are all calculated in main text
 A = p.*(1.0.-q).*min.(Co1,Co2)
 U = (1.0.-p).*Co1 .+ (1.0.-p).*Co2
 S = Co1 .- (A .+ (1.0.-p).*Co1) .+ Co2 .- (A .+ (1.0.-p).*Co2)

@@ -43,7 +43,16 @@ turnover across networks. Here, I present a more thorough justification of the
 methodological choices for the @Poisot2012DisSpe method, explain how information
 about species turnover can be extracted from its decomposition, and conduct
 numerical experiments to guide the interpretation of the $\beta$-diversity
-values thus obtained.
+values thus obtained. These numerical experiments establish three core facts.
+First, the decomposition responds to the correct sources of network variation;
+second, the decomposition adequately captures the relative roles of species
+turnover and interaction rewiring; finally, the decomposition adequately
+captures the role of turnover vs. non-turnover (like changes in connectance)
+processes. Although the alternative normalization suggested by @Frund2021DisSpe
+is not without its uses, which I discuss in conclusion, it is inadequate as a
+network $\beta$-diversity measurement, as it introduces many confounding
+elements that make the interpretation of the results more difficult, and should
+likely not be used as a default.
 
 ## Partitioning network dissimilarity
 
@@ -335,12 +344,77 @@ when both rewiring *and* species sharing are low. Increasing rewiring decreases
 the impact of species turnover (because, for an equal number of interactions,
 the dissimilarity of interactins in shared species contributes more to
 $\beta_{wn}$); increasing the chance of sharing species also does decrease
-$\beta_{st}$, trivially because there is no species turnover anymore.
+$\beta_{st}$, trivially because there is no species turnover anymore. Note that
+when using the correction of $\beta_{st}/\beta_{wn}$, the effect of species
+turnover is magnified for low probabilities of re-wiring.
 
+In conclusion, this numerical experiment shows that the decomposition as
+initially presented by @Poisot2012DisSpe, *i.e.* using denominators that make
+sense from a network composition point of view, succeeds at capturing the
+relative effect of turnover and rewiring.
 ### Numerical experiment: the decomposition captures the roles of species turnover and connectance accurately
 
-![dsds](numexp3.png){#fig:numexp3}
+Consider now two bipartite networks, which still have $R$ species on either
+side, but differ in their connectance ($\rho_1$ and $\rho_2$) -- by maintaining
+the assumption that species on one side are shared with probability $p$, and
+that interactions between shared species are rewired at probability $q$, we can
+examine the effect of varying both connectance and turnover on the value of the
+$\beta$-diversity components. Note that, although not presented, we will drop
+the multiplicative constant $R^2$ from all calculations, as it is a common
+factor for all values; again, this implies that the results presented here are
+independant of network richness.
 
+The number of unique links due to species turnover is
+
+$$U = (1-p)(\rho_1 + \rho_2)\,,$$
+
+which decreases with the proportion of shared species, but increases with
+connectance. The number of links between shared species takes a little more
+steps to calculate. First, amongst the $pR^2$ species in both sub-graphs,
+network 1 will have $\rho_1 pR^2$, and network 2 will have $\rho_2 pR^2$.
+Because $\rho_1 \neq \rho_2$, there are only $\text{min}(\rho_1, \rho_2)pR^2$
+links that can be shared, a proportion $q$ of which will undergo re-wiring, and
+a proportion $(1-q)$ of which will be shared. This leads to the expression
+(after dropping $R^2$) for the number of shared links:
+
+$$A = p (1-q) \text{min}(\rho_1, \rho_2)\,.$$
+
+The number of unique links due to shared species is the sum of all links in
+network 1 ($\rho_1 R^2$), minus the sum of the shared links ($AR^2$) and the
+unique links due to species turnover ($(1-p)\rho_1R^2$); this same quantity is
+calculated in the same way for the second networks, leading to (after dropping
+the multiplicative constant $R^2$ and some simplifications)
+
+$$S = p (\rho_1 + \rho_2) - 2A\,.$$
+
+Note that as expected, this last quantity scales with the proportion of shared
+species ($p$) *and* with connectance (as shared species bring more of their
+interactions), but decreases with the size of the shared links components. The
+consequences of varying $\rho_2$ and $p$ are presented in @fig:numexp3.
+
+![Effects of varying the connectance of the second network ($\rho_2$) and the
+proportion of shared species ($p$) on the values of the $\beta$-diversity
+components. As expected, $\beta_{os}$ is still independent of species turnover,
+and $\beta_{wn}$ increases when species turnover increases, or when the
+connectances become more dissimilar. These figures have been generated with
+$\rho_1 = 0.25$ and $q = 0.15$, and the results are qualitatively robust to
+changes in these parameters.](numexp3.png){#fig:numexp3}
+
+Although $\beta_{os}$ is only responding to changes in connectance (as is
+expected, seeing that the relative connectances of both networks appear in the
+expression for $S$ and $A$), $\beta_{wn}$ changes in response to both
+parameters. Specifically, increasing the difference in connectance between the
+two networks, especially when also increasing the species dissimilarity, results
+in more dissimilar networks -- this is because unique species from both networks
+bring their own interactions (at rate $\rho_1$ and $\rho_2$), and therefore
+contribute to dissimilarity. It is particularly noteworthy that $\beta_{st}$,
+regardless of the differences in connectance, increases with the proportion of
+unique species. At an equal proportion of shared species, $\beta_{st}$
+*decreases* with differences in connectance: this is an equally expected result,
+which indicates that the difference between $\beta_{os}$ and $\beta_{wn}$ is in
+part explained by non-turnover mechanisms (here, changes in connectance).
+Relying on the $\beta_{st}/\beta_{wn}$ correction again magnifies this effect,
+without changing their interpretation.
 
 ## Does the partition of network dissimilarity needs a new normalization?
 
