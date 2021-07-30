@@ -251,7 +251,11 @@ based on a misunderstanding of what $\beta_{st}$ achieves. It is paramount to
 clarify that $\beta_{st}$ is not a direct measure of the importance of turnover:
 it is a quantification of the relative impact of rewiring to overall
 dissimilarity, which, all non-turnover mechanisms being accounted for in the
-decomposition, can be explained by turnover mechanisms.
+decomposition, can be explained by turnover mechanisms. In this section, I
+present two numerical experiments showing (i) that the $\beta_{os}$ component is
+in fact an accurate measure of rewiring, and (ii) that $\beta_{st}$ captures the
+consequences of species turnover, and of the interactions brought by unique
+species.
 
 ### Illustrations on arbitrarily small networks are biased
 
@@ -280,11 +284,60 @@ $1/2$ as $A/(S+U)$ increases. As an additional caveat, the value of $\beta_{st}$
 will depend on the measure of beta-diversity used. Measures that do not count
 the shared interaction twice are not going to amplify the effect of rewiring.
 
-### Numerical experiment: $\beta_{os}$ captures rewiring accurately
+### Numerical experiment: the decomposition captures the roles of rewiring and turnover accurately
 
-![dsds](numexp2.png){#fig:numexp2}
+Consider two bipartite networks, each with $R$ species on either side, and each
+with the same connectance $\rho$. We will assume that these networks *share* a
+proportion $p$ of their species from one side (and share all species from the
+other), and that the interactions between these species are undergo rewiring
+with at a rate $q$. This is sufficient information to calculate the values of
+$A$, $S$, and $U$ required to get the values of $\beta_{os}$ and $\beta_{wn}$.
+Note that the simplification of assuming that only species from one side can
+vary is merely for the sake of simplicity, but does not decrease the generality
+of the argument.
 
-### Numerical experiment: $\beta_{st}$ captures species turnover and connectance accurately
+Each network will have $\rho(1-p)R^2$ interactions that are unique due to
+species turnover, and so
+
+$$U = 2\rho(1-p)R^2\,.$$
+
+The part of both networks composed of overlapping species has $\rho pR^2$
+interactions, of which $\rho (1-q) p R^2$ are shared, and $\rho qp R^2$ underwent
+rewiring. This leads to
+
+$$A = \rho (1-q) p R^2\,,$$
+
+and
+
+$$S = \rho pq R^2\,.$$
+
+Note that we can drop the multiplicative constant $R^2$, making the result
+independent of the size of the network. Based on these components, we can get
+the values of $\beta_{os}$ and $\beta_{wn}$, as presented in @fig:numexp2.
+
+![Response of $\beta_{os}$ and $\beta_{wn}$, and the consequences on
+$\beta_{st}$, to changes in rewiring probability ($q$) and probability of
+species sharing ($p$). As expected, $\beta_{os}$ is not affected by species
+turnover, but increases with the rewiring probability. By contrast, $\beta_{wn}$
+increases when the rewiring probability is higher *and* when fewer species are
+shared. This has important consequences for $\beta_{st}$: its value is maximized
+for low species sharing, and decreases for high rewiring
+probability.](numexp2.png){#fig:numexp2}
+
+The value of $\beta_{os}$ is entirely unchanged by variations in $p$ (species
+sharing), and responds *only* to changes in $q$ (the probability of rewiring),
+whereas as expected, $\beta_{wn}$ responded to changes in both of these
+parameters: the most dissimilar networks have low species sharing (interactions
+are dissimilar because brought by unique species), and high rewiring (shared
+species do not share interactions). The relative changes in $\beta_{os}$ and
+$\beta_{wn}$ lead to predictable changes in $\beta_{st}$: its value is maximized
+when both rewiring *and* species sharing are low. Increasing rewiring decreases
+the impact of species turnover (because, for an equal number of interactions,
+the dissimilarity of interactins in shared species contributes more to
+$\beta_{wn}$); increasing the chance of sharing species also does decrease
+$\beta_{st}$, trivially because there is no species turnover anymore.
+
+### Numerical experiment: the decomposition captures the roles of species turnover and connectance accurately
 
 ![dsds](numexp3.png){#fig:numexp3}
 
