@@ -248,7 +248,7 @@ p_s\times L$, $S = (1-p_s)\times p_r\times L$, and $U = (1-p_s)\times
 
 ![Values of $\beta_{os}$, $\beta_{wn}$, $\beta_{st}$, and
 $\beta_{st}/\beta_{wn}$ as a function of the proportion of rewired links and the
-proportion of shared links.](numexp1.png){#fig:numexp1}
+proportion of shared links.](figures/numexp1.png){#fig:numexp1}
 
 The rewiring component $\beta_{os}$ varies as a function of the proportion of
 shared links that are rewired; by contrast, $\beta_{wn}$ varies *only* as a
@@ -341,7 +341,7 @@ turnover, but increases with the rewiring probability. By contrast, $\beta_{wn}$
 increases when the rewiring probability is higher *and* when fewer species are
 shared. This has important consequences for $\beta_{st}$: its value is maximized
 for low species sharing, and decreases for high rewiring
-probability.](numexp2.png){#fig:numexp2}
+probability.](figures/numexp2.png){#fig:numexp2}
 
 The value of $\beta_{os}$ is entirely unchanged by variations in $p$ (species
 sharing), and responds *only* to changes in $q$ (the probability of rewiring),
@@ -408,7 +408,7 @@ components. As expected, $\beta_{os}$ is still independent of species turnover,
 and $\beta_{wn}$ increases when species turnover increases, or when the
 connectances become more dissimilar. These figures have been generated with
 $\rho_1 = 0.25$ and $q = 0.15$, and the results are qualitatively robust to
-changes in these parameters.](numexp3.png){#fig:numexp3}
+changes in these parameters.](figures/numexp3.png){#fig:numexp3}
 
 Although $\beta_{os}$ is only responding to changes in connectance (as is
 expected, seeing that the relative connectances of both networks appear in the
