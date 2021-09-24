@@ -321,8 +321,8 @@ species turnover, and so
 $$U = 2\rho(1-p)R^2\,.$$
 
 The part of both networks composed of overlapping species has $\rho pR^2$
-interactions, of which $\rho (1-q) p R^2$ are shared, and $\rho qp R^2$ underwent
-rewiring. This leads to
+interactions, of which $\rho (1-q) p R^2$ are shared, and $\rho qp R^2$
+underwent rewiring. This leads to
 
 $$A = \rho (1-q) p R^2\,,$$
 
@@ -362,6 +362,7 @@ In conclusion, this numerical experiment shows that the decomposition as
 initially presented by @Poisot2012DisSpe, *i.e.* using denominators that make
 sense from a network composition point of view, succeeds at capturing the
 relative effect of turnover and rewiring.
+
 ### Numerical experiment: the decomposition captures the roles of species turnover and connectance accurately
 
 Consider now two bipartite networks, which still have $R$ species on either
@@ -461,7 +462,4 @@ methodological issues in the partition itself. Based on the results presented in
 this contribution, I argue that the original partition of network
 $\beta$-diversity from @Poisot2012DisSpe should remain the default.
 
-\newpage
 ## References
-
-\singlespacing
