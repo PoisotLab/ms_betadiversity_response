@@ -2,7 +2,6 @@
 
 steps = 150
 
-Co = 0.99
 p_values = LinRange(0.0, 1.0, steps) # Fraction of shared species
 q_values = LinRange(0.0, 1.0, steps) # Fraction of rewired links
 
@@ -13,9 +12,9 @@ WN = similar(OS)
 
 for (i, p) in enumerate(p_values)
     for (j, q) in enumerate(q_values)
-        A = p * (1 - q) * Co
-        S = p * q * Co
-        U = Co * (1 - p) * 2
+        A = p * (1 - q)
+        S = p * q
+        U = (1 - p) * 2
         OS[i,j] = S / (2A + S)
         FR[i,j] = S / (2A + S + U)
         WN[i,j] = (S+U) / (2A + S + U)
