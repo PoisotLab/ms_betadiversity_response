@@ -1,0 +1,23 @@
+{
+  "title": "Dissimilarity of species interaction networks: quantifying the effect of turnover and rewiring",
+  "authors": [
+    {
+      "affiliations": [
+        "Université de Montréal",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Poisot",
+      "givennames": "Timothée",
+      "email": "timothee.poisot@umontreal.ca",
+      "orcid": "0000-0002-0735-5184",
+      "status": ["corresponding", "equal"]
+    }
+  ],
+  "abstract": "Despite having established its usefulness in the last ten years, the decomposition of ecological networks in components allowing to measure their $\beta$-diversity retains some methodological ambiguities. Notably, how to quantify the relative effect of mechanisms tied to interaction rewiring *vs.* species turnover has been interpreted differently by different authors. In this contribution, I present mathematical arguments and numerical experiments that should (i) establish that the decomposition of networks as it is currently done is indeed fit for purpose, and (ii) provide guidelines to interpret the values of the components tied to turnover and rewiring.",
+  "keywords": [
+    "ecological network dissimilarity",
+    "turnover partitioning",
+    "species interaction networks"
+  ],
+  "citationstyle": "ecology-letters"
+}
