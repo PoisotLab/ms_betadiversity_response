@@ -43,22 +43,22 @@ ST = WN .- OS
 
 # The following lines are plots of the results of numerical experiment 1
 
-p1 = contour(links_rewired, shared_links, OS, clim=(0, 1), aspectratio=1, fill=true, lc=:white, levels=4)
+p1 = contour(links_rewired, shared_links, OS, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
 xaxis!(p1, "Proportion of rewired links", (0, 1))
 yaxis!(p1, "Proportion of shared links", (0, 1))
 title!(p1, "βos")
 
-p2 = contour(links_rewired, shared_links, ST, clim=(0, 1), aspectratio=1, fill=true, lc=:white, levels=4)
+p2 = contour(links_rewired, shared_links, ST, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
 xaxis!(p2, "Proportion of rewired links", (0, 1))
 yaxis!(p2, "Proportion of shared links", (0, 1))
 title!(p2, "βst")
 
-p3 = contour(links_rewired, shared_links, WN, clim=(0, 1), aspectratio=1, fill=true, lc=:white, levels=4)
+p3 = contour(links_rewired, shared_links, WN, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
 xaxis!(p3, "Proportion of rewired links", (0, 1))
 yaxis!(p3, "Proportion of shared links", (0, 1))
 title!(p3, "βwn")
 
-p4 = contour(links_rewired, shared_links, ST ./ WN, clim=(0, 1), aspectratio=1, fill=true, lc=:white, levels=4)
+p4 = contour(links_rewired, shared_links, ST ./ WN, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
 xaxis!(p4, "Proportion of rewired links", (0, 1))
 yaxis!(p4, "Proportion of shared links", (0, 1))
 title!(p4, "βst / βwn")
