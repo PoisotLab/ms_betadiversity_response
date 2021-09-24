@@ -12,7 +12,7 @@ theme(:mute)
 default(; frame=:box, dpi=600, size=(500, 500), c=:lapaz)
 
 # β-diversity function we use
-βₜ = (a,b,c) -> (b+c)/(2a+b+c)
+beta_t = (a,b,c) -> (b+c)/(2a+b+c)
 
 # Path to store the figures
 _FIGPATH = joinpath("figures")

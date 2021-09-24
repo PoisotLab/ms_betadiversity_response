@@ -33,8 +33,8 @@ for (i, sl) in enumerate(shared_links)
         turned = L1 - (common + rewired)
         # We can assume that all links are from the same network, since the
         # measure is symetrical
-        OS[i,j] = βₜ(common, 0.0, rewired)
-        WN[i,j] = βₜ(common, turned, rewired)
+        OS[i,j] = beta_t(common, 0.0, rewired)
+        WN[i,j] = beta_t(common, turned, rewired)
     end
 end
 
