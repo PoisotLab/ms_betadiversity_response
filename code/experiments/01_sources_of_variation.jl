@@ -5,32 +5,27 @@
 # that, without considering connectance or species turnover, we can tie the
 # values of these components to the sources of network dissimilarity.
 
-# The values of L1 and L2 are entirely arbitrary -- indeed, the manuscript shows
-# how the values are independant from these values, as we can collect the
-# non-shared links in those that are rewired, and those that are connecting
-# non-shared species. Using different values for L1 and L2 complexifies the
-# problem a little, by introducing some combinatorics questions that would just
-# stand in the way.
-L1, L2 = 200, 200
+steps = 100
 
 # These are proportions - first, we pick a proportion of links (out of L1 or L2)
 # that are shared, and then we divide the rest of the links in those that are
 # not-shared and rewired (S in the manuscript), and those that are not-shared
 # and involve non-overlapping species (U in the paper). Note that the species
 # richness does not matter here.
-shared_links = LinRange(0.0, 1.0, L1)
-links_rewired = LinRange(0.0, 1.0, L2)
+
+shared_links = LinRange(0.0, 1.0, steps)
+links_rewired = LinRange(0.0, 1.0, steps)
 
 # We prepare matrices to fill the calculated values
-OS = zeros(Float64, length(shared_links), length(links_rewired))
+OS = zeros(Float64, steps, steps)
 WN = similar(OS)
 
 # Finally, we measure OS and WN - we will get the rest by substraction
 for (i, sl) in enumerate(shared_links)
     for (j, lr) in enumerate(links_rewired)
-        common = L1 * sl
-        rewired = (L1 - common) * lr
-        turned = L1 - (common + rewired)
+        common = sl
+        rewired = (1.0 - common) * lr
+        turned = 1.0 - (common + rewired)
         # We can assume that all links are from the same network, since the
         # measure is symetrical
         OS[i,j] = beta_t(common, 0.0, rewired)
