@@ -9,7 +9,7 @@ using Statistics
 # This ensures the reproducibility of the results
 Random.seed!(90210)
 theme(:mute)
-default(; frame=:box, dpi=600, size=(500, 500), c=:lapaz)
+default(; frame=:box, dpi=600, size=(500, 500), c=:batlow)
 
 # β-diversity function we use
 beta_t = (a,b,c) -> (b+c)/(2a+b+c)
