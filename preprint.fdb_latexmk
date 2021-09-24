@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1632512223 "preprint.tex" "preprint.pdf" "preprint" 1632512229
+["pdflatex"] 1632512330 "preprint.tex" "preprint.pdf" "preprint" 1632512337
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc" 1610747736 3356 2818ff063f8b5d0d850e1203330b9fda ""
@@ -229,15 +229,15 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1630458933 5185024 11aeafd2b57b5706f7e839e3d02eaabf ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1630458980 2798034 8b60546fbdd436a8c59f9778588128a9 ""
   "/opt/texlive/texdir/texmf.cnf" 1630458925 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "figures/numexp1.png" 1632512215 577691 47035e233b790b7decbb0fedcd59c9f8 ""
-  "figures/numexp2.png" 1632512215 634010 0abfa8c454c890ba431c942e30a07760 ""
-  "figures/numexp3.png" 1632512216 648692 d6c93e62ea5a8d83b75fce3aeb126882 ""
-  "logo.png" 1632512215 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
-  "preprint.aux" 1632512228 9446 4a38eb09fd087eb698ec2595ab841c0b "pdflatex"
-  "preprint.out" 1632512228 3768 033f0094d1a138ed6110a819272803bb "pdflatex"
-  "preprint.tex" 1632512215 43332 4730352fc0478d885cd31140c7e5a654 ""
+  "figures/numexp1.png" 1632512321 577691 47035e233b790b7decbb0fedcd59c9f8 ""
+  "figures/numexp2.png" 1632512321 634010 0abfa8c454c890ba431c942e30a07760 ""
+  "figures/numexp3.png" 1632512321 648692 d6c93e62ea5a8d83b75fce3aeb126882 ""
+  "logo.png" 1632512321 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
+  "preprint.aux" 1632512337 9446 4a38eb09fd087eb698ec2595ab841c0b "pdflatex"
+  "preprint.out" 1632512337 3768 033f0094d1a138ed6110a819272803bb "pdflatex"
+  "preprint.tex" 1632512321 43332 4730352fc0478d885cd31140c7e5a654 ""
   (generated)
+  "preprint.pdf"
+  "preprint.out"
   "preprint.aux"
   "preprint.log"
-  "preprint.out"
-  "preprint.pdf"
