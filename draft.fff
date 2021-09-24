@@ -1,0 +1,42 @@
+\begin{figure}
+\hypertarget{fig:numexp1}{%
+\centering
+\includegraphics{figures/numexp1.png}
+\caption{Values of \(\beta_{os}\), \(\beta_{wn}\), \(\beta_{st}\), and
+\(\beta_{st}/\beta_{wn}\) as a function of the proportion of rewired
+links and the proportion of shared links.}\label{fig:numexp1}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:numexp2}{%
+\centering
+\includegraphics{figures/numexp2.png}
+\caption{Response of \(\beta_{os}\) and \(\beta_{wn}\), and the
+consequences on \(\beta_{st}\), to changes in rewiring probability
+(\(q\)) and probability of species sharing (\(p\)). As expected,
+\(\beta_{os}\) is not affected by species turnover, but increases with
+the rewiring probability. By contrast, \(\beta_{wn}\) increases when the
+rewiring probability is higher \emph{and} when fewer species are shared.
+This has important consequences for \(\beta_{st}\): its value is
+maximized for low species sharing, and decreases for high rewiring
+probability.}\label{fig:numexp2}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:numexp3}{%
+\centering
+\includegraphics{figures/numexp3.png}
+\caption{Effects of varying the connectance of the second network
+(\(\rho_2\)) and the proportion of shared species (\(p\)) on the values
+of the \(\beta\)-diversity components. As expected, \(\beta_{os}\) is
+still independent of species turnover, and \(\beta_{wn}\) increases when
+species turnover increases, or when the connectances become more
+dissimilar. These figures have been generated with \(\rho_1 = 0.25\) and
+\(q = 0.15\), and the results are qualitatively robust to changes in
+these parameters.}\label{fig:numexp3}
+}
+\end{figure}

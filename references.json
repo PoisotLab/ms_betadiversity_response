@@ -1,0 +1,817 @@
+[
+    {
+        "DOI": "10.21105/joss.02721",
+        "author": [
+            {
+                "family": "Banville",
+                "given": "Francis"
+            },
+            {
+                "family": "Vissault",
+                "given": "Steve"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            }
+        ],
+        "container-title": "Journal of Open Source Software",
+        "id": "Banville2021ManJl",
+        "issue": "61",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    5,
+                    5
+                ]
+            ]
+        },
+        "page": "2721",
+        "title": "Mangal.jl and EcologicalNetworks.jl: Two complementary packages for analyzing ecological networks in Julia",
+        "type": "article-journal",
+        "volume": "6"
+    },
+    {
+        "DOI": "10.1016/j.flora.2021.151869",
+        "author": [
+            {
+                "family": "Baronio",
+                "given": "Gudryan J."
+            },
+            {
+                "family": "Souza",
+                "given": "Camila S."
+            },
+            {
+                "family": "Maruyama",
+                "given": "Pietro K."
+            },
+            {
+                "family": "Raizer",
+                "given": "Josu\u00e9"
+            },
+            {
+                "family": "Sigrist",
+                "given": "Maria Ros\u00e2ngela"
+            },
+            {
+                "family": "Aoki",
+                "given": "Camila"
+            }
+        ],
+        "container-title": "Flora",
+        "id": "Baronio2021NatFir",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    8,
+                    1
+                ]
+            ]
+        },
+        "page": "151869",
+        "title": "Natural fire does not affect the structure and beta diversity of plant-pollinator networks, but diminishes floral-visitor specialization in Cerrado",
+        "type": "article-journal",
+        "volume": "281"
+    },
+    {
+        "DOI": "10.1111/btp.12946",
+        "author": [
+            {
+                "family": "Campos-Moreno",
+                "given": "Diego F."
+            },
+            {
+                "family": "Dyer",
+                "given": "Lee A."
+            },
+            {
+                "family": "Salcido",
+                "given": "Danielle"
+            },
+            {
+                "family": "Massad",
+                "given": "Tara Joy"
+            },
+            {
+                "family": "P\u00e9rez-Lachaud",
+                "given": "Gabriela"
+            },
+            {
+                "family": "Tepe",
+                "given": "Eric J."
+            },
+            {
+                "family": "Whitfield",
+                "given": "James B."
+            },
+            {
+                "family": "Pozo",
+                "given": "Carmen"
+            }
+        ],
+        "container-title": "Biotropica",
+        "id": "Campos-Moreno2021ImpInt",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "page": "1071-1081",
+        "title": "Importance of interaction rewiring in determining spatial and temporal turnover of tritrophic (Piper-caterpillar-parasitoid) metanetworks in the Yucat\u00e1n Pen\u00ednsula, M\u00e9xico",
+        "type": "article-journal",
+        "volume": "53"
+    },
+    {
+        "DOI": "10.1086/675363",
+        "author": [
+            {
+                "family": "Canard",
+                "given": "E. F."
+            },
+            {
+                "family": "Mouquet",
+                "given": "N."
+            },
+            {
+                "family": "Mouillot",
+                "given": "D."
+            },
+            {
+                "family": "Stanko",
+                "given": "M."
+            },
+            {
+                "family": "Miklisova",
+                "given": "D."
+            },
+            {
+                "family": "Gravel",
+                "given": "D."
+            }
+        ],
+        "container-title": "The American Naturalist",
+        "id": "Canard2014EmpEva",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2014,
+                    4
+                ]
+            ]
+        },
+        "page": "468-479",
+        "title": "Empirical evaluation of neutral interactions in host-parasite networks",
+        "type": "article-journal",
+        "volume": "183"
+    },
+    {
+        "author": [
+            {
+                "family": "Dunne",
+                "given": "Jennifer A"
+            }
+        ],
+        "container-title": "Ecological networks: Linking structure and dynamics",
+        "editor": [
+            {
+                "family": "Dunne",
+                "given": "Jennifer A"
+            },
+            {
+                "family": "Pascual",
+                "given": "Mercedes"
+            }
+        ],
+        "id": "Dunne2006NetStr",
+        "issued": {
+            "date-parts": [
+                [
+                    2006
+                ]
+            ]
+        },
+        "page": "27-86",
+        "publisher": "Oxford University Press",
+        "title": "The Network Structure of Food Webs",
+        "type": "chapter"
+    },
+    {
+        "DOI": "10.1002/ecs2.3653",
+        "author": [
+            {
+                "family": "Fr\u00fcnd",
+                "given": "Jochen"
+            }
+        ],
+        "container-title": "Ecosphere",
+        "id": "Frund2021DisSpe",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "page": "e03653",
+        "title": "Dissimilarity of species interaction networks: How to partition rewiring and species turnover components",
+        "type": "article-journal",
+        "volume": "12"
+    },
+    {
+        "DOI": "10.1017/S0031182021000391",
+        "author": [
+            {
+                "family": "Higino",
+                "given": "Gracielle T."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            }
+        ],
+        "container-title": "Parasitology",
+        "id": "Higino2021BetPhy",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    3,
+                    8
+                ]
+            ]
+        },
+        "other-ids": "Higino2020BetPhy",
+        "page": "1-23",
+        "title": "Beta and phylogenetic diversities tell complementary stories about ecological networks biogeography",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1046/j.1365-2656.2003.00710.x",
+        "author": [
+            {
+                "family": "Koleff",
+                "given": "Patricia"
+            },
+            {
+                "family": "Gaston",
+                "given": "Kevin J."
+            },
+            {
+                "family": "Lennon",
+                "given": "Jack J."
+            }
+        ],
+        "container-title": "Journal of Animal Ecology",
+        "id": "Koleff2003MeaBet",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2003,
+                    5,
+                    1
+                ]
+            ]
+        },
+        "page": "367-382",
+        "title": "Measuring beta diversity for presence\u2013absence data",
+        "type": "article-journal",
+        "volume": "72"
+    },
+    {
+        "DOI": "10.1111/ele.12141",
+        "author": [
+            {
+                "family": "Legendre",
+                "given": "Pierre"
+            },
+            {
+                "family": "De C\u00e1ceres",
+                "given": "Miquel"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "editor": [
+            {
+                "family": "Morlon",
+                "given": "H\u00e9l\u00e8ne"
+            }
+        ],
+        "id": "Legendre2013BetDiv",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    8
+                ]
+            ]
+        },
+        "page": "951-963",
+        "title": "Beta diversity as the variance of community data: Dissimilarity coefficients and partitioning",
+        "type": "article-journal",
+        "volume": "16"
+    },
+    {
+        "DOI": "10.1111/jbi.13025",
+        "author": [
+            {
+                "family": "Maestri",
+                "given": "Renan"
+            },
+            {
+                "family": "Shenbrot",
+                "given": "Georgy I."
+            },
+            {
+                "family": "Krasnov",
+                "given": "Boris R."
+            }
+        ],
+        "container-title": "Journal of Biogeography",
+        "id": "Maestri2017ParBet",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    8,
+                    1
+                ]
+            ]
+        },
+        "page": "1880-1890",
+        "title": "Parasite beta diversity, host beta diversity and environment: Application of two approaches to reveal patterns of flea species turnover in Mongolia",
+        "type": "article-journal",
+        "volume": "44"
+    },
+    {
+        "DOI": "10.1111/ecog.02847",
+        "author": [
+            {
+                "family": "Magrach",
+                "given": "Ainhoa"
+            },
+            {
+                "family": "Holzschuh",
+                "given": "Andrea"
+            },
+            {
+                "family": "Bartomeus",
+                "given": "Ignasi"
+            },
+            {
+                "family": "Riedinger",
+                "given": "Verena"
+            },
+            {
+                "family": "Roberts",
+                "given": "Stuart P. M."
+            },
+            {
+                "family": "Rundl\u00f6f",
+                "given": "Maj"
+            },
+            {
+                "family": "Vuji\u0107",
+                "given": "Ante"
+            },
+            {
+                "family": "Wickens",
+                "given": "Jennifer B."
+            },
+            {
+                "family": "Wickens",
+                "given": "Victoria J."
+            },
+            {
+                "family": "Bommarco",
+                "given": "Riccardo"
+            },
+            {
+                "family": "Gonz\u00e1lez-Varo",
+                "given": "Juan P."
+            },
+            {
+                "family": "Potts",
+                "given": "Simon G."
+            },
+            {
+                "family": "Smith",
+                "given": "Henrik G."
+            },
+            {
+                "family": "Steffan-Dewenter",
+                "given": "Ingolf"
+            },
+            {
+                "family": "Vil\u00e0",
+                "given": "Montserrat"
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "Magrach2017PlaNet",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    2,
+                    1
+                ]
+            ]
+        },
+        "page": "n/a-n/a",
+        "title": "Plant-pollinator networks in semi-natural grasslands are resistant to the loss of pollinators during blooming of mass-flowering crops",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1111/j.1752-4598.2008.00035.x",
+        "author": [
+            {
+                "family": "Novotny",
+                "given": "Vojtech"
+            }
+        ],
+        "container-title": "Insect Conservation and Diversity",
+        "id": "Novotny2009BetDiv",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2009
+                ]
+            ]
+        },
+        "page": "5-9",
+        "title": "Beta diversity of plant\u2013insect food webs in tropical forests: A conceptual framework",
+        "type": "article-journal",
+        "volume": "2"
+    },
+    {
+        "DOI": "10.1016/j.fooweb.2021.e00194",
+        "author": [
+            {
+                "family": "Olsson",
+                "given": "Rachel L."
+            },
+            {
+                "family": "Brousil",
+                "given": "Matthew R."
+            },
+            {
+                "family": "Clark",
+                "given": "Robert E."
+            },
+            {
+                "family": "Baine",
+                "given": "Quinlyn"
+            },
+            {
+                "family": "Crowder",
+                "given": "David W."
+            }
+        ],
+        "container-title": "Food Webs",
+        "id": "Olsson2021IntPla",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    6,
+                    1
+                ]
+            ]
+        },
+        "page": "e00194",
+        "title": "Interactions between plants and pollinators across urban and rural farming landscapes",
+        "type": "article-journal",
+        "volume": "27"
+    },
+    {
+        "DOI": "10.1111/ele.12002",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Canard",
+                "given": "Elsa"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Poisot2012DisSpe",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "page": "1353-1361",
+        "title": "The dissimilarity of species interaction networks",
+        "type": "article-journal",
+        "volume": "15"
+    },
+    {
+        "DOI": "10.1111/oik.01719",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Oikos",
+        "id": "Poisot2015SpeWhy",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "page": "243-251",
+        "title": "Beyond species: Why ecological interaction networks vary through space and time",
+        "type": "article-journal",
+        "volume": "124"
+    },
+    {
+        "DOI": "10.1111/2041-210X.12468",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Cirtwill",
+                "given": "Alyssa R."
+            },
+            {
+                "family": "Cazelles",
+                "given": "K\u00e9vin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            }
+        ],
+        "container-title": "Methods in Ecology and Evolution",
+        "editor": [
+            {
+                "family": "Vamosi",
+                "given": "Jana"
+            }
+        ],
+        "id": "Poisot2016StrPro",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2016,
+                    3
+                ]
+            ]
+        },
+        "page": "303-312",
+        "title": "The structure of probabilistic networks",
+        "type": "article-journal",
+        "volume": "7"
+    },
+    {
+        "DOI": "10.1111/geb.12602",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothee"
+            },
+            {
+                "family": "Gueveneux-Julien",
+                "given": "Cynthia"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Josee"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Legendre",
+                "given": "Pierre"
+            }
+        ],
+        "container-title": "Global Ecology and Biogeography",
+        "id": "Poisot2017HosPar",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "page": "n/a-n/a",
+        "title": "Hosts, parasites and their interactions respond to different climatic variables",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1111/ecog.04310",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Belisle",
+                "given": "Zacharie"
+            },
+            {
+                "family": "Hoebeke",
+                "given": "Laura"
+            },
+            {
+                "family": "Stock",
+                "given": "Michiel"
+            },
+            {
+                "family": "Szefer",
+                "given": "Piotr"
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "Poisot2019EcoJl",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "title": "EcologicalNetworks.jl - analysing ecological networks",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1111/nph.17334",
+        "author": [
+            {
+                "family": "Souza",
+                "given": "Camila S."
+            },
+            {
+                "family": "Maruyama",
+                "given": "Pietro K."
+            },
+            {
+                "family": "Santos",
+                "given": "Karen C. B. S."
+            },
+            {
+                "family": "Varassin",
+                "given": "Isabela G."
+            },
+            {
+                "family": "Gross",
+                "given": "Caroline L."
+            },
+            {
+                "family": "Araujo",
+                "given": "Andr\u00e9a C."
+            }
+        ],
+        "container-title": "New Phytologist",
+        "id": "Souza2021PlaSam",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "page": "2501-2512",
+        "title": "Plant-centred sampling estimates higher beta diversity of interactions than pollinator-based sampling across habitats",
+        "type": "article-journal",
+        "volume": "230"
+    },
+    {
+        "DOI": "10.1111/1365-2435.12710",
+        "author": [
+            {
+                "family": "Tr\u00f8jelsgaard",
+                "given": "Kristian"
+            },
+            {
+                "family": "Olesen",
+                "given": "Jens M."
+            }
+        ],
+        "container-title": "Functional Ecology",
+        "id": "Trojelsgaard2016EcoNet",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2016,
+                    7,
+                    1
+                ]
+            ]
+        },
+        "page": "1926-1935",
+        "title": "Ecological networks in motion: Micro- and macroscopic variability across scales",
+        "type": "article-journal",
+        "volume": "30"
+    },
+    {
+        "DOI": "10.1111/j.1600-0587.2009.05880.x",
+        "author": [
+            {
+                "family": "Tuomisto",
+                "given": "Hanna"
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "Tuomisto2010DivBet",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2010,
+                    2,
+                    1
+                ]
+            ]
+        },
+        "page": "2-22",
+        "title": "A diversity of beta diversities: Straightening up a concept gone awry. Part 1. Defining beta diversity as a function of alpha and gamma diversity",
+        "type": "article-journal",
+        "volume": "33"
+    },
+    {
+        "DOI": "10.2307/2259551",
+        "URL": "http://www.jstor.org/stable/2259551",
+        "author": [
+            {
+                "family": "Wilson",
+                "given": "M. V."
+            },
+            {
+                "family": "Shmida",
+                "given": "A."
+            }
+        ],
+        "container-title": "Journal of Ecology",
+        "id": "Wilson1984MeaBet",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    1984
+                ]
+            ]
+        },
+        "page": "1055-1064",
+        "publisher": "[Wiley, British Ecological Society]",
+        "title": "Measuring Beta Diversity with Presence-Absence Data",
+        "type": "article-journal",
+        "volume": "72"
+    }
+]
