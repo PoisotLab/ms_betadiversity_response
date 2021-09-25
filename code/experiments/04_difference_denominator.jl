@@ -26,22 +26,22 @@ FT = WN .- FR
 
 Δ = OS .- FR
 
-p1 = heatmap(q_values, p_values, OS, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
+p1 = contour(q_values, p_values, OS, clim=(0, 1), aspectratio=1, fill=true, levels=9, lc=:white)
 xaxis!(p1, "Rewiring probability", (0, 1))
 yaxis!(p1, "Species sharing probability", (0, 1))
 title!(p1, "βos")
 
-p2 = heatmap(q_values, p_values, FR, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
+p2 = contour(q_values, p_values, FR, clim=(0, 1), aspectratio=1, fill=true, levels=9, lc=:white)
 xaxis!(p2, "Rewiring probability", (0, 1))
 yaxis!(p2, "Species sharing probability", (0, 1))
 title!(p2, "βos (common denominator)")
 
-p3 = heatmap(q_values, p_values, FT, clim=(0, 1), aspectratio=1, fill=true, lc=:white)
+p3 = contour(q_values, p_values, FT, clim=(0, 1), aspectratio=1, fill=true, levels=9, lc=:white)
 xaxis!(p3, "Rewiring probability", (0, 1))
 yaxis!(p3, "Species sharing probability", (0, 1))
 title!(p3, "βst (common denominator)")
 
-p4 = heatmap(q_values, p_values, OS .- FR, clim=(0, 1), aspectratio=1, fill=true, lc=:white, c=:grayC)
+p4 = contour(q_values, p_values, OS .- FR, clim=(0, 1), aspectratio=1, fill=true, levels=9, lc=:white, c=:grayC)
 xaxis!(p4, "Rewiring probability", (0, 1))
 yaxis!(p4, "Species sharing probability", (0, 1))
 title!(p4, "Difference in rewiring estimate")
