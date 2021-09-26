@@ -4,96 +4,86 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ a553ce49-c274-4be5-910c-b3cef97dc2d5
+# ╔═╡ 42b6f8c2-1f11-11ec-2372-4134895e6fe2
 using StatsPlots, Symbolics
 
-# ╔═╡ 7cfca8be-1ee0-11ec-30be-a58d5339cfb9
-md"""
-# Numerical experiment 2 - effect of rewiring and connectance
-"""
+# ╔═╡ 67c1480e-6cae-4963-bfc4-6437f81d7953
+# p: probability of sharing a species
+# q: probability of sharing an interaction
+@variables p q
 
-# ╔═╡ 4b071b9e-c85e-445e-a730-b832c1d9b918
-default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1))
+# ╔═╡ d47db712-18a5-4b97-b487-7290c7f94200
+each_turnover = 1-p*p
 
-# ╔═╡ c5776ce9-9c52-4529-b7be-35a2122570f7
-# p: probability of sharing species
-# q: probability of sharing a link between overlapping species
-# c: connectance of network 1
-# a: multiplicative constant so that the connectance of network 2 is a*c, a >= 1
-@variables p q a c
+# ╔═╡ 65ba1d3a-879d-4bba-ad5b-6154a70bf38a
+each_rewired = p*p*(1-q)
 
-# ╔═╡ c7696c55-c260-49aa-b964-f303d9502f48
-n1_unique_turnover = 1 - p*p*1
+# ╔═╡ 992195f0-7629-43de-8151-20b57a878a4b
+each_common = p*p*q
 
-# ╔═╡ b4146a9b-c391-466a-bad9-8545e16997d1
-n2_unique_turnover = a*1 - p*p*a*1
+# ╔═╡ 60fd4b47-7228-4687-8d57-6ff505b930f7
+common_links = each_common
 
-# ╔═╡ d65f7927-13f9-43ea-8bdd-9eeba6923c59
-unique_turnover = n1_unique_turnover + n2_unique_turnover |> simplify
+# ╔═╡ b89551fa-6e7d-4489-866e-06d792218f91
+rewired_links = 2*each_rewired
 
-# ╔═╡ 1c65ee48-d1bc-43b5-8f21-9cf7a3ac2e40
-shareable_links = p*p
+# ╔═╡ 055f8ce0-0e5a-4d64-b0d2-b96eefa7beab
+turnover_links = 2*each_turnover
 
-# ╔═╡ 1395ffe7-7eaa-4aa7-a3e3-0d311ce10749
-shared_shareable_links = q*shareable_links
+# ╔═╡ 9a5065a9-d776-44ea-ac0b-636fdfba7d3f
+WN = (rewired_links + turnover_links) / (2*common_links + rewired_links + turnover_links) |> expand
 
-# ╔═╡ 9d897ef9-f48d-437d-900e-5776d8b48a3c
-n1_rewired_links = 1 - n1_unique_turnover - shared_shareable_links
+# ╔═╡ 905419a8-9f6d-4e3c-a6bc-eef900bdec16
+OSp = rewired_links / (2*common_links + rewired_links) |> expand
 
-# ╔═╡ 57a6e5ee-c0b8-4e6c-8a18-c5a0e8350d8c
-n2_rewired_links = a - n2_unique_turnover - shared_shareable_links
+# ╔═╡ a8276021-01ca-4036-8b1b-fc0c45166ae8
+OSf = rewired_links / (2*common_links + rewired_links + turnover_links) |> expand
 
-# ╔═╡ 65ebea02-113e-4c8d-93b8-91c9faa9c658
-rewired_links = n1_rewired_links + n2_rewired_links |> simplify
+# ╔═╡ 93c3df0e-f48b-4ed8-a98f-3dbbe58653cb
+STp = WN - OSp |> expand |> simplify
 
-# ╔═╡ 29982cf1-2dc0-4df2-bf1b-57434c2b9f1e
-md"""
-Value of the components
-"""
+# ╔═╡ 592f752c-8a87-432b-b8ac-c6b9bc81e4ad
+STf = WN - OSf |> expand |> simplify
 
-# ╔═╡ 70918f82-d207-430a-a036-3e9d09098a40
-beta_os = rewired_links / (2*shared_shareable_links + rewired_links) |> simplify
+# ╔═╡ f65bd86a-d42e-462d-92d9-4beb26a7efea
+dOS = OSp - OSf |> expand |> simplify
 
-# ╔═╡ 329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
-beta_wn = (rewired_links + unique_turnover) / (2*shared_shareable_links + rewired_links + unique_turnover) |> simplify
+# ╔═╡ a02f0382-26cd-4b31-9c06-ff1bc24d5949
+dST = STp - STf |> expand |> simplify
 
-# ╔═╡ f3f6ed36-e7a9-477c-aa2c-49491076debf
-beta_st = beta_wn - beta_os
-
-# ╔═╡ 0745c28f-f8d3-4355-9180-88c0e28e3dfc
-beta_ratio = beta_st / beta_wn
-
-# ╔═╡ f14cd691-8235-46a3-aa5d-61937b7037cd
+# ╔═╡ dea224c7-143e-469f-b763-826df75e761e
 begin
-	Bos = build_function(beta_os, p, q, a)
-	Bwn = build_function(beta_wn, p, q, a)
-	Bst = build_function(beta_st, p, q, a)
-	Bratio = build_function(beta_ratio, p, q, a)
+	Bwn = build_function(WN, p, q)
+	Bosp = build_function(OSp, p, q)
+	Bstp = build_function(STp, p, q)
+	Bosf = build_function(OSf, p, q)
+	Bstf = build_function(STf, p, q)
 end
 
-# ╔═╡ 64c8e293-dc9b-4a47-9017-cbd75794e341
+# ╔═╡ 6c978805-4377-4baa-b67a-018b6ee1a469
 begin
 	_pixels = 200
 	_values = LinRange(0.0, 1.0, _pixels)
 end
 
-# ╔═╡ c56081af-688b-4a11-8677-d58a885a9ff9
+# ╔═╡ 051b74dc-a57f-4199-bca2-8dbd183ed798
 begin
-	os = broadcast(eval(Bos), _values, _values', 1.0)
-	wn = broadcast(eval(Bwn), _values, _values', 1.0)
-	st = broadcast(eval(Bst), _values, _values', 1.0)
-	ratio = broadcast(eval(Bratio), _values, _values', 1.0)
+	wn = broadcast(eval(Bwn), _values, _values')
+	osp = broadcast(eval(Bosp), _values, _values')
+	osf = broadcast(eval(Bosf), _values, _values')
+	stp = wn .- osp
+	stf = wn .- osf
 end
 
-# ╔═╡ b9425558-7d6b-4947-9fcb-efbbe537d39d
+# ╔═╡ 877a65f5-5da3-4e44-93fe-58de51693fab
 begin
-	p_os = contour(_values, _values, os, levels=9, fill=true)
+	p_os = contour(_values, _values, osf .- stf, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta os")
 end
 
-# ╔═╡ d8147164-ae59-4025-81cb-5aa3dff7af36
+# ╔═╡ 27247554-cc9e-4d62-b6aa-04058dabb856
 begin
 	p_wn = contour(_values, _values, wn, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
@@ -101,88 +91,26 @@ begin
 	title!("\\beta wn")
 end
 
-# ╔═╡ c2206bc0-1926-4020-b8c4-6c27995b4cab
+# ╔═╡ 7ebced26-071c-41f0-982c-32bbbc7a86e5
 begin
-	p_st = contour(_values, _values, st, levels=9, fill=true)
+	p_st = contour(_values, _values, stf, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta st")
 end
 
-# ╔═╡ c81cd270-8eee-4555-81e0-1fc57ccd322d
+# ╔═╡ 8301f419-ab60-424e-a279-7715d883dae0
 begin
-	p_ratio = contour(_values, _values, ratio, levels=9, fill=true)
+	p_ratio = contour(_values, _values, stf ./ wn, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta st / \\beta wn")
 end
 
-# ╔═╡ aae10b7d-f298-4230-bc6e-44d4f6d3cf41
+# ╔═╡ 2824cc03-4d64-4b16-b71c-5ceed924ca62
 begin
 	plot(p_os, p_wn, p_st, p_ratio, size=(800, 800))
-	savefig(joinpath(@__DIR__, "..", "figures", "sm_2_fig_1.png"))
-end
-
-# ╔═╡ b0d7ea71-0755-43e2-898a-e0f0c5533824
-md"""
-## Differences in connectance between networks
-"""
-
-# ╔═╡ 7a09953a-eb9e-4e40-9862-8ea2d4e1da0f
-begin
-	_cvalues = LinRange(1.0, 2.0, _pixels)
-	_spsharing = 0.7
-	cos = broadcast(eval(Bos), _spsharing, _values, _cvalues')
-	cwn = broadcast(eval(Bwn), _spsharing, _values, _cvalues')
-	cst = broadcast(eval(Bst), _spsharing, _values, _cvalues')
-	cratio = broadcast(eval(Bratio), _spsharing, _values, _cvalues')
-end
-
-# ╔═╡ 48cb3f49-552e-4afd-a687-72a8e784e4bd
-begin
-	_wrg = findall(x -> !(0 <= x <= 1), cos)
-	cos[_wrg] .= NaN
-	cwn[_wrg] .= NaN
-	cst[_wrg] .= NaN
-	cratio[_wrg] .= NaN
-end
-
-# ╔═╡ 1606ef32-64a0-4267-aa33-9b80b63c62d4
-begin
-	cp_os = contour(_values, _cvalues, cos', levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
-	title!("\\beta os")
-end
-
-# ╔═╡ 003bf76d-70ab-4cf2-8d1c-5d307058a93f
-begin
-	cp_wn = contour(_values, _cvalues, cwn', levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
-	title!("\\beta wn")
-end
-
-# ╔═╡ 8e38ed48-480a-4851-ae11-b02187d68b30
-begin
-	cp_st = contour(_values, _cvalues, cst', levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
-	title!("\\beta st")
-end
-
-# ╔═╡ 446b882c-52e8-407d-8f66-69d97d933936
-begin
-	cp_ratio = contour(_values, _cvalues, cratio', levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
-	title!("\\beta st / \\beta wn")
-end
-
-# ╔═╡ 65a84c4c-a746-4ce6-97fa-34707fccb03d
-begin
-	plot(cp_os, cp_wn, cp_st, cp_ratio, size=(800, 800))
-	savefig(joinpath(@__DIR__, "..", "figures", "sm_2_fig_2.png"))
+	savefig(joinpath(@__DIR__, "..", "figures", "sm_3_fig_1.png"))
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -1399,38 +1327,28 @@ version = "0.9.1+5"
 """
 
 # ╔═╡ Cell order:
-# ╠═7cfca8be-1ee0-11ec-30be-a58d5339cfb9
-# ╠═a553ce49-c274-4be5-910c-b3cef97dc2d5
-# ╠═4b071b9e-c85e-445e-a730-b832c1d9b918
-# ╠═c5776ce9-9c52-4529-b7be-35a2122570f7
-# ╠═c7696c55-c260-49aa-b964-f303d9502f48
-# ╠═b4146a9b-c391-466a-bad9-8545e16997d1
-# ╠═d65f7927-13f9-43ea-8bdd-9eeba6923c59
-# ╠═1c65ee48-d1bc-43b5-8f21-9cf7a3ac2e40
-# ╠═1395ffe7-7eaa-4aa7-a3e3-0d311ce10749
-# ╠═9d897ef9-f48d-437d-900e-5776d8b48a3c
-# ╠═57a6e5ee-c0b8-4e6c-8a18-c5a0e8350d8c
-# ╠═65ebea02-113e-4c8d-93b8-91c9faa9c658
-# ╠═29982cf1-2dc0-4df2-bf1b-57434c2b9f1e
-# ╠═70918f82-d207-430a-a036-3e9d09098a40
-# ╠═329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
-# ╠═f3f6ed36-e7a9-477c-aa2c-49491076debf
-# ╠═0745c28f-f8d3-4355-9180-88c0e28e3dfc
-# ╠═f14cd691-8235-46a3-aa5d-61937b7037cd
-# ╠═64c8e293-dc9b-4a47-9017-cbd75794e341
-# ╠═c56081af-688b-4a11-8677-d58a885a9ff9
-# ╠═b9425558-7d6b-4947-9fcb-efbbe537d39d
-# ╠═d8147164-ae59-4025-81cb-5aa3dff7af36
-# ╠═c2206bc0-1926-4020-b8c4-6c27995b4cab
-# ╠═c81cd270-8eee-4555-81e0-1fc57ccd322d
-# ╠═aae10b7d-f298-4230-bc6e-44d4f6d3cf41
-# ╠═b0d7ea71-0755-43e2-898a-e0f0c5533824
-# ╠═7a09953a-eb9e-4e40-9862-8ea2d4e1da0f
-# ╠═48cb3f49-552e-4afd-a687-72a8e784e4bd
-# ╠═1606ef32-64a0-4267-aa33-9b80b63c62d4
-# ╠═003bf76d-70ab-4cf2-8d1c-5d307058a93f
-# ╠═8e38ed48-480a-4851-ae11-b02187d68b30
-# ╠═446b882c-52e8-407d-8f66-69d97d933936
-# ╠═65a84c4c-a746-4ce6-97fa-34707fccb03d
+# ╠═42b6f8c2-1f11-11ec-2372-4134895e6fe2
+# ╠═67c1480e-6cae-4963-bfc4-6437f81d7953
+# ╠═d47db712-18a5-4b97-b487-7290c7f94200
+# ╠═65ba1d3a-879d-4bba-ad5b-6154a70bf38a
+# ╠═992195f0-7629-43de-8151-20b57a878a4b
+# ╠═60fd4b47-7228-4687-8d57-6ff505b930f7
+# ╠═b89551fa-6e7d-4489-866e-06d792218f91
+# ╠═055f8ce0-0e5a-4d64-b0d2-b96eefa7beab
+# ╠═9a5065a9-d776-44ea-ac0b-636fdfba7d3f
+# ╠═905419a8-9f6d-4e3c-a6bc-eef900bdec16
+# ╠═a8276021-01ca-4036-8b1b-fc0c45166ae8
+# ╠═93c3df0e-f48b-4ed8-a98f-3dbbe58653cb
+# ╠═592f752c-8a87-432b-b8ac-c6b9bc81e4ad
+# ╠═f65bd86a-d42e-462d-92d9-4beb26a7efea
+# ╠═a02f0382-26cd-4b31-9c06-ff1bc24d5949
+# ╠═dea224c7-143e-469f-b763-826df75e761e
+# ╠═6c978805-4377-4baa-b67a-018b6ee1a469
+# ╠═051b74dc-a57f-4199-bca2-8dbd183ed798
+# ╠═877a65f5-5da3-4e44-93fe-58de51693fab
+# ╠═27247554-cc9e-4d62-b6aa-04058dabb856
+# ╠═7ebced26-071c-41f0-982c-32bbbc7a86e5
+# ╠═8301f419-ab60-424e-a279-7715d883dae0
+# ╠═2824cc03-4d64-4b16-b71c-5ceed924ca62
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
