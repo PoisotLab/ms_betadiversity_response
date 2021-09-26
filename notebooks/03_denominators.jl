@@ -7,6 +7,9 @@ using InteractiveUtils
 # ╔═╡ 42b6f8c2-1f11-11ec-2372-4134895e6fe2
 using StatsPlots, Symbolics
 
+# ╔═╡ cfe5378b-02b0-4141-bdcd-35b0c622dc9b
+default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1))
+
 # ╔═╡ 67c1480e-6cae-4963-bfc4-6437f81d7953
 # p: probability of sharing a species
 # q: probability of sharing an interaction
@@ -77,10 +80,10 @@ end
 
 # ╔═╡ 877a65f5-5da3-4e44-93fe-58de51693fab
 begin
-	p_os = contour(_values, _values, osf .- stf, levels=9, fill=true)
+	p_os = contour(_values, _values, osf, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
-	title!("\\beta os")
+	title!("\\beta os (common denom.)")
 end
 
 # ╔═╡ 27247554-cc9e-4d62-b6aa-04058dabb856
@@ -96,7 +99,7 @@ begin
 	p_st = contour(_values, _values, stf, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
-	title!("\\beta st")
+	title!("\\beta st (common denom.)")
 end
 
 # ╔═╡ 8301f419-ab60-424e-a279-7715d883dae0
@@ -104,7 +107,7 @@ begin
 	p_ratio = contour(_values, _values, stf ./ wn, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
-	title!("\\beta st / \\beta wn")
+	title!("\\beta st / \\beta wn (common denom.)")
 end
 
 # ╔═╡ 2824cc03-4d64-4b16-b71c-5ceed924ca62
@@ -1328,6 +1331,7 @@ version = "0.9.1+5"
 
 # ╔═╡ Cell order:
 # ╠═42b6f8c2-1f11-11ec-2372-4134895e6fe2
+# ╠═cfe5378b-02b0-4141-bdcd-35b0c622dc9b
 # ╠═67c1480e-6cae-4963-bfc4-6437f81d7953
 # ╠═d47db712-18a5-4b97-b487-7290c7f94200
 # ╠═65ba1d3a-879d-4bba-ad5b-6154a70bf38a

@@ -130,7 +130,7 @@ md"""
 
 # ╔═╡ 7a09953a-eb9e-4e40-9862-8ea2d4e1da0f
 begin
-	_cvalues = LinRange(1.0, 2.0, _pixels)
+	_cvalues = LinRange(1.0, 5.0, _pixels)
 	_spsharing = 0.7
 	cos = broadcast(eval(Bos), _spsharing, _values, _cvalues')
 	cwn = broadcast(eval(Bwn), _spsharing, _values, _cvalues')
@@ -149,33 +149,33 @@ end
 
 # ╔═╡ 1606ef32-64a0-4267-aa33-9b80b63c62d4
 begin
-	cp_os = contour(_values, _cvalues, cos', levels=9, fill=true)
+	cp_os = contour(_values, _cvalues, cos', levels=9, fill=true, aspectratio=1/4)
 	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
+	yaxis!((1, 5), "Difference in connectance")
 	title!("\\beta os")
 end
 
 # ╔═╡ 003bf76d-70ab-4cf2-8d1c-5d307058a93f
 begin
-	cp_wn = contour(_values, _cvalues, cwn', levels=9, fill=true)
+	cp_wn = contour(_values, _cvalues, cwn', levels=9, fill=true, aspectratio=1/4)
 	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
+	yaxis!((1, 5), "Difference in connectance")
 	title!("\\beta wn")
 end
 
 # ╔═╡ 8e38ed48-480a-4851-ae11-b02187d68b30
 begin
-	cp_st = contour(_values, _cvalues, cst', levels=9, fill=true)
+	cp_st = contour(_values, _cvalues, cst', levels=9, fill=true, aspectratio=1/4)
 	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
+	yaxis!((1, 5), "Difference in connectance")
 	title!("\\beta st")
 end
 
 # ╔═╡ 446b882c-52e8-407d-8f66-69d97d933936
 begin
-	cp_ratio = contour(_values, _cvalues, cratio', levels=9, fill=true)
+	cp_ratio = contour(_values, _cvalues, cratio', levels=9, fill=true, aspectratio=1/4)
 	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((1, 2), "Difference in connectance")
+	yaxis!((1, 5), "Difference in connectance")
 	title!("\\beta st / \\beta wn")
 end
 
