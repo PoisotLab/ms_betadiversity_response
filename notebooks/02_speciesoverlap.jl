@@ -185,6 +185,9 @@ begin
 	savefig(joinpath(@__DIR__, "..", "figures", "sm_1_fig_2.png"))
 end
 
+# ╔═╡ 074433e6-d5fe-479c-8a3f-f1917a9bcdfa
+(p*(1+a)-p*(1-a))/p |> e -> simplify(e; expand=true)
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -1432,5 +1435,6 @@ version = "0.9.1+5"
 # ╠═8e38ed48-480a-4851-ae11-b02187d68b30
 # ╠═446b882c-52e8-407d-8f66-69d97d933936
 # ╠═65a84c4c-a746-4ce6-97fa-34707fccb03d
+# ╠═074433e6-d5fe-479c-8a3f-f1917a9bcdfa
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
