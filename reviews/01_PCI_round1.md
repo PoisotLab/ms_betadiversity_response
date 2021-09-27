@@ -1,17 +1,22 @@
 # Editor's comments
 
-We have received two detailed and insightful reviews of the preprint you have
-submitted to PCI Ecology.
-
-I would like that you carefully revise the manuscript according to the comments
-and suggestions.
-
 The most salient point is that the preprint is a kind of response/comment to a
 recent paper of Fründ in Ecosphere.
+
+> I have de-empahsized this component of the manuscript in the revision - it is
+> now framed as a "best practices" recommendations, with a discussion of the
+> consequences of changing the denominator as suggested by Fründ towards the
+> end.
 
 In addition, the ms does not follow a classical
 Introduction/M&M/Results/Discussion section, arguably because of the
 response/comment nature of this contribution.
+
+> I do not think the "classical" structure would be appropriate, as it would
+> essentially disconnect the explanations of how components are calculated from
+> their use in the numerical experiments. To guide the readers I have added an
+> expanded outline to the introduction, and strengthened the rationale for all
+> of the numerical experiments in the text.
 
 As suggested by reviewer 2, the ms would gain clarity if,
 
@@ -19,8 +24,14 @@ As suggested by reviewer 2, the ms would gain clarity if,
 views between Fründ and you, and thus more clearly exposing the motivation of
 challenging the recent paper of Fründ,
 
+> As mentionned in a previous comment, I have moved this part of the manuscript
+> towards the end, with more explicit recommendations about the use of the
+> proposed alternative.
+
 - a Discussion section synthesizes the pros and cons of both approaches, as it
 seems that each method can be justified and used in an appropriate context.
+
+> Same answer as above.
 
 # Reviewer 1
 
