@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1632761296 "preprint.tex" "preprint.pdf" "preprint" 1632761298
+["pdflatex"] 1632761819 "preprint.tex" "preprint.pdf" "preprint" 1632761821
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc" 1610747736 3356 2818ff063f8b5d0d850e1203330b9fda ""
@@ -232,12 +232,12 @@
   "figures/numexp1.png" 0 -1 0 ""
   "figures/numexp2.png" 0 -1 0 ""
   "figures/numexp3.png" 0 -1 0 ""
-  "logo.png" 1632761292 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
-  "preprint.aux" 1632761297 10054 f0ffeb625efa3c0bc3e69c4d72df9a4f "pdflatex"
-  "preprint.out" 1632761297 4397 127457c576dac1606e34d1b0499c9e73 "pdflatex"
-  "preprint.tex" 1632761292 43598 8f31d02ada6d4d50fe565870292a4938 ""
+  "logo.png" 1632761816 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
+  "preprint.aux" 1632761821 10054 f0ffeb625efa3c0bc3e69c4d72df9a4f "pdflatex"
+  "preprint.out" 1632761821 4397 127457c576dac1606e34d1b0499c9e73 "pdflatex"
+  "preprint.tex" 1632761816 43598 8f31d02ada6d4d50fe565870292a4938 ""
   (generated)
-  "preprint.pdf"
   "preprint.aux"
+  "preprint.pdf"
   "preprint.out"
   "preprint.log"
