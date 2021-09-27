@@ -37,7 +37,7 @@ turnover_links = 2*each_turnover
 WN = (rewired_links + turnover_links) / (2*common_links + rewired_links + turnover_links) |> expand
 
 # ╔═╡ 905419a8-9f6d-4e3c-a6bc-eef900bdec16
-OSp = rewired_links / (2*common_links + rewired_links) |> expand
+OSp = rewired_links / (2*common_links + rewired_links) |> expand |> simplify
 
 # ╔═╡ a8276021-01ca-4036-8b1b-fc0c45166ae8
 OSf = rewired_links / (2*common_links + rewired_links + turnover_links) |> expand
