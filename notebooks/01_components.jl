@@ -12,6 +12,8 @@ md"""
 # Numerical experiment 1 - importance of rewiring on total link dissimilarity
 
 In this experiment, we will split the origins of network dissimilarity into two components: the total dissimilarity, expressed as the proportion of links that are different between the two networks, and the *relative* importance of rewiring, which is the proportion of different links that are established between common species.
+
+The rationale for this decomposition is to illustrate how the measures react to (i) how dissimilar the networks are, in terms of proportion of shared links, and (ii) how the measures react to increased rewiring for a given level of dissimilarity. In the next case studies, we will rely on more straighforward decompositions in species / link sharing.
 """
 
 # ╔═╡ db35b6f1-d487-475f-9199-da5c22420a48
@@ -20,6 +22,8 @@ default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1
 # ╔═╡ 1cc2c524-a46a-447d-8c77-921c71a74422
 md"""
 ## Getting the expressions for the partitions from the proportions of different and rewired links
+
+In this section, we rely on the `Symbolics.jl` package to get solutions from the number of links in the different categories, and from there express the values of $\beta_{os}$ and $\beta_{wn}$:
 """
 
 # ╔═╡ ff0e3e93-f6bd-43bf-9532-387c0f29467e
@@ -45,7 +49,7 @@ We can express the values of OS, WN, and ST as a function of these three quantit
 beta_os = rewired_links / (2*common_links + rewired_links)
 
 # ╔═╡ a4904916-c2be-42e0-923a-1bbf9aca0ac4
-beta_wn = (rewired_links + turnover_links) / (2*common_links + rewired_links + turnover_links) |> simplify
+beta_wn = (rewired_links + turnover_links) / (2*common_links + rewired_links + turnover_links) |> simplify_fractions
 
 # ╔═╡ fc31c00a-ba80-4bab-81a5-5a0f0b7bb97d
 beta_st = beta_wn - beta_os
@@ -1347,7 +1351,7 @@ version = "0.9.1+5"
 # ╟─ed4e6594-1ed9-11ec-3f18-d9c695099d51
 # ╠═b585acc6-050c-4c80-8ba4-7220c2af5224
 # ╠═db35b6f1-d487-475f-9199-da5c22420a48
-# ╠═1cc2c524-a46a-447d-8c77-921c71a74422
+# ╟─1cc2c524-a46a-447d-8c77-921c71a74422
 # ╠═ff0e3e93-f6bd-43bf-9532-387c0f29467e
 # ╠═cd501c75-500b-44ac-9da2-156407bd3495
 # ╠═261e7989-8cac-49ed-ad4d-337e5e15a8d9
