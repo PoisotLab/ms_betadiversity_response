@@ -52,13 +52,13 @@ Value of the components
 """
 
 # ╔═╡ 70918f82-d207-430a-a036-3e9d09098a40
-beta_os = rewired_links / (2*shared_shareable_links + rewired_links) |> simplify
+beta_os = rewired_links / (2*shared_shareable_links + rewired_links) |> expand |> simplify_fractions
 
 # ╔═╡ 329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
 beta_wn = (rewired_links + unique_turnover) / (2*shared_shareable_links + rewired_links + unique_turnover) |> simplify
 
 # ╔═╡ f3f6ed36-e7a9-477c-aa2c-49491076debf
-beta_st = beta_wn - beta_os
+beta_st = beta_wn - beta_os |> expand
 
 # ╔═╡ 0745c28f-f8d3-4355-9180-88c0e28e3dfc
 beta_ratio = beta_st / beta_wn
