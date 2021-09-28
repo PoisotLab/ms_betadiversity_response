@@ -4,11 +4,24 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 42b6f8c2-1f11-11ec-2372-4134895e6fe2
-using StatsPlots, Symbolics
+# ╔═╡ 07218335-8c59-4690-b908-a3bf2eb8d3a3
+begin
+	using StatsPlots, Symbolics
+	_pixels = 200
+	_values = LinRange(0.0, 1.0, _pixels)
+	_species_sharing = 0.8
+	default(; c=:oslo, lw=0.0, levels=9, aspectratio=1, size=(400, 400), dpi=500, frame=:box, clim=(0,1))
+	_EXPNAME = split(split(@__FILE__, '/')[end], ".jl")[begin]
+	_FIGPATH = joinpath(@__DIR__, "..", "figures",  _EXPNAME)
+	ispath(_FIGPATH) || mkpath(_FIGPATH)
+end
 
 # ╔═╡ cfe5378b-02b0-4141-bdcd-35b0c622dc9b
-default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1))
+md"""
+# Numerical experiment - consequences of the common denominator
+
+We keep the same constraints as the first numerical experiment, this time focusing on methodological differences as to the numerator.
+"""
 
 # ╔═╡ 67c1480e-6cae-4963-bfc4-6437f81d7953
 # p: probability of sharing a species
@@ -16,71 +29,44 @@ default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1
 @variables p q
 
 # ╔═╡ d47db712-18a5-4b97-b487-7290c7f94200
-each_turnover = 1-p*p
+begin
+	C = q*p^2
+	r = (1-q)*p^2
+	R = 2r
+	t = simplify(1 - C - r; expand=true)
+	T = 2t
+end
+	
 
 # ╔═╡ 65ba1d3a-879d-4bba-ad5b-6154a70bf38a
-each_rewired = p*p*(1-q)
+beta_os = R/(2C+R+T) |> expand |> simplify_fractions
 
 # ╔═╡ 992195f0-7629-43de-8151-20b57a878a4b
-each_common = p*p*q
+beta_wn = (R+T)/(2C+R+T) |> expand |> simplify_fractions
 
 # ╔═╡ 60fd4b47-7228-4687-8d57-6ff505b930f7
-common_links = each_common
+beta_st = beta_wn - beta_os |> expand |> simplify_fractions
 
-# ╔═╡ b89551fa-6e7d-4489-866e-06d792218f91
-rewired_links = 2*each_rewired
-
-# ╔═╡ 055f8ce0-0e5a-4d64-b0d2-b96eefa7beab
-turnover_links = 2*each_turnover
-
-# ╔═╡ 9a5065a9-d776-44ea-ac0b-636fdfba7d3f
-WN = (rewired_links + turnover_links) / (2*common_links + rewired_links + turnover_links) |> expand
-
-# ╔═╡ 905419a8-9f6d-4e3c-a6bc-eef900bdec16
-OSp = rewired_links / (2*common_links + rewired_links) |> expand |> simplify
-
-# ╔═╡ a8276021-01ca-4036-8b1b-fc0c45166ae8
-OSf = rewired_links / (2*common_links + rewired_links + turnover_links) |> expand
-
-# ╔═╡ 93c3df0e-f48b-4ed8-a98f-3dbbe58653cb
-STp = WN - OSp |> expand |> simplify
-
-# ╔═╡ 592f752c-8a87-432b-b8ac-c6b9bc81e4ad
-STf = WN - OSf |> expand |> simplify
-
-# ╔═╡ f65bd86a-d42e-462d-92d9-4beb26a7efea
-dOS = OSp - OSf |> expand |> simplify
-
-# ╔═╡ a02f0382-26cd-4b31-9c06-ff1bc24d5949
-dST = STp - STf |> expand |> simplify
+# ╔═╡ e1e4bd91-622d-4d14-b312-f62b37c68ea4
+beta_s = 2*(1-p)/(2*p^2 + 2*(1-p)) |> expand
 
 # ╔═╡ dea224c7-143e-469f-b763-826df75e761e
 begin
-	Bwn = build_function(WN, p, q)
-	Bosp = build_function(OSp, p, q)
-	Bstp = build_function(STp, p, q)
-	Bosf = build_function(OSf, p, q)
-	Bstf = build_function(STf, p, q)
-end
-
-# ╔═╡ 6c978805-4377-4baa-b67a-018b6ee1a469
-begin
-	_pixels = 200
-	_values = LinRange(0.0, 1.0, _pixels)
+	Bwn = build_function(beta_wn, p, q)
+	Bos = build_function(beta_os, p, q)
 end
 
 # ╔═╡ 051b74dc-a57f-4199-bca2-8dbd183ed798
 begin
 	wn = broadcast(eval(Bwn), _values, _values')
-	osp = broadcast(eval(Bosp), _values, _values')
-	osf = broadcast(eval(Bosf), _values, _values')
-	stp = wn .- osp
-	stf = wn .- osf
+	os = broadcast(eval(Bos), _values, _values')
+	st = wn .- os
+	ratio = st ./ wn
 end
 
-# ╔═╡ 877a65f5-5da3-4e44-93fe-58de51693fab
+# ╔═╡ 8301f419-ab60-424e-a279-7715d883dae0
 begin
-	p_os = contour(_values, _values, osf, levels=9, fill=true)
+	p_os = contour(_values, _values, os, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta os (common denom.)")
@@ -91,20 +77,20 @@ begin
 	p_wn = contour(_values, _values, wn, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
-	title!("\\beta wn")
+	title!("\\beta wn (common denom.)")
 end
 
 # ╔═╡ 7ebced26-071c-41f0-982c-32bbbc7a86e5
 begin
-	p_st = contour(_values, _values, stf, levels=9, fill=true)
+	p_st = contour(_values, _values, st, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta st (common denom.)")
 end
 
-# ╔═╡ 8301f419-ab60-424e-a279-7715d883dae0
+# ╔═╡ 5a9c82fe-7a1b-48b4-a2ac-99f8bedbb34c
 begin
-	p_ratio = contour(_values, _values, stf ./ wn, levels=9, fill=true)
+	p_ratio = contour(_values, _values, ratio, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta st / \\beta wn (common denom.)")
@@ -113,11 +99,8 @@ end
 # ╔═╡ 2824cc03-4d64-4b16-b71c-5ceed924ca62
 begin
 	plot(p_os, p_wn, p_st, p_ratio, size=(800, 800))
-	savefig(joinpath(@__DIR__, "..", "figures", "sm_3_fig_1.png"))
+	savefig(joinpath(_FIGPATH, "components.png"))
 end
-
-# ╔═╡ 07218335-8c59-4690-b908-a3bf2eb8d3a3
-
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1333,29 +1316,19 @@ version = "0.9.1+5"
 """
 
 # ╔═╡ Cell order:
-# ╠═42b6f8c2-1f11-11ec-2372-4134895e6fe2
 # ╠═cfe5378b-02b0-4141-bdcd-35b0c622dc9b
 # ╠═67c1480e-6cae-4963-bfc4-6437f81d7953
 # ╠═d47db712-18a5-4b97-b487-7290c7f94200
 # ╠═65ba1d3a-879d-4bba-ad5b-6154a70bf38a
 # ╠═992195f0-7629-43de-8151-20b57a878a4b
 # ╠═60fd4b47-7228-4687-8d57-6ff505b930f7
-# ╠═b89551fa-6e7d-4489-866e-06d792218f91
-# ╠═055f8ce0-0e5a-4d64-b0d2-b96eefa7beab
-# ╠═9a5065a9-d776-44ea-ac0b-636fdfba7d3f
-# ╠═905419a8-9f6d-4e3c-a6bc-eef900bdec16
-# ╠═a8276021-01ca-4036-8b1b-fc0c45166ae8
-# ╠═93c3df0e-f48b-4ed8-a98f-3dbbe58653cb
-# ╠═592f752c-8a87-432b-b8ac-c6b9bc81e4ad
-# ╠═f65bd86a-d42e-462d-92d9-4beb26a7efea
-# ╠═a02f0382-26cd-4b31-9c06-ff1bc24d5949
+# ╠═e1e4bd91-622d-4d14-b312-f62b37c68ea4
 # ╠═dea224c7-143e-469f-b763-826df75e761e
-# ╠═6c978805-4377-4baa-b67a-018b6ee1a469
 # ╠═051b74dc-a57f-4199-bca2-8dbd183ed798
-# ╠═877a65f5-5da3-4e44-93fe-58de51693fab
+# ╠═8301f419-ab60-424e-a279-7715d883dae0
 # ╠═27247554-cc9e-4d62-b6aa-04058dabb856
 # ╠═7ebced26-071c-41f0-982c-32bbbc7a86e5
-# ╠═8301f419-ab60-424e-a279-7715d883dae0
+# ╠═5a9c82fe-7a1b-48b4-a2ac-99f8bedbb34c
 # ╠═2824cc03-4d64-4b16-b71c-5ceed924ca62
 # ╠═07218335-8c59-4690-b908-a3bf2eb8d3a3
 # ╟─00000000-0000-0000-0000-000000000001
