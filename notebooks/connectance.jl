@@ -9,8 +9,8 @@ begin
 	using StatsPlots, Symbolics
 	_pixels = 200
 	_values = LinRange(0.0, 1.0, _pixels)
-	_species_sharing = 0.7
-	default(; c=:oslo, lw=0.0, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1), frame=:box)
+	_species_sharing = 0.8
+	default(; c=:oslo, lw=0.0, levels=9, aspectratio=1, size=(400, 400), dpi=500, frame=:box, clim=(0,1))
 	_EXPNAME = split(split(@__FILE__, '/')[end], ".jl")[begin]
 	_FIGPATH = joinpath(@__DIR__, "..", "figures",  _EXPNAME)
 	ispath(_FIGPATH) || mkpath(_FIGPATH)
@@ -20,9 +20,9 @@ end
 md"""
 # Numerical experiment - connectance gradient
 
-In this numerical experiment, we will reproduce the results of the examination of rewiring/sharing, by relaxing the constraint that the connectance of the two networks is the same, but by maintaining the constraint that they have equal richess. The sole variation in this numerical experiment is therefore that one network has $L_1 = \rho\times a\times S^2$, and the other network has $L_2 = \rho\times S^2$; in other words, $L_1 = a\times L$ and $L_2 = L$.
+In this numerical experiment, we will reproduce the results of the examination of rewiring/sharing, by relaxing the constraint that the connectance of the two networks must be the same, but by maintaining the constraint that they have equal richness.
 
-As one step of the components calculations involves a $\text{min}$ operation, we will force the constraint that $L_1 \le L_2$, which is to say $0 < a \le 1$. The value of $a$ is the *ratio* of connectances of the two networks.
+The sole variation in this numerical experiment is therefore that one network has $L_1 = \rho\times a\times S^2$, and the other network has $L_2 = \rho\times S^2$; in other words, $L_1 = a\times L$ and $L_2 = L$. As one step of the components calculations involves a $\text{min}$ operation, we will force the constraint that $L_1 \le L_2$, which is to say $0 < a \le 1$. The value of $a$ is the *ratio* of connectances of the two networks.
 """
 
 # ╔═╡ 67e402f0-198f-4a98-9c1c-c2fb5505511f
@@ -35,7 +35,7 @@ The number of links that can be shared between the two networks *cannot* be larg
 
 # ╔═╡ df53daea-8500-4b18-b509-33e5d844903c
 md"""
-Out of these links, a proportion $q$ will be kept, giving a expression for the number of common links:
+Out of these potentially shared links, a proportion $q$ will actually be kept, giving a expression for the number of common links:
 """
 
 # ╔═╡ e928b4a3-d95e-4863-90af-5484a413f958
@@ -101,41 +101,41 @@ end
 
 # ╔═╡ 745c47b7-4792-471a-8004-ebea797892e9
 begin
-	os = broadcast(eval(Bos), _species_sharing, _values, _values')
-	wn = broadcast(eval(Bwn), _species_sharing, _values, _values')
+	os = eval(Bos).(_species_sharing, _values, _values')
+	wn = eval(Bwn).(_species_sharing, _values, _values')
 	st = wn .- os
 	ratio = st ./ wn
 end
 
 # ╔═╡ b074d4e7-7006-438e-abda-e38f94af530e
 begin
-	p_os = contour(_values, _values, os, levels=9, fill=true)
-	xaxis!((0, 1), "Connectance ratio")
-	yaxis!((0, 1), "Probability of sharing a link")
+	p_os = contour(_values, _values, rotl90(os), levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta os")
 end
 
 # ╔═╡ a6b0715d-66fc-4d80-828d-bf80b1c36426
 begin
-	p_wn = contour(_values, _values, wn, levels=9, fill=true)
-	xaxis!((0, 1), "Connectance ratio")
-	yaxis!((0, 1), "Probability of sharing a link")
+	p_wn = contour(_values, _values, rotl90(wn), levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta wn")
 end
 
 # ╔═╡ 9a2ceb4e-7ebe-4b0e-b942-79f33340ee94
 begin
-	p_st = contour(_values, _values, st, levels=9, fill=true)
-	xaxis!((0, 1), "Connectance ratio")
-	yaxis!((0, 1), "Probability of sharing a link")
+	p_st = contour(_values, _values, rotl90(st), levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta st")
 end
 
 # ╔═╡ 855e65e1-a7bb-470d-861b-534b4d80ad17
 begin
-	p_ratio = contour(_values, _values, ratio, levels=9, fill=true)
-	xaxis!((0, 1), "Connectance ratio")
-	yaxis!((0, 1), "Probability of sharing a link")
+	p_ratio = contour(_values, _values, rotl90(ratio), levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta st / \\beta wn")
 end
 
