@@ -6,7 +6,9 @@ recent paper of Fründ in Ecosphere.
 > I have de-emphasized this component of the manuscript in the revision - it is
 > now framed as a "best practices" recommendations, with a discussion of the
 > consequences of changing the denominator as suggested by Fründ towards the
-> end.
+> end. This is made clearer in the introduction, by explaining first the
+> difficulties in interpreting the components, then the importance of choices
+> about the denominator.
 
 In addition, the ms does not follow a classical
 Introduction/M&M/Results/Discussion section, arguably because of the
