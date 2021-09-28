@@ -4,135 +4,203 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ b585acc6-050c-4c80-8ba4-7220c2af5224
-using StatsPlots, Symbolics
+# ╔═╡ 64c8e293-dc9b-4a47-9017-cbd75794e341
+begin
+	using StatsPlots, Symbolics
+	_pixels = 200
+	_values = LinRange(0.0, 1.0, _pixels)
+	default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1))
+	_EXPNAME = split(split(@__FILE__, '/')[end], ".jl")[begin]
+	_FIGPATH = joinpath(@__DIR__, "..", "figures",  _EXPNAME)
+	ispath(_FIGPATH) || mkpath(_FIGPATH)
+end
 
-# ╔═╡ ed4e6594-1ed9-11ec-3f18-d9c695099d51
+# ╔═╡ 7cfca8be-1ee0-11ec-30be-a58d5339cfb9
 md"""
-# Numerical experiment 1 - importance of rewiring on total link dissimilarity
+# Numerical experiment - effect of species sharing and rewiring
 
-In this experiment, we will split the origins of network dissimilarity into two components: the total dissimilarity, expressed as the proportion of links that are different between the two networks, and the *relative* importance of rewiring, which is the proportion of different links that are established between common species.
+The purpose of this experiment is to show how the decomposition behaves with regards to two core mechanisms: species sharing, and link rewiring. We will assume that the networks are unipartite, have the same number of species $S$, the same connectance $\rho$, and therefore have the same number of links $L = \rho\times S^2$.
 
-The rationale for this decomposition is to illustrate how the measures react to (i) how dissimilar the networks are, in terms of proportion of shared links, and (ii) how the measures react to increased rewiring for a given level of dissimilarity. In the next case studies, we will rely on more straighforward decompositions in species / link sharing.
+Based on this, we will provide exact solutions for the number of links that are common ($C$), different due to species turnover ($T$), and different due to rewiring in the subset of common species ($R$).
 """
 
-# ╔═╡ db35b6f1-d487-475f-9199-da5c22420a48
-default(; c=:lapaz, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1))
-
-# ╔═╡ 1cc2c524-a46a-447d-8c77-921c71a74422
+# ╔═╡ 7393adea-cf71-4f83-8ee1-7c3f42e63884
 md"""
-## Getting the expressions for the partitions from the proportions of different and rewired links
+We will define a probability for a species to be shared between the two networks ($p$), and a probability for an interaction to be shared if it is established by two species from the shared species pool ($q$).
 
-In this section, we rely on the `Symbolics.jl` package to get solutions from the number of links in the different categories, and from there express the values of $\beta_{os}$ and $\beta_{wn}$:
+Because every component will have $L = S^2\times \rho$ as a factor, we do not need to use these terms in the calculation (they would end up simplifying). Therefore, the conclusions presented here are working on *proportions* of links.
 """
 
-# ╔═╡ ff0e3e93-f6bd-43bf-9532-387c0f29467e
-# d: proportion of total links that are different
-# r: proportion of different links that are rewired
-@variables d, r
+# ╔═╡ c5776ce9-9c52-4529-b7be-35a2122570f7
+# p: probability of sharing species
+# q: probability of sharing a link between overlapping species
+@variables p q
 
-# ╔═╡ cd501c75-500b-44ac-9da2-156407bd3495
-common_links = 1 - d
-
-# ╔═╡ 261e7989-8cac-49ed-ad4d-337e5e15a8d9
-rewired_links = d * r
-
-# ╔═╡ 66baac1a-c473-4912-9ee4-6541f021c147
-turnover_links = d * (1-r)
-
-# ╔═╡ be60bea6-4723-47ff-afd2-4a10436a610d
+# ╔═╡ c0d6153d-333b-4601-9b55-3faa0f1919ca
 md"""
-We can express the values of OS, WN, and ST as a function of these three quantities:
+As the networks have the same size and connectance, the number of links that *can* be shared is $p^2$ - these possibly shared links are common to both networks with probability $q$, and rewired with probability $1-q$.
 """
 
-# ╔═╡ c0af19a3-7d1e-4565-9614-33b5591c2756
-beta_os = rewired_links / (2*common_links + rewired_links)
+# ╔═╡ 8574615a-7b87-4d4a-8e8b-cffa9af0ef57
+C = q*p^2
 
-# ╔═╡ a4904916-c2be-42e0-923a-1bbf9aca0ac4
-beta_wn = (rewired_links + turnover_links) / (2*common_links + rewired_links + turnover_links) |> simplify_fractions
+# ╔═╡ 4cc46d6c-2ebc-433b-b030-99f668b5a92c
+md"""
+The links unique to either network because of rewiring are noted $r$, and the total number of rewired links is $R = 2r$.
+"""
 
-# ╔═╡ fc31c00a-ba80-4bab-81a5-5a0f0b7bb97d
+# ╔═╡ 1c65ee48-d1bc-43b5-8f21-9cf7a3ac2e40
+r = (1-q)*p^2
+
+# ╔═╡ b6ebbb26-3244-4e42-9c75-ae7a326daee2
+R = 2r
+
+# ╔═╡ f0b0db7d-4b86-4f08-a051-1d82c9eafbae
+md"""
+We can get the number of links that are unique due to turnover by subtracting $C+r$ from the total number of links, which in this case is $t = 1 - C - r$ -- this is the *per* network number of turnover links, and the total number of turnover links is $T = 2t$:
+"""
+
+# ╔═╡ 80e16b7b-eae3-4596-99c2-7956db3d44f2
+t = simplify(1 - C - r; expand=true)
+
+# ╔═╡ 5229e988-06b3-4634-bf9c-f31c1e978874
+T = 2t
+
+# ╔═╡ 597133da-2f1a-4450-a0d7-9f3079ba4edf
+md"""
+Because we have expressed $\beta_{os} = R / (2C + R)$ and $\beta_{wn} = (R+T)/(2C+R+T)$, we can get the solutions for the values of these partitions of network dissimilarity
+"""
+
+# ╔═╡ 57a6e5ee-c0b8-4e6c-8a18-c5a0e8350d8c
+beta_os = R/(2C+R) |> expand
+
+# ╔═╡ 329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
+beta_wn = (R+T)/(2C+R+T) |> expand
+
+# ╔═╡ f3f6ed36-e7a9-477c-aa2c-49491076debf
 beta_st = beta_wn - beta_os
 
-# ╔═╡ 2359ca08-bc9c-4a3f-af2c-b98fd230bb4e
-md"""
-## Visualizing the results
+# ╔═╡ f0e939db-b33a-400f-a9fa-4b920199c957
+1 - beta_os/beta_wn |> expand
 
-We can plug these results into a series of simulations, by converting the results of the `Symbolics.jl` calculations into Julia functions. All we need to set is a grid size, and generate a range of values for both the proportion of different links, and for the proportion of rewired links:
-"""
-
-# ╔═╡ 49381b21-6e41-479b-836b-ec8164d6d2fc
+# ╔═╡ f14cd691-8235-46a3-aa5d-61937b7037cd
 begin
-	# Resolution of the grid
-	_pixels = 200
-	
-	# Proportion of different links
-	p_link_diff = LinRange(0.0, 1.0, _pixels)
-	
-	# Proportion of rewired links (among the ones that are different)
-	p_link_rewired = LinRange(0.0, 1.0, _pixels)
+	Bos = build_function(beta_os, p, q)
+	Bwn = build_function(beta_wn, p, q)
 end
 
-# ╔═╡ 8e00f4ff-74bc-4bb3-9ad6-f13e92fc59d6
-md"""
-The next block will turn the expressions for $\beta_{os}$ and $\beta_{wn}$ into Julia functions, so we can broadcast them over the arrays of probabilities.
-"""
-
-# ╔═╡ d4ef1fc2-0a16-4fd7-bcd3-838493c3ac4a
+# ╔═╡ c56081af-688b-4a11-8677-d58a885a9ff9
 begin
-	Bos = build_function(beta_os, d, r)
-	Bwn = build_function(beta_wn, d, r)
-end
-
-# ╔═╡ 7fb1beb7-f3b0-4370-933a-21f3b0a6370f
-md"""
-Getting the value of the components over the range of link variation can be done by calling these functions directly -- note that we do not have a function for $\beta_{st}$, because we can get it through substraction.
-"""
-
-# ╔═╡ afde174b-0138-46e0-9c6a-0892e4a815b4
-begin
-	os = broadcast(eval(Bos), p_link_diff, p_link_rewired')
-	wn = broadcast(eval(Bwn), p_link_diff, p_link_rewired')
+	os = broadcast(eval(Bos), _values, _values')
+	wn = broadcast(eval(Bwn), _values, _values')
 	st = wn .- os
+	ratio = st ./ wn
 end
 
-# ╔═╡ 438376b9-3817-4fbb-a4a8-e0b42d7acf72
+# ╔═╡ b9425558-7d6b-4947-9fcb-efbbe537d39d
 begin
-	p_os = contour(p_link_rewired, p_link_diff, os, levels=9, fill=true)
-	xaxis!((0, 1), "Relative importance of rewiring")
-	yaxis!((0, 1), "Relative link difference")
+	p_os = contour(_values, _values, os, levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta os")
 end
 
-# ╔═╡ c3fdac7a-12a7-4785-a9f4-4c150ff40f26
+# ╔═╡ d8147164-ae59-4025-81cb-5aa3dff7af36
 begin
-	p_wn = contour(p_link_rewired, p_link_diff, wn, levels=9, fill=true)
-	xaxis!((0, 1), "Relative importance of rewiring")
-	yaxis!((0, 1), "Relative link difference")
+	p_wn = contour(_values, _values, wn, levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta wn")
 end
 
-# ╔═╡ 65ba3d97-fa1e-4761-bdaa-5721dc7fbdce
+# ╔═╡ c2206bc0-1926-4020-b8c4-6c27995b4cab
 begin
-	p_st = contour(p_link_rewired, p_link_diff, st, levels=9, fill=true)
-	xaxis!((0, 1), "Relative importance of rewiring")
-	yaxis!((0, 1), "Relative link difference")
+	p_st = contour(_values, _values, st, levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta st")
 end
 
-# ╔═╡ dc8aff9d-3922-4dc6-ac84-c2fce7a3b32d
+# ╔═╡ c81cd270-8eee-4555-81e0-1fc57ccd322d
 begin
-	p_ratio = contour(p_link_rewired, p_link_diff, st./wn, levels=9, fill=true)
-	xaxis!((0, 1), "Relative importance of rewiring")
-	yaxis!((0, 1), "Relative link difference")
+	p_ratio = contour(_values, _values, ratio, levels=9, fill=true)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((0, 1), "Probability of sharing a species")
 	title!("\\beta st / \\beta wn")
 end
 
-# ╔═╡ 238d169e-921b-4b01-924f-38b82fbd05e9
+# ╔═╡ aae10b7d-f298-4230-bc6e-44d4f6d3cf41
 begin
 	plot(p_os, p_wn, p_st, p_ratio, size=(800, 800))
-	savefig(joinpath(@__DIR__, "..", "figures", "sm_1_fig_1.png"))
+	savefig(joinpath(_FIGPATH, "components.png"))
 end
+
+# ╔═╡ b0d7ea71-0755-43e2-898a-e0f0c5533824
+md"""
+## Differences in connectance between networks
+"""
+
+# ╔═╡ 7a09953a-eb9e-4e40-9862-8ea2d4e1da0f
+begin
+	_cvalues = LinRange(1.0, 5.0, _pixels)
+	_spsharing = 0.7
+	cos = broadcast(eval(Bos), _spsharing, _values, _cvalues')
+	cwn = broadcast(eval(Bwn), _spsharing, _values, _cvalues')
+	cst = broadcast(eval(Bst), _spsharing, _values, _cvalues')
+	cratio = broadcast(eval(Bratio), _spsharing, _values, _cvalues')
+end
+
+# ╔═╡ 48cb3f49-552e-4afd-a687-72a8e784e4bd
+begin
+	_wrg = findall(x -> !(0 <= x <= 1), cos)
+	cos[_wrg] .= NaN
+	cwn[_wrg] .= NaN
+	cst[_wrg] .= NaN
+	cratio[_wrg] .= NaN
+end
+
+# ╔═╡ 1606ef32-64a0-4267-aa33-9b80b63c62d4
+begin
+	cp_os = contour(_values, _cvalues, cos', levels=9, fill=true, aspectratio=1/4)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((1, 5), "Difference in connectance")
+	title!("\\beta os")
+end
+
+# ╔═╡ 003bf76d-70ab-4cf2-8d1c-5d307058a93f
+begin
+	cp_wn = contour(_values, _cvalues, cwn', levels=9, fill=true, aspectratio=1/4)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((1, 5), "Difference in connectance")
+	title!("\\beta wn")
+end
+
+# ╔═╡ 8e38ed48-480a-4851-ae11-b02187d68b30
+begin
+	cp_st = contour(_values, _cvalues, cst', levels=9, fill=true, aspectratio=1/4)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((1, 5), "Difference in connectance")
+	title!("\\beta st")
+end
+
+# ╔═╡ 446b882c-52e8-407d-8f66-69d97d933936
+begin
+	cp_ratio = contour(_values, _cvalues, cratio', levels=9, fill=true, aspectratio=1/4)
+	xaxis!((0, 1), "Probability of sharing a link")
+	yaxis!((1, 5), "Difference in connectance")
+	title!("\\beta st / \\beta wn")
+end
+
+# ╔═╡ 65a84c4c-a746-4ce6-97fa-34707fccb03d
+begin
+	plot(cp_os, cp_wn, cp_st, cp_ratio, size=(800, 800))
+	savefig(joinpath(@__DIR__, "..", "figures", "sm_2_fig_2.png"))
+end
+
+# ╔═╡ 9fa6b535-1120-4bab-a4c1-6d54f466edc0
+md"""
+## Additional parameters for simulations et al.
+"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -218,9 +286,9 @@ version = "1.16.1+0"
 
 [[ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "bd4afa1fdeec0c8b89dad3c6e92bc6e3b0fec9ce"
+git-tree-sha1 = "e8a30e8019a512e4b6c56ccebc065026624660e8"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "1.6.0"
+version = "1.7.0"
 
 [[Clustering]]
 deps = ["Distances", "LinearAlgebra", "NearestNeighbors", "Printf", "SparseArrays", "Statistics", "StatsBase"]
@@ -493,9 +561,9 @@ version = "1.0.2"
 
 [[HTTP]]
 deps = ["Base64", "Dates", "IniFile", "Logging", "MbedTLS", "NetworkOptions", "Sockets", "URIs"]
-git-tree-sha1 = "60ed5f1643927479f845b0135bb369b031b541fa"
+git-tree-sha1 = "24675428ca27678f003414a98c9e473e45fe6a21"
 uuid = "cd3eb016-35fb-5094-929b-558a96fad6f3"
-version = "0.9.14"
+version = "0.9.15"
 
 [[HarfBuzz_jll]]
 deps = ["Artifacts", "Cairo_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "Graphite2_jll", "JLLWrappers", "Libdl", "Libffi_jll", "Pkg"]
@@ -853,9 +921,9 @@ version = "1.0.14"
 
 [[Plots]]
 deps = ["Base64", "Contour", "Dates", "Downloads", "FFMPEG", "FixedPointNumbers", "GR", "GeometryBasics", "JSON", "Latexify", "LinearAlgebra", "Measures", "NaNMath", "PlotThemes", "PlotUtils", "Printf", "REPL", "Random", "RecipesBase", "RecipesPipeline", "Reexport", "Requires", "Scratch", "Showoff", "SparseArrays", "Statistics", "StatsBase", "UUIDs"]
-git-tree-sha1 = "457b13497a3ea4deb33d273a6a5ea15c25c0ebd9"
+git-tree-sha1 = "cfbd033def161db9494f86c5d18fbf874e09e514"
 uuid = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-version = "1.22.2"
+version = "1.22.3"
 
 [[Preferences]]
 deps = ["TOML"]
@@ -993,10 +1061,10 @@ deps = ["LinearAlgebra", "Random"]
 uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[SpecialFunctions]]
-deps = ["ChainRulesCore", "LogExpFunctions", "OpenLibm_jll", "OpenSpecFun_jll"]
-git-tree-sha1 = "ad42c30a6204c74d264692e633133dcea0e8b14e"
+deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "OpenLibm_jll", "OpenSpecFun_jll"]
+git-tree-sha1 = "793793f1df98e3d7d554b65a107e9c9a6399a6ed"
 uuid = "276daf66-3868-5448-9aa4-cd146d93841b"
-version = "1.6.2"
+version = "1.7.0"
 
 [[Static]]
 deps = ["IfElse"]
@@ -1027,9 +1095,9 @@ version = "0.33.10"
 
 [[StatsFuns]]
 deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "Reexport", "Rmath", "SpecialFunctions"]
-git-tree-sha1 = "46d7ccc7104860c38b11966dd1f72ff042f382e4"
+git-tree-sha1 = "d9bcf8d82077567abc2d972dd2db4b201a7d4263"
 uuid = "4c63d2b9-4356-54db-8cca-17b64c39e42c"
-version = "0.9.10"
+version = "0.9.11"
 
 [[StatsPlots]]
 deps = ["Clustering", "DataStructures", "DataValues", "Distributions", "Interpolations", "KernelDensity", "LinearAlgebra", "MultivariateStats", "Observables", "Plots", "RecipesBase", "RecipesPipeline", "Reexport", "StatsBase", "TableOperations", "Tables", "Widgets"]
@@ -1348,28 +1416,38 @@ version = "0.9.1+5"
 """
 
 # ╔═╡ Cell order:
-# ╟─ed4e6594-1ed9-11ec-3f18-d9c695099d51
-# ╠═b585acc6-050c-4c80-8ba4-7220c2af5224
-# ╠═db35b6f1-d487-475f-9199-da5c22420a48
-# ╟─1cc2c524-a46a-447d-8c77-921c71a74422
-# ╠═ff0e3e93-f6bd-43bf-9532-387c0f29467e
-# ╠═cd501c75-500b-44ac-9da2-156407bd3495
-# ╠═261e7989-8cac-49ed-ad4d-337e5e15a8d9
-# ╠═66baac1a-c473-4912-9ee4-6541f021c147
-# ╟─be60bea6-4723-47ff-afd2-4a10436a610d
-# ╠═c0af19a3-7d1e-4565-9614-33b5591c2756
-# ╠═a4904916-c2be-42e0-923a-1bbf9aca0ac4
-# ╠═fc31c00a-ba80-4bab-81a5-5a0f0b7bb97d
-# ╟─2359ca08-bc9c-4a3f-af2c-b98fd230bb4e
-# ╠═49381b21-6e41-479b-836b-ec8164d6d2fc
-# ╟─8e00f4ff-74bc-4bb3-9ad6-f13e92fc59d6
-# ╠═d4ef1fc2-0a16-4fd7-bcd3-838493c3ac4a
-# ╟─7fb1beb7-f3b0-4370-933a-21f3b0a6370f
-# ╠═afde174b-0138-46e0-9c6a-0892e4a815b4
-# ╠═438376b9-3817-4fbb-a4a8-e0b42d7acf72
-# ╠═c3fdac7a-12a7-4785-a9f4-4c150ff40f26
-# ╠═65ba3d97-fa1e-4761-bdaa-5721dc7fbdce
-# ╠═dc8aff9d-3922-4dc6-ac84-c2fce7a3b32d
-# ╠═238d169e-921b-4b01-924f-38b82fbd05e9
+# ╟─7cfca8be-1ee0-11ec-30be-a58d5339cfb9
+# ╟─7393adea-cf71-4f83-8ee1-7c3f42e63884
+# ╠═c5776ce9-9c52-4529-b7be-35a2122570f7
+# ╟─c0d6153d-333b-4601-9b55-3faa0f1919ca
+# ╠═8574615a-7b87-4d4a-8e8b-cffa9af0ef57
+# ╟─4cc46d6c-2ebc-433b-b030-99f668b5a92c
+# ╠═1c65ee48-d1bc-43b5-8f21-9cf7a3ac2e40
+# ╠═b6ebbb26-3244-4e42-9c75-ae7a326daee2
+# ╟─f0b0db7d-4b86-4f08-a051-1d82c9eafbae
+# ╠═80e16b7b-eae3-4596-99c2-7956db3d44f2
+# ╠═5229e988-06b3-4634-bf9c-f31c1e978874
+# ╟─597133da-2f1a-4450-a0d7-9f3079ba4edf
+# ╠═57a6e5ee-c0b8-4e6c-8a18-c5a0e8350d8c
+# ╠═329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
+# ╠═f3f6ed36-e7a9-477c-aa2c-49491076debf
+# ╠═f0e939db-b33a-400f-a9fa-4b920199c957
+# ╠═f14cd691-8235-46a3-aa5d-61937b7037cd
+# ╠═c56081af-688b-4a11-8677-d58a885a9ff9
+# ╠═b9425558-7d6b-4947-9fcb-efbbe537d39d
+# ╠═d8147164-ae59-4025-81cb-5aa3dff7af36
+# ╠═c2206bc0-1926-4020-b8c4-6c27995b4cab
+# ╠═c81cd270-8eee-4555-81e0-1fc57ccd322d
+# ╠═aae10b7d-f298-4230-bc6e-44d4f6d3cf41
+# ╠═b0d7ea71-0755-43e2-898a-e0f0c5533824
+# ╠═7a09953a-eb9e-4e40-9862-8ea2d4e1da0f
+# ╠═48cb3f49-552e-4afd-a687-72a8e784e4bd
+# ╠═1606ef32-64a0-4267-aa33-9b80b63c62d4
+# ╠═003bf76d-70ab-4cf2-8d1c-5d307058a93f
+# ╠═8e38ed48-480a-4851-ae11-b02187d68b30
+# ╠═446b882c-52e8-407d-8f66-69d97d933936
+# ╠═65a84c4c-a746-4ce6-97fa-34707fccb03d
+# ╠═9fa6b535-1120-4bab-a4c1-6d54f466edc0
+# ╠═64c8e293-dc9b-4a47-9017-cbd75794e341
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

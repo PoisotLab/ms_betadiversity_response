@@ -3,7 +3,7 @@
 The most salient point is that the preprint is a kind of response/comment to a
 recent paper of Fründ in Ecosphere.
 
-> I have de-empahsized this component of the manuscript in the revision - it is
+> I have de-emphasized this component of the manuscript in the revision - it is
 > now framed as a "best practices" recommendations, with a discussion of the
 > consequences of changing the denominator as suggested by Fründ towards the
 > end.
@@ -31,7 +31,8 @@ challenging the recent paper of Fründ,
 - a Discussion section synthesizes the pros and cons of both approaches, as it
 seems that each method can be justified and used in an appropriate context.
 
-> Same answer as above.
+> Same answer as above. In addition, I have clarified the mathematical notation
+> throughout, so that it will hopefully be easier to follow.
 
 # Reviewer 1
 
