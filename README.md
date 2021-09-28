@@ -1,52 +1,75 @@
 Ecological networks are variable both in time and space [@Poisot2015SpeWhy;
 @Trojelsgaard2016EcoNet] - this variability motivated the emergence of
-methodology to compare ecological networks, in a way that meshes with the usual
-approaches of comparison of ecological communities, *i.e.* $\beta$-diversity;
-although the definiton of $\beta$-diversity is a contentious topic amongst
-community ecologists [see *e.g.* @Tuomisto2010DivBet], the need to understand
-network variability is motivated by the fact that species that make up the
-networks do not react to their environment in the same way, and therefore the
-$\beta$-diversity of networks may behave in complex ways.
+methodology to compare ecological networks, including in a way that meshes with
+the core concept for the comparison of ecological communities, namely
+$\beta$-diversity [@Poisot2012DisSpe]. The need to understand network
+variability through partitioning in components equivalent to $\alpha$, $\beta$,
+and $\gamma$ diversities is motivated by the prospect to further integrate the
+analysis of species interactions to the analysis of species compositions.
+Because species that make up the networks do not react to their environment in
+the same way, and because interactions are only expressed in subsets of the
+environments in which species co-occurr, the $\beta$-diversity of networks may
+behave in complex ways, and its quantification is likely to be ecologically
+informative.
 
 @Poisot2012DisSpe and @Canard2014EmpEva have suggested an approach to
 $\beta$-diversity for ecological networks which is based on the comparison of
-shared and unique links among species, and differentiate this sharing of links
-between common and unique species. This framework can be summarized as
-$\beta_{wn} = \beta_{os} + \beta_{st}$, namely the fact that overall network
-dissimilarity ($\beta_{wn}$) has a component that can be calculated directly
-from the dissimilarity of interactions between shared species ($\beta_{os}$),
-and a component that cannot, the later originating in unique species introducing
-their unique interactions ($\beta_{st}$). This approach has been widely adopted
-since its publication, with recent examples using it to understand the effect of
-fire on pollination systems [@Baronio2021NatFir]; the impact of rewiring on
-spatio-temporal network dynamics [@Campos-Moreno2021ImpInt]; the effects of
-farming on rural and urban landscapes on species interactions
-[@Olsson2021IntPla]; and as a tool to estimate the sampling completeness of
-networks [@Souza2021PlaSam]. It has, similarly, received a number of extensions,
-including the ability to account for interaction strength [@Magrach2017PlaNet],
-the ability to handle probabilistic ecological networks [@Poisot2016StrPro], and
-the integration into the Local Contribution to Beta Diversity
-[@Legendre2013BetDiv] approach to understand how environment changes drive
-network dissimilarity [@Poisot2017HosPar].
+the number of shared and unique links among species within a pair of networks.
+Their approach differentiates this sharing of links between those established
+between species occurring in both networks, and those established with at least
+one unique species. This framework is expressed as the decomposition $\beta_{wn}
+= \beta_{os} + \beta_{st}$, namely the fact that network dissimilarity
+($\beta_{wn}$) has a component that can be calculated directly from the
+dissimilarity of interactions between shared species ($\beta_{os}$), and a
+component that cannot ($\beta_{st}$). Presumably, the value of these components
+for a pair of networks can generate insights about the mechanisms involved in
+dissimilarity. 
 
-In a  recent contribution, @Frund2021DisSpe argues that the calculation of
-network dissimilarity terms as outlined by @Poisot2012DisSpe is incorrect, as it
-can lead to over-estimating the role of interactions between shared species in a
-network ("rewiring"), and therefore underestimate the importance of species
-turnover across networks. Here, I present a more thorough justification of the
-methodological choices for the @Poisot2012DisSpe method, explain how information
-about species turnover can be extracted from its decomposition, and conduct
-numerical experiments to guide the interpretation of the $\beta$-diversity
-values thus obtained. These numerical experiments establish three core facts.
-First, the decomposition responds to the correct sources of network variation;
-second, the decomposition adequately captures the relative roles of species
-turnover and interaction rewiring; finally, the decomposition adequately
-captures the role of turnover vs. non-turnover (like changes in connectance)
-processes. Although the alternative normalization suggested by @Frund2021DisSpe
-is not without its uses, which I discuss in conclusion, it is inadequate as a
-network $\beta$-diversity measurement, as it introduces many confounding
-elements that make the interpretation of the results more difficult, and should
-likely not be used as a default.
+This approach has been widely adopted since its publication, with recent
+examples using it to understand the effect of fire on pollination systems
+[@Baronio2021NatFir]; the impact of rewiring on spatio-temporal network dynamics
+[@Campos-Moreno2021ImpInt]; the effects of farming on rural and urban landscapes
+on species interactions [@Olsson2021IntPla]; the impact of environment gradients
+on multi-trophic metacommunities [@Ohlmann2018MapImp]; and as a tool to estimate
+the sampling completeness of networks [@Souza2021PlaSam]. It has, similarly,
+received a number of extensions, including the ability to account for
+interaction strength [@Magrach2017PlaNet], the ability to handle probabilistic
+ecological networks [@Poisot2016StrPro], and the integration into the Local
+Contribution to Beta Diversity [@Legendre2013BetDiv] approach to understand how
+environment changes drive network dissimilarity [@Poisot2017HosPar].
+
+This later component originates in unique species introducing their unique
+interactions both between themselves, and with species that are common to both
+networks. CONTINUE WITH BETA ST
+
+Furthermore, much like the definition of $\beta$-diversity in all its forms is a
+contentious topic amongst community ecologists [see *e.g.* @Tuomisto2010DivBet],
+the $\beta$-diversity of networks has been submitted to methodological scrutiny
+over the years. A synthesis of some criticisms, related to the correct
+denominator to use to express the proportion of different links, has recently
+been published [@Frund2021DisSpe]. It argues that the calculation of network
+dissimilarity terms as originally outlined by @Poisot2012DisSpe is incorrect, as
+it can lead to over-estimating the role of interactions between shared species
+in a network ("rewiring"), and therefore underestimate the importance of species
+turnover across networks. As mist-understanding either of these quantities can
+lead to biased inferences about the mechanisms generating network dissimilarity,
+it is important to assess how the values (notably of $\beta_{os}$, and therefore
+of $\beta_{st}$) react to methodological choices.
+
+Here, I present a more thorough justification of the methodological choices for
+the @Poisot2012DisSpe method, explain how information about species turnover can
+be extracted from its decomposition, and conduct numerical experiments to guide
+the interpretation of the $\beta$-diversity values thus obtained. These
+numerical experiments establish three core facts. First, the decomposition
+responds to the correct sources of network variation; second, the decomposition
+adequately captures the relative roles of species turnover and interaction
+rewiring; finally, the decomposition adequately captures the role of turnover
+vs. non-turnover (like changes in connectance) processes. Although the
+alternative normalization suggested by @Frund2021DisSpe is not without its uses,
+which I discuss in conclusion, it is inadequate as a network $\beta$-diversity
+measurement, as it introduces many confounding elements that make the
+interpretation of the results more difficult, and should likely not be used as a
+default.
 
 ## Partitioning network dissimilarity
 
