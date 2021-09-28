@@ -4,140 +4,150 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 64c8e293-dc9b-4a47-9017-cbd75794e341
+# ╔═╡ 663343c5-0487-4b56-8a74-7471bb3bfec1
 begin
 	using StatsPlots, Symbolics
 	_pixels = 200
 	_values = LinRange(0.0, 1.0, _pixels)
+	_species_sharing = 0.7
 	default(; c=:oslo, lw=0.0, levels=9, aspectratio=1, size=(400, 400), dpi=500, clim=(0,1), frame=:box)
 	_EXPNAME = split(split(@__FILE__, '/')[end], ".jl")[begin]
 	_FIGPATH = joinpath(@__DIR__, "..", "figures",  _EXPNAME)
 	ispath(_FIGPATH) || mkpath(_FIGPATH)
 end
 
-# ╔═╡ 7cfca8be-1ee0-11ec-30be-a58d5339cfb9
+# ╔═╡ 13a78b04-206b-11ec-3967-97c11148de03
 md"""
-# Numerical experiment - effect of species sharing and rewiring
+# Numerical experiment - connectance gradient
 
-The purpose of this experiment is to show how the decomposition behaves with regards to two core mechanisms: species sharing, and link rewiring. We will assume that the networks are unipartite, have the same number of species $S$, the same connectance $\rho$, and therefore have the same number of links $L = \rho\times S^2$.
+In this numerical experiment, we will reproduce the results of the examination of rewiring/sharing, by relaxing the constraint that the connectance of the two networks is the same, but by maintaining the constraint that they have equal richess. The sole variation in this numerical experiment is therefore that one network has $L_1 = \rho\times a\times S^2$, and the other network has $L_2 = \rho\times S^2$; in other words, $L_1 = a\times L$ and $L_2 = L$.
 
-Based on this, we will provide exact solutions for the number of links that are common ($C$), different due to species turnover ($T$), and different due to rewiring in the subset of common species ($R$).
+As one step of the components calculations involves a $\text{min}$ operation, we will force the constraint that $L_1 \le L_2$, which is to say $0 < a \le 1$. The value of $a$ is the *ratio* of connectances of the two networks.
 """
 
-# ╔═╡ 7393adea-cf71-4f83-8ee1-7c3f42e63884
-md"""
-We will define a probability for a species to be shared between the two networks ($p$), and a probability for an interaction to be shared if it is established by two species from the shared species pool ($q$).
+# ╔═╡ 67e402f0-198f-4a98-9c1c-c2fb5505511f
+@variables p q a
 
-Because every component will have $L = S^2\times \rho$ as a factor, we do not need to use these terms in the calculation (they would end up simplifying). Therefore, the conclusions presented here are working on *proportions* of links.
+# ╔═╡ 28154aee-6f22-4394-9bb4-53c2fdc7ae99
+md"""
+The number of links that can be shared between the two networks *cannot* be larger than the minimal number of links of the shared species sub-section, which is determined entirely by the number of links in the smaller network; namely, it cannot be larger than $\text{min}(p^2, a\times p^2)$. Because we set $0 < a \le 1$, the minimal number of shareable links is $a\times p^2$.
 """
 
-# ╔═╡ c5776ce9-9c52-4529-b7be-35a2122570f7
-# p: probability of sharing species
-# q: probability of sharing a link between overlapping species
-@variables p q
-
-# ╔═╡ c0d6153d-333b-4601-9b55-3faa0f1919ca
+# ╔═╡ df53daea-8500-4b18-b509-33e5d844903c
 md"""
-As the networks have the same size and connectance, the number of links that *can* be shared is $p^2$ - these possibly shared links are common to both networks with probability $q$, and rewired with probability $1-q$.
+Out of these links, a proportion $q$ will be kept, giving a expression for the number of common links:
 """
 
-# ╔═╡ 8574615a-7b87-4d4a-8e8b-cffa9af0ef57
-C = q*p^2
+# ╔═╡ e928b4a3-d95e-4863-90af-5484a413f958
+C = a*q*p^2
 
-# ╔═╡ 4cc46d6c-2ebc-433b-b030-99f668b5a92c
+# ╔═╡ b6e48fb2-a311-4154-8a5b-f3a03b2d5bc2
 md"""
-The links unique to either network because of rewiring are noted $r$, and the total number of rewired links is $R = 2r$.
+The next components will vary for the two networks considered, as they do not have the same total number of links. Network 1 has an expected $a\times p^2$ links in the common species pool, of which $C = a\times p^2\times q$ have not been rewired. We can therefore write the number of rewired links in network 1 $r_1$:
 """
 
-# ╔═╡ 1c65ee48-d1bc-43b5-8f21-9cf7a3ac2e40
-r = (1-q)*p^2
+# ╔═╡ dbe30065-f630-43a9-99fe-0d4bb261f9c9
+r1 = a*p^2-C
 
-# ╔═╡ b6ebbb26-3244-4e42-9c75-ae7a326daee2
-R = 2r
-
-# ╔═╡ f0b0db7d-4b86-4f08-a051-1d82c9eafbae
+# ╔═╡ 4521cdc4-67e9-4504-a46a-3254cced6240
 md"""
-We can get the number of links that are unique due to turnover by subtracting $C+r$ from the total number of links, which in this case is $t = 1 - C - r$ -- this is the *per* network number of turnover links, and the total number of turnover links is $T = 2t$:
+Quite similarly, as network 2 has $p^2$ possible links in the shared species pool, the number $r_2$ that are rewired is:
 """
 
-# ╔═╡ 80e16b7b-eae3-4596-99c2-7956db3d44f2
-t = simplify(1 - C - r; expand=true)
+# ╔═╡ 6bf46cc6-c2ee-42df-b647-d3648919b80c
+r2 = p^2 - C
 
-# ╔═╡ 5229e988-06b3-4634-bf9c-f31c1e978874
-T = 2t
-
-# ╔═╡ 597133da-2f1a-4450-a0d7-9f3079ba4edf
+# ╔═╡ c3a9c260-8a87-4f0a-b2fc-dcc8c1eaa6e7
 md"""
-Because we have expressed $\beta_{os} = R / (2C + R)$ and $\beta_{wn} = (R+T)/(2C+R+T)$, we can get the solutions for the values of these partitions of network dissimilarity
+We can then get the total number of rewired links as
 """
 
-# ╔═╡ 57a6e5ee-c0b8-4e6c-8a18-c5a0e8350d8c
-beta_os = R/(2C+R) |> expand
+# ╔═╡ 53c1f756-2666-4a3b-b66f-e206853927fb
+R = r1 + r2
 
-# ╔═╡ 329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
-beta_wn = (R+T)/(2C+R+T) |> expand
+# ╔═╡ 5ec07862-5baf-4a40-8cfd-87b0d75f49eb
+md"""
+Considering that network 1 has $a$ links, and network 2 has $1$, we can write the remaining components $t_1$ and $t_2$ (quantity of different links due to turnover) as
+"""
 
-# ╔═╡ f3f6ed36-e7a9-477c-aa2c-49491076debf
-beta_st = beta_wn - beta_os
+# ╔═╡ 5d2ed1ac-91f4-4bca-b403-6390182e2d88
+t1 = a - r1 - C
 
-# ╔═╡ f0e939db-b33a-400f-a9fa-4b920199c957
-1 - beta_os/beta_wn |> expand
+# ╔═╡ 528191f4-4eae-4356-96ed-e28c29b02530
+t2 = 1 - r2 - C
 
-# ╔═╡ f14cd691-8235-46a3-aa5d-61937b7037cd
+# ╔═╡ cc2073fa-868f-4cb7-a9a4-8910765e6818
+md"""
+And finally get the expression for $T$
+"""
+
+# ╔═╡ a2ecb15e-9424-430a-824f-071fe0d224fc
+T = t1 + t2 |> simplify
+
+# ╔═╡ e0727a86-434e-442f-bf9c-cd9186030aa5
+beta_os = R/(2C+R) |> simplify_fractions
+
+# ╔═╡ ad416ef3-5ba6-4a29-9713-c7f135c63117
+beta_wn = (R+T)/(2C+R+T) |> simplify_fractions
+
+# ╔═╡ 0b347ffd-3180-44d5-be5a-33e1b595a2c5
+beta_st = beta_wn - beta_os |> expand |> simplify_fractions
+
+# ╔═╡ d95b6a4c-c763-4290-942b-ccac6efeb703
 begin
-	Bos = build_function(beta_os, p, q)
-	Bwn = build_function(beta_wn, p, q)
+	Bos = build_function(beta_os, p, q, a)
+	Bwn = build_function(beta_wn, p, q, a)
 end
 
-# ╔═╡ c56081af-688b-4a11-8677-d58a885a9ff9
+# ╔═╡ 745c47b7-4792-471a-8004-ebea797892e9
 begin
-	os = broadcast(eval(Bos), _values, _values')
-	wn = broadcast(eval(Bwn), _values, _values')
+	os = broadcast(eval(Bos), _species_sharing, _values, _values')
+	wn = broadcast(eval(Bwn), _species_sharing, _values, _values')
 	st = wn .- os
 	ratio = st ./ wn
 end
 
-# ╔═╡ b9425558-7d6b-4947-9fcb-efbbe537d39d
+# ╔═╡ b074d4e7-7006-438e-abda-e38f94af530e
 begin
 	p_os = contour(_values, _values, os, levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((0, 1), "Probability of sharing a species")
+	xaxis!((0, 1), "Connectance ratio")
+	yaxis!((0, 1), "Probability of sharing a link")
 	title!("\\beta os")
 end
 
-# ╔═╡ d8147164-ae59-4025-81cb-5aa3dff7af36
+# ╔═╡ a6b0715d-66fc-4d80-828d-bf80b1c36426
 begin
 	p_wn = contour(_values, _values, wn, levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((0, 1), "Probability of sharing a species")
+	xaxis!((0, 1), "Connectance ratio")
+	yaxis!((0, 1), "Probability of sharing a link")
 	title!("\\beta wn")
 end
 
-# ╔═╡ c2206bc0-1926-4020-b8c4-6c27995b4cab
+# ╔═╡ 9a2ceb4e-7ebe-4b0e-b942-79f33340ee94
 begin
 	p_st = contour(_values, _values, st, levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((0, 1), "Probability of sharing a species")
+	xaxis!((0, 1), "Connectance ratio")
+	yaxis!((0, 1), "Probability of sharing a link")
 	title!("\\beta st")
 end
 
-# ╔═╡ c81cd270-8eee-4555-81e0-1fc57ccd322d
+# ╔═╡ 855e65e1-a7bb-470d-861b-534b4d80ad17
 begin
 	p_ratio = contour(_values, _values, ratio, levels=9, fill=true)
-	xaxis!((0, 1), "Probability of sharing a link")
-	yaxis!((0, 1), "Probability of sharing a species")
+	xaxis!((0, 1), "Connectance ratio")
+	yaxis!((0, 1), "Probability of sharing a link")
 	title!("\\beta st / \\beta wn")
 end
 
-# ╔═╡ aae10b7d-f298-4230-bc6e-44d4f6d3cf41
+# ╔═╡ 186a685f-a53a-47ca-829e-e6c50eb78d71
 begin
 	plot(p_os, p_wn, p_st, p_ratio, size=(800, 800))
 	savefig(joinpath(_FIGPATH, "components.png"))
 end
 
-# ╔═╡ 9fa6b535-1120-4bab-a4c1-6d54f466edc0
+# ╔═╡ e1756d99-0813-4a01-8f79-9cc894dbe19b
 md"""
-## Additional parameters for simulations et al.
+## Additional parameters, etc.
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -1354,30 +1364,33 @@ version = "0.9.1+5"
 """
 
 # ╔═╡ Cell order:
-# ╟─7cfca8be-1ee0-11ec-30be-a58d5339cfb9
-# ╟─7393adea-cf71-4f83-8ee1-7c3f42e63884
-# ╠═c5776ce9-9c52-4529-b7be-35a2122570f7
-# ╟─c0d6153d-333b-4601-9b55-3faa0f1919ca
-# ╠═8574615a-7b87-4d4a-8e8b-cffa9af0ef57
-# ╟─4cc46d6c-2ebc-433b-b030-99f668b5a92c
-# ╠═1c65ee48-d1bc-43b5-8f21-9cf7a3ac2e40
-# ╠═b6ebbb26-3244-4e42-9c75-ae7a326daee2
-# ╟─f0b0db7d-4b86-4f08-a051-1d82c9eafbae
-# ╠═80e16b7b-eae3-4596-99c2-7956db3d44f2
-# ╠═5229e988-06b3-4634-bf9c-f31c1e978874
-# ╟─597133da-2f1a-4450-a0d7-9f3079ba4edf
-# ╠═57a6e5ee-c0b8-4e6c-8a18-c5a0e8350d8c
-# ╠═329c5b67-ecc5-4ae4-bcdb-8728f2bb8d7a
-# ╠═f3f6ed36-e7a9-477c-aa2c-49491076debf
-# ╠═f0e939db-b33a-400f-a9fa-4b920199c957
-# ╠═f14cd691-8235-46a3-aa5d-61937b7037cd
-# ╠═c56081af-688b-4a11-8677-d58a885a9ff9
-# ╠═b9425558-7d6b-4947-9fcb-efbbe537d39d
-# ╠═d8147164-ae59-4025-81cb-5aa3dff7af36
-# ╠═c2206bc0-1926-4020-b8c4-6c27995b4cab
-# ╠═c81cd270-8eee-4555-81e0-1fc57ccd322d
-# ╠═aae10b7d-f298-4230-bc6e-44d4f6d3cf41
-# ╠═9fa6b535-1120-4bab-a4c1-6d54f466edc0
-# ╠═64c8e293-dc9b-4a47-9017-cbd75794e341
+# ╠═13a78b04-206b-11ec-3967-97c11148de03
+# ╠═67e402f0-198f-4a98-9c1c-c2fb5505511f
+# ╠═28154aee-6f22-4394-9bb4-53c2fdc7ae99
+# ╠═df53daea-8500-4b18-b509-33e5d844903c
+# ╠═e928b4a3-d95e-4863-90af-5484a413f958
+# ╠═b6e48fb2-a311-4154-8a5b-f3a03b2d5bc2
+# ╠═dbe30065-f630-43a9-99fe-0d4bb261f9c9
+# ╠═4521cdc4-67e9-4504-a46a-3254cced6240
+# ╠═6bf46cc6-c2ee-42df-b647-d3648919b80c
+# ╠═c3a9c260-8a87-4f0a-b2fc-dcc8c1eaa6e7
+# ╠═53c1f756-2666-4a3b-b66f-e206853927fb
+# ╠═5ec07862-5baf-4a40-8cfd-87b0d75f49eb
+# ╠═5d2ed1ac-91f4-4bca-b403-6390182e2d88
+# ╠═528191f4-4eae-4356-96ed-e28c29b02530
+# ╠═cc2073fa-868f-4cb7-a9a4-8910765e6818
+# ╠═a2ecb15e-9424-430a-824f-071fe0d224fc
+# ╠═e0727a86-434e-442f-bf9c-cd9186030aa5
+# ╠═ad416ef3-5ba6-4a29-9713-c7f135c63117
+# ╠═0b347ffd-3180-44d5-be5a-33e1b595a2c5
+# ╠═d95b6a4c-c763-4290-942b-ccac6efeb703
+# ╠═745c47b7-4792-471a-8004-ebea797892e9
+# ╠═b074d4e7-7006-438e-abda-e38f94af530e
+# ╠═a6b0715d-66fc-4d80-828d-bf80b1c36426
+# ╠═9a2ceb4e-7ebe-4b0e-b942-79f33340ee94
+# ╠═855e65e1-a7bb-470d-861b-534b4d80ad17
+# ╠═186a685f-a53a-47ca-829e-e6c50eb78d71
+# ╠═e1756d99-0813-4a01-8f79-9cc894dbe19b
+# ╠═663343c5-0487-4b56-8a74-7471bb3bfec1
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
