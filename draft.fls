@@ -974,6 +974,7 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+OUTPUT draft.fff
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
@@ -982,10 +983,14 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text-bold.tfm
-OUTPUT draft.fff
 INPUT ./draft.fff
 INPUT draft.fff
 INPUT draft.fff
+INPUT ./figures/betadiv_response_figure.png
+INPUT ./figures/betadiv_response_figure.png
+INPUT figures/betadiv_response_figure.png
+INPUT ./figures/betadiv_response_figure.png
+INPUT ./figures/betadiv_response_figure.png
 INPUT draft.aux
 INPUT ./draft.out
 INPUT ./draft.out

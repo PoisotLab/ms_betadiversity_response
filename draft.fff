@@ -1,4 +1,13 @@
 \begin{figure}
+\hypertarget{fig:conceptual}{%
+\centering
+\includegraphics{figures/betadiv_response_figure.png}
+\caption{TK}\label{fig:conceptual}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
 \hypertarget{fig:numexp1}{%
 \centering
 \includegraphics{figures/numexp1.png}

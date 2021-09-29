@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1216,30 +1216,41 @@ File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 8.21255pt on input line 229.
+<figures/betadiv_response_figure.png, id=57, 963.6pt x 542.025pt>
+File: figures/betadiv_response_figure.png Graphic file (type png)
+<use figures/betadiv_response_figure.png>
+Package pdftex.def Info: figures/betadiv_response_figure.png  used on input lin
+e 313.
+(pdftex.def)             Requested size: 386.67299pt x 217.50089pt.
+
+
+LaTeX Warning: Reference `fig:concptual' on page 1 undefined on input line 322.
+
+
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.12506pt on input line 317.
+(Font)              scaled to size 7.12506pt on input line 325.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
-(Font)              scaled to size 7.50009pt on input line 317.
- [1
+(Font)              scaled to size 7.50009pt on input line 325.
+[1
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>
 ]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.54997pt on input line 349.
- [2]
-Underfull \hbox (badness 10000) in alignment at lines 437--441
+(Font)              scaled to size 8.54997pt on input line 357.
+ [2 <./figures/betadiv_response_figure.png (PNG copy)>]
+Underfull \hbox (badness 10000) in alignment at lines 445--449
 [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 441--446
+Underfull \hbox (badness 10000) in alignment at lines 449--454
 [] [] [] []
  []
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 449.
+(Font)              scaled to size 9.0pt on input line 457.
 
-Overfull \hbox (0.88437pt too wide) in paragraph at lines 448--452
+Overfull \hbox (0.88437pt too wide) in paragraph at lines 456--460
 []\T1/stix2/m/n/9 These de-com-po-si-tions are used to per-form the cal-cu-la-t
 ions of $\LS1/stix2/m/it/9 ^^L$\T1/stix2/m/n/9 -diversity in the \T1/zi4/m/n/9 
 EcologicalNetworks.jl
@@ -1247,7 +1258,7 @@ EcologicalNetworks.jl
 
 [3] [4]
 
-LaTeX Warning: File `figures/numexp1.png' not found on input line 595.
+LaTeX Warning: File `figures/numexp1.png' not found on input line 603.
 
 
 ! Package pdftex.def Error: File `figures/numexp1.png' not found: using draft s
@@ -1257,24 +1268,24 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.595 }
+l.603 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 637--642
+Underfull \hbox (badness 10000) in alignment at lines 645--650
 [] [] [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 642--648
+Underfull \hbox (badness 10000) in alignment at lines 650--656
 [] [] [] [] [] [] []
  []
 
 [5]
 
-LaTeX Warning: File `figures/numexp2.png' not found on input line 716.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 724.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -1284,26 +1295,26 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.716 }
+l.724 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 716--716
+Underfull \hbox (badness 2680) in paragraph at lines 724--724
 \T1/stix2/m/n/8.21255 ing ($\LS1/stix2/m/it/8.21255 p$\T1/stix2/m/n/8.21255 ). 
 As ex-pected, $\LS1/stix2/m/it/8.21255 ^^L[]$ \T1/stix2/m/n/8.21255 is not af-f
 ected
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 716--716
+Underfull \hbox (badness 1354) in paragraph at lines 724--724
 \T1/stix2/m/n/8.21255 by species turnover, but in-creases with the
  []
 
 [6]
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 800.
+LaTeX Warning: File `figures/numexp3.png' not found on input line 808.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -1313,13 +1324,13 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.800 }
+l.808 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [7]
-Overfull \hbox (0.46379pt too wide) in paragraph at lines 881--887
+Overfull \hbox (0.46379pt too wide) in paragraph at lines 889--895
 \T1/stix2/m/n/9 Im-por-tance of in-ter-ac-tion rewiring in de-ter-min-ing spa-t
 ial and tem-po-ral turnover of tritrophic (Piper-
  []
@@ -1327,17 +1338,20 @@ ial and tem-po-ral turnover of tritrophic (Piper-
 [8] 
 AED: lastpage setting LastPage
 [9] (./preprint.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `preprint.out' has not changed.
 (rerunfilecheck)             Checksum: 127457C576DAC1606E34D1B0499C9E73;4397.
  ) 
 Here is how much of TeX's memory you used:
- 30014 strings out of 478599
- 531128 string characters out of 5856105
- 835189 words of memory out of 5000000
- 47279 multiletter control sequences out of 15000+600000
+ 30026 strings out of 478599
+ 531478 string characters out of 5856105
+ 836251 words of memory out of 5000000
+ 47288 multiletter control sequences out of 15000+600000
  553768 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,11n,117p,718b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,12n,117p,718b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc
 }{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{/opt
 /texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.enc}{/opt
@@ -1356,10 +1370,10 @@ exmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/te
 xdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (9 pages, 928500 bytes).
+Output written on preprint.pdf (9 pages, 964395 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 62 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
