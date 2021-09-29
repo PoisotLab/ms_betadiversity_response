@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  28 SEP 2021 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1217,29 +1217,29 @@ File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 8.21255pt on input line 229.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.12506pt on input line 327.
+(Font)              scaled to size 7.12506pt on input line 317.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
-(Font)              scaled to size 7.50009pt on input line 327.
+(Font)              scaled to size 7.50009pt on input line 317.
  [1
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>
 ]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.54997pt on input line 347.
+(Font)              scaled to size 8.54997pt on input line 349.
  [2]
-Underfull \hbox (badness 10000) in alignment at lines 435--439
+Underfull \hbox (badness 10000) in alignment at lines 437--441
 [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 439--444
+Underfull \hbox (badness 10000) in alignment at lines 441--446
 [] [] [] []
  []
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 447.
+(Font)              scaled to size 9.0pt on input line 449.
 
-Overfull \hbox (0.88437pt too wide) in paragraph at lines 446--450
+Overfull \hbox (0.88437pt too wide) in paragraph at lines 448--452
 []\T1/stix2/m/n/9 These de-com-po-si-tions are used to per-form the cal-cu-la-t
 ions of $\LS1/stix2/m/it/9 ^^L$\T1/stix2/m/n/9 -diversity in the \T1/zi4/m/n/9 
 EcologicalNetworks.jl
@@ -1247,7 +1247,7 @@ EcologicalNetworks.jl
 
 [3] [4]
 
-LaTeX Warning: File `figures/numexp1.png' not found on input line 593.
+LaTeX Warning: File `figures/numexp1.png' not found on input line 595.
 
 
 ! Package pdftex.def Error: File `figures/numexp1.png' not found: using draft s
@@ -1257,24 +1257,24 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.593 }
+l.595 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 635--640
+Underfull \hbox (badness 10000) in alignment at lines 637--642
 [] [] [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 640--646
+Underfull \hbox (badness 10000) in alignment at lines 642--648
 [] [] [] [] [] [] []
  []
 
 [5]
 
-LaTeX Warning: File `figures/numexp2.png' not found on input line 714.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 716.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -1284,26 +1284,26 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.714 }
+l.716 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 714--714
+Underfull \hbox (badness 2680) in paragraph at lines 716--716
 \T1/stix2/m/n/8.21255 ing ($\LS1/stix2/m/it/8.21255 p$\T1/stix2/m/n/8.21255 ). 
 As ex-pected, $\LS1/stix2/m/it/8.21255 ^^L[]$ \T1/stix2/m/n/8.21255 is not af-f
 ected
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 714--714
+Underfull \hbox (badness 1354) in paragraph at lines 716--716
 \T1/stix2/m/n/8.21255 by species turnover, but in-creases with the
  []
 
 [6]
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 798.
+LaTeX Warning: File `figures/numexp3.png' not found on input line 800.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -1313,13 +1313,13 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.798 }
+l.800 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [7]
-Overfull \hbox (0.46379pt too wide) in paragraph at lines 879--885
+Overfull \hbox (0.46379pt too wide) in paragraph at lines 881--887
 \T1/stix2/m/n/9 Im-por-tance of in-ter-ac-tion rewiring in de-ter-min-ing spa-t
 ial and tem-po-ral turnover of tritrophic (Piper-
  []
@@ -1333,11 +1333,11 @@ Package rerunfilecheck Info: File `preprint.out' has not changed.
 Here is how much of TeX's memory you used:
  30014 strings out of 478599
  531128 string characters out of 5856105
- 837189 words of memory out of 5000000
+ 835189 words of memory out of 5000000
  47279 multiletter control sequences out of 15000+600000
  553768 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,117p,718b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,11n,117p,718b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc
 }{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{/opt
 /texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.enc}{/opt
@@ -1356,7 +1356,7 @@ exmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/te
 xdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (9 pages, 928444 bytes).
+Output written on preprint.pdf (9 pages, 928500 bytes).
 PDF statistics:
  229 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams
