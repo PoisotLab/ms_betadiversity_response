@@ -78,7 +78,7 @@ different denominator put forth by @Frund2021DisSpe.
 
 The approach to quantifying the difference between pairs of networks established
 in @Poisot2012DisSpe is a simple extension of the overall method by
-@Koleff2003MeaBet for species dissimilarity baed on presence-absence data. The
+@Koleff2003MeaBet for species dissimilarity based on presence-absence data. The
 objects to compare, $X_1$ and $X_2$, are partitioned into three values, $a =
 |X_1 \cup X_2|$, $b = |X_2 \setminus X_1|$, and $c = |X_1 \setminus X_2|$, where
 $|\dot|$ is the cardinality of set $\dot$ (the number of elements it contains),

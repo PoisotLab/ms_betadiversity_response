@@ -194,7 +194,11 @@ case?) and a better organized manuscript.
 
 L.32 Maybe citing Ohlman et al, Eco. Lett. as another extension.
 
+> Done.
+
 L.53 Typo "baed"
+
+> Changed.
 
 L.54 Using "x" here and then using "x" L.56-57 could be misleading. Maybe just
 say "|.|" is the cardinality operator ?
