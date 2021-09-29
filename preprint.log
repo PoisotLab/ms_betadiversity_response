@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1264,7 +1264,7 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 9.0pt on input line 477.
 [3] [4]
 
-LaTeX Warning: File `figures/numexp1.png' not found on input line 624.
+LaTeX Warning: File `figures/numexp1.png' not found on input line 618.
 
 
 ! Package pdftex.def Error: File `figures/numexp1.png' not found: using draft s
@@ -1274,24 +1274,24 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.624 }
+l.618 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 666--671
+Underfull \hbox (badness 10000) in alignment at lines 660--665
 [] [] [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 671--677
+Underfull \hbox (badness 10000) in alignment at lines 665--671
 [] [] [] [] [] [] []
  []
 
 [5]
 
-LaTeX Warning: File `figures/numexp2.png' not found on input line 745.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 739.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -1301,26 +1301,26 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.745 }
+l.739 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 745--745
+Underfull \hbox (badness 2680) in paragraph at lines 739--739
 \T1/stix2/m/n/8.21255 ing ($\LS1/stix2/m/it/8.21255 p$\T1/stix2/m/n/8.21255 ). 
 As ex-pected, $\LS1/stix2/m/it/8.21255 ^^L[]$ \T1/stix2/m/n/8.21255 is not af-f
 ected
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 745--745
+Underfull \hbox (badness 1354) in paragraph at lines 739--739
 \T1/stix2/m/n/8.21255 by species turnover, but in-creases with the
  []
 
 [6]
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 829.
+LaTeX Warning: File `figures/numexp3.png' not found on input line 823.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -1330,13 +1330,13 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.829 }
+l.823 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [7]
-Overfull \hbox (0.46379pt too wide) in paragraph at lines 904--910
+Overfull \hbox (0.46379pt too wide) in paragraph at lines 898--904
 \T1/stix2/m/n/9 Im-por-tance of in-ter-ac-tion rewiring in de-ter-min-ing spa-t
 ial and tem-po-ral turnover of tritrophic (Piper-
  []
@@ -1354,7 +1354,7 @@ Here is how much of TeX's memory you used:
  47287 multiletter control sequences out of 15000+600000
  553768 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,11n,117p,773b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,12n,117p,773b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm-bold
 .enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.
 enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{/
@@ -1375,7 +1375,7 @@ f-dist/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir
 texdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/f
 onts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (9 pages, 970128 bytes).
+Output written on preprint.pdf (9 pages, 969533 bytes).
 PDF statistics:
  243 PDF objects out of 1000 (max. 8388607)
  201 compressed objects within 3 object streams
