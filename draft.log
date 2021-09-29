@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,14 +860,14 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
  (draft.fff)
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 267.
+(Font)              scaled to size 8.54997pt on input line 276.
  [3
 
 ]
 ! Extra }, or forgotten $.
 <recently read> }
                  
-l.307 ...dot|\) is the cardinality of set \(\dot\)
+l.316 ...dot|\) is the cardinality of set \(\dot\)
                                                    (the number of elements it
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -878,7 +878,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.307 ...dot|\) is the cardinality of set \(\dot\)
+l.316 ...dot|\) is the cardinality of set \(\dot\)
                                                    (the number of elements it
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -893,7 +893,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.308 contains), and \(
+l.317 contains), and \(
                        \setminus\) is the set substraction operation. In the
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -903,15 +903,15 @@ or  <return>  to continue without it.
 
 AED: lastpage setting LastPage
 [16] AED endfloat: Processing end Figures and Tables (./draft.fff
-<figures/betadiv_response_figure.png, id=178, 963.6pt x 542.025pt>
+<figures/betadiv_response_figure.png, id=179, 963.6pt x 542.025pt>
 File: figures/betadiv_response_figure.png Graphic file (type png)
 <use figures/betadiv_response_figure.png>
 Package pdftex.def Info: figures/betadiv_response_figure.png  used on input lin
-e 6.
+e 15.
 (pdftex.def)             Requested size: 489.10307pt x 275.11406pt.
  [17 <./figures/betadiv_response_figure.png (PNG copy)>]
 
-LaTeX Warning: File `figures/numexp1.png' not found on input line 17.
+LaTeX Warning: File `figures/numexp1.png' not found on input line 26.
 
 
 ! Package pdftex.def Error: File `figures/numexp1.png' not found: using draft s
@@ -921,14 +921,14 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 }
+l.26 }
       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [18]
 
-LaTeX Warning: File `figures/numexp2.png' not found on input line 34.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 43.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -938,14 +938,14 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.34 }
+l.43 }
       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [19]
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 50.
+LaTeX Warning: File `figures/numexp3.png' not found on input line 59.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -955,7 +955,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50 }
+l.59 }
       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -967,11 +967,11 @@ Package rerunfilecheck Info: File `draft.out' has not changed.
 Here is how much of TeX's memory you used:
  18280 strings out of 478599
  285246 string characters out of 5856105
- 572546 words of memory out of 5000000
+ 573129 words of memory out of 5000000
  35780 multiletter control sequences out of 15000+600000
  504687 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,12n,117p,717b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,12n,117p,772b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc
 }{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.enc
 }{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathex.enc}{
@@ -989,10 +989,10 @@ s/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir/texmf-dist
 f-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist/f
 onts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (20 pages, 779457 bytes).
+Output written on draft.pdf (20 pages, 780184 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
  76 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
