@@ -45,7 +45,7 @@ turnover in the overall dissimilarity, has been difficult to capture, and a
 source of confusion for some practitioners. This is not particularly surprising,
 as this component of the decomposition responds to unique species introducing
 their unique interactions both between themselves, and with species that are
-common to both networks [@fig:concptual]. For this reason, it is important to
+common to both networks [@fig:conceptual]. For this reason, it is important to
 come up with guidelines for the interpretation of this measure, and how to use
 it to extract ecological insights.
 
