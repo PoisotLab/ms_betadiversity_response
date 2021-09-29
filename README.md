@@ -23,7 +23,7 @@ one unique species. This framework is expressed as the decomposition $\beta_{wn}
 dissimilarity of interactions between shared species ($\beta_{os}$), and a
 component that cannot ($\beta_{st}$). Presumably, the value of these components
 for a pair of networks can generate insights about the mechanisms involved in
-dissimilarity. 
+dissimilarity.
 
 This approach has been widely adopted since its publication, with recent
 examples using it to understand the effect of fire on pollination systems
@@ -38,14 +38,16 @@ ecological networks [@Poisot2016StrPro], and the integration into the Local
 Contribution to Beta Diversity [@Legendre2013BetDiv] approach to understand how
 environment changes drive network dissimilarity [@Poisot2017HosPar].
 
+![TK](figures/betadiv_response_figure.png){#fig:conceptual}
+
 Yet, the precise meaning of $\beta_{st}$, namely the importance of species
 turnover in the overall dissimilarity, has been difficult to capture, and a
 source of confusion for some practitioners. This is not particularly surprising,
 as this component of the decomposition responds to unique species introducing
 their unique interactions both between themselves, and with species that are
-common to both networks. For this reason, it is important to come up with
-guidelines for the interpretation of this measure, and how to use it to extract
-ecological insights.
+common to both networks [@fig:concptual]. For this reason, it is important to
+come up with guidelines for the interpretation of this measure, and how to use
+it to extract ecological insights.
 
 Furthermore, much like the definition of $\beta$-diversity in all its forms is a
 contentious topic amongst community ecologists [see *e.g.* @Tuomisto2010DivBet],
