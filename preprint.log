@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1232,20 +1232,56 @@ LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 ]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.54997pt on input line 357.
- [2 <./figures/betadiv_response_figure.png (PNG copy)>]
-Underfull \hbox (badness 10000) in alignment at lines 445--449
+
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.365 ...dot|\) is the cardinality of set \(\dot\)
+                                                   (the number of elements it
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.365 ...dot|\) is the cardinality of set \(\dot\)
+                                                   (the number of elements it
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.366 contains), and \(
+                       \setminus\) is the set substraction operation. In the
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[2 <./figures/betadiv_response_figure.png (PNG copy)>]
+Underfull \hbox (badness 10000) in alignment at lines 447--451
 [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 449--454
+Underfull \hbox (badness 10000) in alignment at lines 451--456
 [] [] [] []
  []
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 457.
+(Font)              scaled to size 9.0pt on input line 459.
 
-Overfull \hbox (0.88437pt too wide) in paragraph at lines 456--460
+Overfull \hbox (0.88437pt too wide) in paragraph at lines 458--462
 []\T1/stix2/m/n/9 These de-com-po-si-tions are used to per-form the cal-cu-la-t
 ions of $\LS1/stix2/m/it/9 ^^L$\T1/stix2/m/n/9 -diversity in the \T1/zi4/m/n/9 
 EcologicalNetworks.jl
@@ -1253,7 +1289,7 @@ EcologicalNetworks.jl
 
 [3] [4]
 
-LaTeX Warning: File `figures/numexp1.png' not found on input line 603.
+LaTeX Warning: File `figures/numexp1.png' not found on input line 605.
 
 
 ! Package pdftex.def Error: File `figures/numexp1.png' not found: using draft s
@@ -1263,24 +1299,24 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.603 }
+l.605 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 645--650
+Underfull \hbox (badness 10000) in alignment at lines 647--652
 [] [] [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 650--656
+Underfull \hbox (badness 10000) in alignment at lines 652--658
 [] [] [] [] [] [] []
  []
 
 [5]
 
-LaTeX Warning: File `figures/numexp2.png' not found on input line 724.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 726.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -1290,26 +1326,26 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.724 }
+l.726 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 724--724
+Underfull \hbox (badness 2680) in paragraph at lines 726--726
 \T1/stix2/m/n/8.21255 ing ($\LS1/stix2/m/it/8.21255 p$\T1/stix2/m/n/8.21255 ). 
 As ex-pected, $\LS1/stix2/m/it/8.21255 ^^L[]$ \T1/stix2/m/n/8.21255 is not af-f
 ected
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 724--724
+Underfull \hbox (badness 1354) in paragraph at lines 726--726
 \T1/stix2/m/n/8.21255 by species turnover, but in-creases with the
  []
 
 [6]
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 808.
+LaTeX Warning: File `figures/numexp3.png' not found on input line 810.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -1319,13 +1355,13 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.808 }
+l.810 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [7]
-Overfull \hbox (0.46379pt too wide) in paragraph at lines 889--895
+Overfull \hbox (0.46379pt too wide) in paragraph at lines 891--897
 \T1/stix2/m/n/9 Im-por-tance of in-ter-ac-tion rewiring in de-ter-min-ing spa-t
 ial and tem-po-ral turnover of tritrophic (Piper-
  []
@@ -1362,10 +1398,10 @@ exmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/te
 xdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (9 pages, 964433 bytes).
+Output written on preprint.pdf (9 pages, 965728 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
+ 234 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
  64 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
