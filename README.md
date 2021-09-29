@@ -38,9 +38,14 @@ ecological networks [@Poisot2016StrPro], and the integration into the Local
 Contribution to Beta Diversity [@Legendre2013BetDiv] approach to understand how
 environment changes drive network dissimilarity [@Poisot2017HosPar].
 
-This later component originates in unique species introducing their unique
-interactions both between themselves, and with species that are common to both
-networks. CONTINUE WITH BETA ST
+Yet, the precise meaning of $\beta_{st}$, namely the importance of species
+turnover in the overall dissimilarity, has been difficult to capture, and a
+source of confusion for some practitioners. This is not particularly surprising,
+as this component of the decomposition responds to unique species introducing
+their unique interactions both between themselves, and with species that are
+common to both networks. For this reason, it is important to come up with
+guidelines for the interpretation of this measure, and how to use it to extract
+ecological insights.
 
 Furthermore, much like the definition of $\beta$-diversity in all its forms is a
 contentious topic amongst community ecologists [see *e.g.* @Tuomisto2010DivBet],
@@ -56,20 +61,16 @@ lead to biased inferences about the mechanisms generating network dissimilarity,
 it is important to assess how the values (notably of $\beta_{os}$, and therefore
 of $\beta_{st}$) react to methodological choices.
 
-Here, I present a more thorough justification of the methodological choices for
-the @Poisot2012DisSpe method, explain how information about species turnover can
-be extracted from its decomposition, and conduct numerical experiments to guide
-the interpretation of the $\beta$-diversity values thus obtained. These
-numerical experiments establish three core facts. First, the decomposition
-responds to the correct sources of network variation; second, the decomposition
-adequately captures the relative roles of species turnover and interaction
-rewiring; finally, the decomposition adequately captures the role of turnover
-vs. non-turnover (like changes in connectance) processes. Although the
-alternative normalization suggested by @Frund2021DisSpe is not without its uses,
-which I discuss in conclusion, it is inadequate as a network $\beta$-diversity
-measurement, as it introduces many confounding elements that make the
-interpretation of the results more difficult, and should likely not be used as a
-default.
+Here, I present a mathematical analysis of the @Poisot2012DisSpe method, explain
+how information about species turnover and link rewiring can be extracted from
+its decomposition, and conduct numerical experiments to guide the interpretation
+of the $\beta$-diversity values thus obtained (with a specific focus on
+$\beta_{st}$). These numerical experiments establish three core facts. First,
+the decomposition adequately captures the relative roles of species turnover and
+interaction rewiring; second, the decomposition responds to differences in
+network structure (like connectance) as expected; finally, the decomposition
+more accurately captures rewiring than the proposed alternative using a
+different denominator put forth by @Frund2021DisSpe.
 
 ## Partitioning network dissimilarity
 
