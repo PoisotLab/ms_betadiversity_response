@@ -81,14 +81,16 @@ in @Poisot2012DisSpe is a simple extension of the overall method by
 @Koleff2003MeaBet for species dissimilarity baed on presence-absence data. The
 objects to compare, $X_1$ and $X_2$, are partitioned into three values, $a =
 |X_1 \cup X_2|$, $b = |X_2 \setminus X_1|$, and $c = |X_1 \setminus X_2|$, where
-$|x|$ is the cardinality of set $x$, and $\setminus$ is the set substraction
-operation. In the perspective of species composition comparison, $X_1$ and $X_2$
-are the sets of species in either community, so that if $X_1 = \{x, y, z\}$ and
-$X_2 = \{v, w, x, y\}$, we have $X_1 \cup X_2 = \{v, w, x, y, z\}$, $X_1 \cap
-X_2 = \{x, y\}$, $X_2 \setminus X_1 = \{v, w\}$, and $X_1 \setminus X_2 =
-\{z\}$. The core message of @Koleff2003MeaBet is that the overwheling majority
-of measures of $\beta$-diversity can be re-expressed as functions that operate
-on the cardinality (number of elements) of these sets.
+$|\dot|$ is the cardinality of set $\dot$ (the number of elements it contains),
+and $\setminus$ is the set substraction operation. In the perspective of species
+composition comparison, $X_1$ and $X_2$ are the sets of species in either
+community, so that if $X_1 = \{x, y, z\}$ and $X_2 = \{v, w, x, y\}$, we have
+$X_1 \cup X_2 = \{v, w, x, y, z\}$, $X_1 \cap X_2 = \{x, y\}$, $X_2 \setminus
+X_1 = \{v, w\}$, and $X_1 \setminus X_2 = \{z\}$. The core message of
+@Koleff2003MeaBet is that the overwheling majority of measures of
+$\beta$-diversity can be re-expressed as functions that operate on the
+cardinality of these sets -- this allows to focus on the number of unique and
+common elements, as outlined in @fig:conceptual.
 
 ### Re-expressing networks as sets
 
