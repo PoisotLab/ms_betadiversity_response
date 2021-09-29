@@ -175,15 +175,9 @@ figures.
 The difference between $\beta_{os}$ and $\beta_{wn}$ stems from the species
 dissimilarity between $\mathcal{M}$ and $\mathcal{N}$, and it is easier to
 understand the effect of turnover by picking a dissimilarity measure to work as
-an exemplar. At this point, @Frund2021DisSpe introduce a confusin terminology in
-their work, stating that S\o rensen's and Whittaker's measures of dissimilarity
-are the same in the @Koleff2003MeaBet framework (they are not; in practice,
-$\beta_{Sor}=1-\beta_{w}$), and (ii) noting Whittaker's measure as
-$(b+c)/(2a+b+c)$, which in the @Koleff2003MeaBet framework is, in fact,
-$\beta_t$ [@Wilson1984MeaBet]. This does not change the overall conclusions as
-these measures can be re-expressed to converge to the same value. For the sake
-of consistency, I will use $\beta_t$ moving forward; it returns values in
-$[0,1]$, with $0$ meaning complete similarity, and $1$ meaning complete
+an exemplar. We will use $\beta = (b+c)/(2a+b+c)$, which in the
+@Koleff2003MeaBet framework is [@Wilson1984MeaBet]. This measure returns values
+in $[0,1]$, with $0$ meaning complete similarity, and $1$ meaning complete
 dissimilarity.
 
 ### Establishing that $\beta_{wn} \ge \beta_{os}$ 
