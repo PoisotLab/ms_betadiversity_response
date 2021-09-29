@@ -199,6 +199,8 @@ L.53 Typo "baed"
 L.54 Using "x" here and then using "x" L.56-57 could be misleading. Maybe just
 say "|.|" is the cardinality operator ?
 
+> Done.
+
 L.66-68 This assumes that edges are directed. This can not be the case, for
 mutualistic interaction (btw, replacing an undirected edge by two directed edges
 is still possible)
