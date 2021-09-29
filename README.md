@@ -81,7 +81,7 @@ in @Poisot2012DisSpe is a simple extension of the overall method by
 @Koleff2003MeaBet for species dissimilarity based on presence-absence data. The
 objects to compare, $X_1$ and $X_2$, are partitioned into three values, $a =
 |X_1 \cup X_2|$, $b = |X_2 \setminus X_1|$, and $c = |X_1 \setminus X_2|$, where
-$|\dot|$ is the cardinality of set $\dot$ (the number of elements it contains),
+$|\cdot|$ is the cardinality of set $\cdot$ (the number of elements it contains),
 and $\setminus$ is the set substraction operation. In the perspective of species
 composition comparison, $X_1$ and $X_2$ are the sets of species in either
 community, so that if $X_1 = \{x, y, z\}$ and $X_2 = \{v, w, x, y\}$, we have
@@ -101,11 +101,12 @@ robust understanding of which elements should be counted as part of which set
 when measuring network dissimilarity. For this reason, we need fall back on the
 definition of a graph as a pair of sets, wherein $\mathcal{G} = (V, E)$. These
 two components $V$ and $E$ represent vertices (nodes, species) and edges
-(interactions), where $V$ is specifically a set containing the vertices
+(interactions), where $V$ is specifically a set containing the vertices of
 $\mathcal{G}$, and $E$ is a set of ordered pairs, in which every pair is
 composed of two elements of $V$; an element $\{i,j\}$ in $E$ indicates that
 there is an interaction *from* species $i$ to species $j$ in the network
-$\mathcal{G}$.
+$\mathcal{G}$. The adjancency matrix $\mathbf{A}$ of this network would
+therefore have a non-zero entry at $A_{ij}$.
 
 In the context of networks comparison (assuming the networks to compare are
 $\mathcal{M}$ and $\mathcal{N}$), we can further decompose the contents of these
@@ -115,12 +116,13 @@ $$\mathcal{M} = (V_c \cup V_m, E_c \cup E_{sm} \cup E_{um}) \,,$$
 
 and 
 
-$$\mathcal{M} = (V_c \cup V_n, E_c \cup E_{sn} \cup E_{un}) \,,$$
+$$\mathcal{N} = (V_c \cup V_n, E_c \cup E_{sn} \cup E_{un}) \,,$$
 
-where $V_c$ is the set of shared species, $V_k$ are the species belonging only
-to network $k$, $E_c$ are the shared edges, and $E_{sk}$ and $E_{uk}$ are the
-interactions unique to $k$ involving, respectively, only species in $V_c$, and
-at least one species from $V_k$.
+where $V_c$ is the set of common species, $V_m$ and $V_n$ are the species
+belonging only to network $m$ and $n$ (respectivly), $E_c$ are the common edges,
+and $E_{sm}$ and $E_{um}$ are the interactions unique to $k$ involving,
+respectively, only species in $V_c$, and at least one species from $V_m$ (the
+same notation applies for the subscript $_{n}$).
 
 ### Defining the partitions from networks as sets
 
@@ -146,8 +148,7 @@ networks:
 $$\mathcal{M} \cap \mathcal{N} = (V_c, E_c)\,.$$
 
 The decomposition of $\beta$-diversity from @Poisot2012DisSpe uses these
-components to measure $\beta_{os}$ (the interaction dissimilarity between shared
-species, which @Frund2021DisSpe terms "rewiring"), and $\beta_{wn}$ (the overall
+components to measure $\beta_{os}$ ("rewiring"), and $\beta_{wn}$ (the overall
 dissimilarity including non-shared species). We can express the components $a$,
 $b$, and $c$ of @Koleff2003MeaBet as the cardinality of the following sets:
 
@@ -156,9 +157,18 @@ $b$, and $c$ of @Koleff2003MeaBet as the cardinality of the following sets:
 | $\beta_{os}$ | $E_c$ | $E_{sn}$             | $E_{sm}$             |
 | $\beta_{wn}$ | $E_c$ | $E_{sn} \cup E_{un}$ | $E_{sm} \cup E_{um}$ |
 
-These decompositions are used to perform the calculations of $\beta$-diversity
-in the `EcologicalNetworks.jl` package [@Banville2021ManJl] for Julia, which I
-use for the following numerical experiments.
+It is fundamental to note that these components can be measured entirely from
+the interactions, and that the number of species in either network are never
+directly involved.
+
+In the following sections, I present a series of calculations aimed at
+expressing the values of $\beta_{os}$, $\beta_{wn}$, and therefore $\beta_{st}$
+as a function of species sharing probability (as a proxy for mechanisms
+generating turnover), and link rewiring probability (as a proxy for mechanisms
+generating differences in interactions among shared species). These calculations
+are done using `Symbolics.jl` [@Gowda2021HigSym], and subsequently transformed
+in executable code for *Julia* [@Bezanson2017JulFre], used to produce the
+figures.
 
 ## Quantifying the importance of species turnover
 
