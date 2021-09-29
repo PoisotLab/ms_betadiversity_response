@@ -38,7 +38,7 @@ ecological networks [@Poisot2016StrPro], and the integration into the Local
 Contribution to Beta Diversity [@Legendre2013BetDiv] approach to understand how
 environment changes drive network dissimilarity [@Poisot2017HosPar].
 
-![TK](figures/betadiv_response_figure.png){#fig:conceptual}
+![The dissimilarity of two networks (green and orange) of equal richness $S$ (this also holds for unequal richness) depends on three families of interactions: those that are unique because of species turnover (in a pale color), those that are unique because of rewiring (in a saturated color), and those that are shared (in black). Assuming that the chance of sharing a species between the two networks is $p$, then there can be at most $p^2\times S^2$ shared links -- for this reason, overall network dissimilarity ($\beta_{wn}$) will have a component tied to species turnover, which is $\beta_{st}$.](figures/betadiv_response_figure.png){#fig:conceptual}
 
 Yet, the precise meaning of $\beta_{st}$, namely the importance of species
 turnover in the overall dissimilarity, has been difficult to capture, and a
@@ -95,16 +95,17 @@ common elements, as outlined in @fig:conceptual.
 ### Re-expressing networks as sets
 
 Applying this framework to networks requires a few additional definitions.
-Although ecologists tend to think of networks as their adjacency matrix, this
-representation is far from optimal to get a solid understanding of which
-elements should be counted as part of which set when measuring network
-dissimilarity. For this reason, we need fall back on the definition of a graph
-as a pair of sets, wherein $\mathcal{G} = (V, E)$. These two components $V$ and
-$E$ represent vertices (nodes, species) and edges (interactions), where $V$ is
-specifically a set containing the vertices $\mathcal{G}$, and $E$ is a set of
-ordered pairs, in which every pair is composed of two elements of $V$; an
-element $\{i,j\}$ in $E$ indicates that there is an interaction *from* species
-$i$ to species $j$ in the network $\mathcal{G}$.
+Although ecologists tend to think of networks as their adjacency matrix (as is
+presented in @fig:conceptual), this representation is not optimal to reach a
+robust understanding of which elements should be counted as part of which set
+when measuring network dissimilarity. For this reason, we need fall back on the
+definition of a graph as a pair of sets, wherein $\mathcal{G} = (V, E)$. These
+two components $V$ and $E$ represent vertices (nodes, species) and edges
+(interactions), where $V$ is specifically a set containing the vertices
+$\mathcal{G}$, and $E$ is a set of ordered pairs, in which every pair is
+composed of two elements of $V$; an element $\{i,j\}$ in $E$ indicates that
+there is an interaction *from* species $i$ to species $j$ in the network
+$\mathcal{G}$.
 
 In the context of networks comparison (assuming the networks to compare are
 $\mathcal{M}$ and $\mathcal{N}$), we can further decompose the contents of these
