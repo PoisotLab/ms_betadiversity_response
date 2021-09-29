@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -859,19 +859,16 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 \openout4 = `draft.fff'.
 
  (draft.fff)
-
-LaTeX Warning: Reference `fig:concptual' on page 3 undefined on input line 264.
-
-
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.54997pt on input line 267.
-[3
+ [3
 
-] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+]
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
 
 AED: lastpage setting LastPage
 [16] AED endfloat: Processing end Figures and Tables (./draft.fff
-<figures/betadiv_response_figure.png, id=175, 963.6pt x 542.025pt>
+<figures/betadiv_response_figure.png, id=177, 963.6pt x 542.025pt>
 File: figures/betadiv_response_figure.png Graphic file (type png)
 <use figures/betadiv_response_figure.png>
 Package pdftex.def Info: figures/betadiv_response_figure.png  used on input lin
@@ -929,17 +926,14 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ) [20] (./draft.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: ECF0844928EF7BC416DD8AA49FDEFE38;4289.
  ) 
 Here is how much of TeX's memory you used:
- 18281 strings out of 478599
- 285261 string characters out of 5856105
+ 18280 strings out of 478599
+ 285246 string characters out of 5856105
  572546 words of memory out of 5000000
- 35781 multiletter control sequences out of 15000+600000
+ 35780 multiletter control sequences out of 15000+600000
  504687 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,12n,117p,717b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -960,10 +954,10 @@ s/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir/texmf-dist
 f-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist/f
 onts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (20 pages, 778204 bytes).
+Output written on draft.pdf (20 pages, 778193 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
+ 273 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
  76 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

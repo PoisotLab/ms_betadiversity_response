@@ -1222,16 +1222,11 @@ File: figures/betadiv_response_figure.png Graphic file (type png)
 Package pdftex.def Info: figures/betadiv_response_figure.png  used on input lin
 e 313.
 (pdftex.def)             Requested size: 386.67299pt x 217.50089pt.
-
-
-LaTeX Warning: Reference `fig:concptual' on page 1 undefined on input line 322.
-
-
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.12506pt on input line 325.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 (Font)              scaled to size 7.50009pt on input line 325.
-[1
+ [1
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>
 ]
@@ -1338,17 +1333,14 @@ ial and tem-po-ral turnover of tritrophic (Piper-
 [8] 
 AED: lastpage setting LastPage
 [9] (./preprint.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `preprint.out' has not changed.
 (rerunfilecheck)             Checksum: 127457C576DAC1606E34D1B0499C9E73;4397.
  ) 
 Here is how much of TeX's memory you used:
- 30026 strings out of 478599
- 531478 string characters out of 5856105
+ 30025 strings out of 478599
+ 531463 string characters out of 5856105
  836251 words of memory out of 5000000
- 47288 multiletter control sequences out of 15000+600000
+ 47287 multiletter control sequences out of 15000+600000
  553768 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,12n,117p,718b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1370,10 +1362,10 @@ exmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/te
 xdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (9 pages, 964395 bytes).
+Output written on preprint.pdf (9 pages, 964433 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
+ 233 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
  64 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
