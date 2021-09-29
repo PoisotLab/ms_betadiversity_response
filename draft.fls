@@ -994,7 +994,9 @@ INPUT ./figures/betadiv_response_figure.png
 INPUT draft.aux
 INPUT ./draft.out
 INPUT ./draft.out
+INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm-bold.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc
+INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathex.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc

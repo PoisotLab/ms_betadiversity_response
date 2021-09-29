@@ -1368,8 +1368,10 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.t
 INPUT preprint.aux
 INPUT ./preprint.out
 INPUT ./preprint.out
+INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm-bold.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc
+INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathex.enc
 INPUT /opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc

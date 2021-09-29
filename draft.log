@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 17:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,46 +864,11 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
  [3
 
 ]
-! Extra }, or forgotten $.
-<recently read> }
-                 
-l.316 ...dot|\) is the cardinality of set \(\dot\)
-                                                   (the number of elements it
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.316 ...dot|\) is the cardinality of set \(\dot\)
-                                                   (the number of elements it
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.317 contains), and \(
-                       \setminus\) is the set substraction operation. In the
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
 
 AED: lastpage setting LastPage
 [16] AED endfloat: Processing end Figures and Tables (./draft.fff
-<figures/betadiv_response_figure.png, id=179, 963.6pt x 542.025pt>
+<figures/betadiv_response_figure.png, id=180, 963.6pt x 542.025pt>
 File: figures/betadiv_response_figure.png Graphic file (type png)
 <use figures/betadiv_response_figure.png>
 Package pdftex.def Info: figures/betadiv_response_figure.png  used on input lin
@@ -965,34 +930,36 @@ Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: ECF0844928EF7BC416DD8AA49FDEFE38;4289.
  ) 
 Here is how much of TeX's memory you used:
- 18280 strings out of 478599
- 285246 string characters out of 5856105
- 573129 words of memory out of 5000000
+ 18279 strings out of 478599
+ 285225 string characters out of 5856105
+ 574129 words of memory out of 5000000
  35780 multiletter control sequences out of 15000+600000
  504687 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,12n,117p,772b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc
-}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.enc
-}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathex.enc}{
-/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{/o
-pt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/texdir/t
-exmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{/opt/texlive/texdir/tex
-mf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{/opt/texlive/texdir/texmf-dis
-t/fonts/enc/dvips/inconsolata/i4-t1-0.enc}{/opt/texlive/texdir/texmf-dist/fonts
-/enc/dvips/stix2-type1/stix2-ts1.enc}</opt/texlive/texdir/texmf-dist/fonts/type
-1/public/inconsolata/Inconsolata-zi4r.pfb></opt/texlive/texdir/texmf-dist/fonts
-/type1/public/stix2-type1/STIX2Math.pfb></opt/texlive/texdir/texmf-dist/fonts/t
-ype1/public/stix2-type1/STIX2Text-Bold.pfb></opt/texlive/texdir/texmf-dist/font
-s/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir/texmf-dist
-/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/texm
-f-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist/f
-onts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/
-urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (20 pages, 780184 bytes).
+{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm-bold
+.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.
+enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathscr.e
+nc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathfrak.e
+nc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathex.enc
+}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{
+/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/texdir
+/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{/opt/texlive/texdir/t
+exmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{/opt/texlive/texdir/texmf-d
+ist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}{/opt/texlive/texdir/texmf-dist/fon
+ts/enc/dvips/stix2-type1/stix2-ts1.enc}</opt/texlive/texdir/texmf-dist/fonts/ty
+pe1/public/inconsolata/Inconsolata-zi4r.pfb></opt/texlive/texdir/texmf-dist/fon
+ts/type1/public/stix2-type1/STIX2Math.pfb></opt/texlive/texdir/texmf-dist/fonts
+/type1/public/stix2-type1/STIX2Text-Bold.pfb></opt/texlive/texdir/texmf-dist/fo
+nts/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir/texmf-di
+st/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/te
+xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
+/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
+1/urw/helvetic/uhvr8a.pfb>
+Output written on draft.pdf (20 pages, 783252 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 282 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
