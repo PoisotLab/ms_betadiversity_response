@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -932,7 +932,7 @@ Package rerunfilecheck Info: File `draft.out' has not changed.
 Here is how much of TeX's memory you used:
  18279 strings out of 478599
  285225 string characters out of 5856105
- 573129 words of memory out of 5000000
+ 574129 words of memory out of 5000000
  35780 multiletter control sequences out of 15000+600000
  504687 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -956,7 +956,7 @@ st/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/te
 xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
 /fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (20 pages, 782978 bytes).
+Output written on draft.pdf (20 pages, 783758 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  233 compressed objects within 3 object streams

@@ -444,33 +444,27 @@ Based on a partition between three sets of cardinality \(a\), \(b\), and
 \[\beta_t = \frac{b+c}{2a+b+c}\,.\]
 
 So as to simplify the notation of the following section, I will
-introduce a series of new variables. Let \(A = |E_c|\) be the number of
-links that are identical between networks; \(S = |E_{sn} \cup E_{sm}|\)
-be the number of links that are not shared, but only involve shared
-species (\emph{i.e.} links from \(\mathcal{M}\cup\mathcal{N}\)
-established between species from \(\mathcal{M}\cap\mathcal{N}\)); and
-\(U = |E_{un} \cup E_{um}|\) the number of links that are not shared,
-and involve at least one unique species. Adopting the perspective
-developed in the previous section, wherein networks are sets and the
-measures of \(\beta\)-diversity operates on these sets, highlights the
-conceptual issue in the Fründ (2021) alternative normalization: they are
-using components of the networks that are \emph{not} part of the
-networks being compared.
+introduce a series of new variables. Let \(C = |E_c|\) be the number of
+links that are identical between networks (as a mnemonic, \(C\) stands
+for ``common''); \(R = |E_{sn} \cup E_{sm}|\) be the number of links
+that are not shared, but only involve shared species (\emph{i.e.} links
+from \(\mathcal{M}\cup\mathcal{N}\) established between species from
+\(\mathcal{M}\cap\mathcal{N}\); as a mnemonic, \(R\) stands for
+``rewired''); and \(T = |E_{un} \cup E_{um}|\) the number of links that
+are not shared, and involve at least one unique species (as a mnemonic,
+\(T\) stands for ``turnover'').
 
-There are two important points to note here. First, the number or
-proportion of species that are shared is not involved in the
-calculation. Second, the connectance of either network is not involved
-in the calculation. That all links counted in \emph{e.g.} \(U\) come
-from \(\mathcal{M}\), or that they are evenly distributed between
-\(\mathcal{M}\) and \(\mathcal{N}\), has no impact on the result. This
-is a desirable property of the approach: whatever quantitative value of
-the components of dissimilarity can be interpreted in the light of the
-connectance and species turnover \emph{without} any risk of circularity.
-Therefore the argument of Fründ (2021), whereby the \(\beta_{os}\)
-component should decrease with turnover, and be invariant to
-connectance, does not hold: the very point of the approach is to provide
-measures that can be interpreted in the light of connectance and species
-turnover.
+There are two important points to note here. First, as mentionned
+earlier, the number or proportion of species that are shared is not
+involved in the calculation. Second, the connectance of either network
+is not involved in the calculation. That all links counted in
+\emph{e.g.} \(U\) come from \(\mathcal{M}\), or that they are evenly
+distributed between \(\mathcal{M}\) and \(\mathcal{N}\), has no impact
+on the result. This is a desirable property of the approach: whatever
+quantitative value of the components of dissimilarity can be interpreted
+in the light of the connectance and species turnover \emph{without} any
+risk of circularity; indeed, I present a numerical experiment where
+connectance varies independently later in this manuscript.
 
 The final component of network dissimilarity in Poisot \emph{et al.}
 (2012) is \(\beta_{st}\), \emph{i.e.} the part of \(\beta_{wn}\) that is
@@ -801,6 +795,18 @@ calculation. As such, it is possible to use \(\beta_{os}\) and
 \(\beta_{wn}\) in relationship to these terms, calculated externally (as
 was recently done by \emph{e.g.} Higino \& Poisot 2021), without
 creating circularities.
+
+\textbf{TK} Therefore the argument of Fründ (2021), whereby the
+\(\beta_{os}\) component should decrease with turnover, and be invariant
+to connectance, does not hold: the very point of the approach is to
+provide measures that can be interpreted in the light of connectance and
+species turnover.
+
+\textbf{TK} Adopting the perspective developed in the previous section,
+wherein networks are sets and the measures of \(\beta\)-diversity
+operates on these sets, highlights the conceptual issue in the Fründ
+(2021) alternative normalization: they are using components of the
+networks that are \emph{not} part of the networks being compared.
 
 The choice of changing the denominator hinges on what one admits as a
 definition for \(\beta_{st}\). If the point of \(\beta_{st}\) is to be a
