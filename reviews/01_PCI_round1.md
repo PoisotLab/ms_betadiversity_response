@@ -48,6 +48,9 @@ mostly follow the maths decomposing the different indexes, I focus my review on
 their interpretation, and I can't fully assess the more complex mathematical
 derivations.
 
+> I have attempted to clarify the notation *and* the way the derivations are
+> presented, so that they are easier to follow by interested users as well.
+
 I appreciate the detailed explanation provided and the rationale behind each
 index. I think the calculation and interpretation of BetaOS are clear. This one
 can be interpreted unambiguously as interaction rewiring among shared species.
