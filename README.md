@@ -294,7 +294,9 @@ $\beta_{st}/\beta_{wn}$ as a function of the probability $q$ or sharing a link
 ($x$-axis), and the probability $p$ of sharing a species ($y$-axis). Larger
 values indicate *more* dissimilarity, such that for $p=q=1$ the dissimilarity as
 measured by $\beta_{wn}=0$, and for $p=q=0$ the dissimilarity as measured by
-$\beta_{wn}=1$.](figures/sharing_v_rewiring/components.png){#fig:turnrew}
+$\beta_{wn}=1$. As expected, the relative importance of turnover ($\beta_{st}$)
+is maximal when there is no rewiring, and when turnover
+increases.](figures/sharing_v_rewiring/components.png){#fig:turnrew}
 
 The value of $C$ is the proportion of shared species $p^2$, as per
 @fig:conceptual, times the proportion of shared links, $q$, giving $C = qp^2$.
@@ -337,37 +339,33 @@ pair of networks for which rewiring is important ($q$ goes to 0), species
 turnover is going to be a *relatively* less important mechanism to
 dissimilarity. $\beta_{st}$ increases when turnover is important ($p$ goes to
 0), and therefore $\beta_{st}$ represents a *balance* between species turnover
-and link rewiring.
-
-These three values, as well as $\beta_{st}/\beta_{wn}$, are represented in
+and link rewiring. These three values, as well as $\beta_{st}/\beta_{wn}$, are represented in
 @fig:turnrew.
-
-The rewiring component $\beta_{os}$ varies as a function of the proportion of
-shared links that are rewired; by contrast, $\beta_{wn}$ varies *only* as a
-function of the proportion of links that are shared: that the unshared links are
-established between common or unique species has no effect on overall network
-dissimilarity. The quadratic nature of the denominator for $\beta_{st}$ is clear
-here, with a maximum reach when there is no re-wiring, and a small number of
-shared links (*i.e.* the networks are almost entirely dissimilar except for the
-links between shared species). Althought the *raw* values of $\beta_{st}$ may
-seem low, the normalization using $\beta_{st}/\beta_{wn}$ magnifies this effect:
-its values are indeed maximized when the rewiring is lower, *i.e.* all of the
-network variation stems from turnover processes.
 
 ### Sensibility of the decomposition to differences in connectance
 
-Consider two bipartite networks, each with $R$ species on either side, and each
-with the same connectance $\rho$. We will assume that these networks *share* a
-proportion $p$ of their species from one side (and share all species from the
-other), and that the interactions between these species are undergo rewiring
-with at a rate $q$. This is sufficient information to calculate the values of
-$A$, $S$, and $U$ required to get the values of $\beta_{os}$ and $\beta_{wn}$.
-Note that the simplification of assuming that only species from one side can
-vary is merely for the sake of simplicity, but does not decrease the generality
-of the argument.
+The results presented in @fig:turnrew include the strong assumption that the two
+networks have equal connectance. Although the range of connectances in nature
+tends to be very strongly conserved within a system, we can relax this
+assumption, by letting one network have more interactions than the other. Note
+that for the sake of notation simplicity, I maintain the constraint that the two
+networks are equally species rich. Therefore, the sole variation in this
+numerical experiment is that one network has $L_1 = \rho\times a\times S^2$, and
+the other network has $L_2 = \rho\times S^2$; in other words, $L_1 = a\times L$
+and $L_2 = L$. As one step of the components calculations involves a
+$\text{min}$ operation, I will add the constraint that $L_1 \le L_2$, which is
+to say $0 < a \le 1$. The value of $a$ is the *ratio* of connectances of the two
+networks, and the terms $S^2$ and $\rho$ being shared across all factors, they
+will be dropped from the calculations.
 
-Each network will have $\rho(1-p)R^2$ interactions that are unique due to
-species turnover, and so
+The maximal number of links that can be shared is $ap^2$ (*i.e.*
+$\text{min}(p^2, ap^2)$), as we cannot share more links than are in the sparsest
+of the two networks. Of these, $q$ are not rewired, leading to $C = aqp^2$. The
+number of links that are rewired in network 1 is the number of its links between
+shared species minus $C$, *i.e.* $r_1 = ap^2 - aqp^2 = ap^2(1-q)$, and similarly
+$r_2 = p^2 - aqp^2 = p^2(1-aq)$, leading to $R = r_1 + r_2 = p^2
+\left[a(1-q)+1\right]$. Using the same approach, we can get $t_1 = a(1-p^2)$ and
+$t_2 = (1-p^2)$, leading to $T = t_1 + t_2 = (1-p^2)(1+a)$.
 
 $$U = 2\rho(1-p)R^2\,.$$
 
