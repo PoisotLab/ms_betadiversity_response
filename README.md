@@ -119,7 +119,7 @@ and
 $$\mathcal{N} = (V_c \cup V_n, E_c \cup E_{sn} \cup E_{un}) \,,$$
 
 where $V_c$ is the set of common species, $V_m$ and $V_n$ are the species
-belonging only to network $m$ and $n$ (respectivly), $E_c$ are the common edges,
+belonging only to network $m$ and $n$ (respectively), $E_c$ are the common edges,
 and $E_{sm}$ and $E_{um}$ are the interactions unique to $k$ involving,
 respectively, only species in $V_c$, and at least one species from $V_m$ (the
 same notation applies for the subscript $_{n}$).
@@ -205,79 +205,88 @@ impact on the result. This is a desirable property of the approach: whatever
 quantitative value of the components of dissimilarity can be interpreted in the
 light of the connectance and species turnover *without* any risk of circularity;
 indeed, I present a numerical experiment where connectance varies independently
-later in this manuscript.
+later in this manuscript, reinforcing this point.
 
 The final component of network dissimilarity in @Poisot2012DisSpe is
 $\beta_{st}$, *i.e.* the part of $\beta_{wn}$ that is not explained by changes
 in interactions between shared species ($\beta_{os}$), and therefore stems from
 species turnover. This fraction is defined as $\beta_{st} =
-\beta_{wn}-\beta_{os}$.
-
-The expression of $\beta_{st}$ does not involve a partition into sets that can
-be plugged into the framework of @Koleff2003MeaBet, because the part of
-$\mathcal{M}$ and $\mathcal{N}$ that are composed of their unique species
-cannot, by definition, share interactions. One could, theoretically, express
-these as $\mathcal{M} \setminus \mathcal{N} = (V_m, E_{um})$ and $\mathcal{N}
-\setminus \mathcal{M} = (V_v, E_{un})$ (note the non-commutativity here), but
-the dissimilarity between these networks is trivially maximal for the measures
-considered.
+\beta_{wn}-\beta_{os}$. The expression of $\beta_{st}$ does not involve a
+partition into sets that can be plugged into the framework of @Koleff2003MeaBet,
+because the part of $\mathcal{M}$ and $\mathcal{N}$ that are composed of their
+unique species cannot, by definition, share interactions. One could,
+theoretically, express these as $\mathcal{M} \setminus \mathcal{N} = (V_m,
+E_{um})$ and $\mathcal{N} \setminus \mathcal{M} = (V_v, E_{un})$ (note the
+non-commutativity here), but the dissimilarity between these networks is
+trivially maximal for the measures considered.
 
 Using the $\beta_t$ measure of dissimilarity, we can re-write (using the
 notation with $A$, $S$, and $U$)
 
-$$\beta_{os} = \frac{S}{2A+S}\,,$$
+$$\beta_{os} = \frac{R}{2C+R}\,,$$
 
 and
 
-$$\beta_{wn} = \frac{S+U}{2A+S+U}\,.$$
+$$\beta_{wn} = \frac{R+T}{2C+R+T}\,.$$
 
 Note that $\beta_{os}$ has the form $x/y$ with $x = S$ and $y = 2A+S$, and
 $\beta_{wn}$ has the form $(x+k)/(y+k)$, with $k = U$. As long as $k \ge 0$, it
 is guaranteed that $\beta_{wn} \ge \beta_{os}$, and therefore that $0 \ge
-\beta_{st} \ge 1$; as $A$, $S$, and $U$ are cardinalities of sets, they are
+\beta_{st} \ge 1$; as $C$, $T$, and $R$ are cardinalities of sets, they are
 necessarily satisfying this condition.
 
 We can get an expression for $\beta_{st}$, by bringing $\beta_{os}$ and
 $\beta_{wn}$ to a common denominator and simplifying the numerator:
 
-$$\beta_{st} = \frac{2AU}{(2A+S)(2A+S+U)}\,.$$
+$$\beta_{st} = \frac{2CT}{(2C+R)(2C+R+T)}\,.$$
 
 Note that this value varies in a non-monotonic way with regards to the number of
 interactions that are part of the common set of species -- this is obvious when
-developing the denominator into
-
-$$4A^2 + S^2 + 4AS + 2AU + SU\,,$$
-
-As such, we expect that the value of $\beta_{st}$ will vary in a hump-shaped way
-with the proportion of shared interactions. For this reason, @Poisot2012DisSpe
-suggest that $\beta_{st}/\beta{wn}$ (alt. $1-\beta_{os}/\beta_{wn}$) is a better
+developing the denominator into $4C^2 + R^2 + 4CR + 2CT + RT$. As such, we
+expect that the value of $\beta_{st}$ will vary in a hump-shaped way with the
+proportion of shared interactions. For this reason, @Poisot2012DisSpe suggest
+that $\beta_{st}/\beta{wn}$ (alt. $1-\beta_{os}/\beta_{wn}$) is a better
 indicator of the *relative* importance of turnover processes on network
 dissimilarity. This can be calculated as 
 
-$$\frac{\beta_{st}}{\beta_{wn}} = \frac{2AU}{(2A+S)(2A+S+U)}\times\frac{S+U}{2A+S+U}\,,$$
+$$\frac{\beta_{st}}{\beta_{wn}} = \frac{2CT}{(2C+S)(2C+R+T)}\times\frac{R+T}{2C+R+T}\,,$$
 
 which reduces to 
 
-$$\frac{\beta_{st}}{\beta_{wn}} = \frac{2AU}{(2A+S)(S+U)}\,.$$
+$$\frac{\beta_{st}}{\beta_{wn}} = \frac{2CT}{(2C+R)(R+T)}\,.$$
 
-The roots of this expression are $A=0$ (the turnover of species has no
+The roots of this expression are $C=0$ (the turnover of species has no
 contribution to the difference between $\beta_{wn}$ and $\beta_{os}$ if there
-are no shared species, and therefore no rewiring), and  for $U = 0$ (the
+are no shared species, and therefore no rewiring), and  for $T = 0$ (the
 turnover of species has no contribution if all species are shared).
 
 ### Numerical experiment: response of the components to different sources of network variation
 
-To illustrate the behavior of $\beta_{st}$, I conducted a simple numerical
-experiment in which two networks have the same number of interactions $L$
-(recall from the previous section that we do not need to set a number of species
-yet), and these interactions are partitionned according to proportions $p_s$ and
-$p_r$ into shared ($A$), rewired ($S$), and unique ($U$) links, with $A =
-p_s\times L$, $S = (1-p_s)\times p_r\times L$, and $U = (1-p_s)\times
-(1-p_r)\times L$. The results are represented in @fig:numexp1.
+As the decomposition of beta diversity into sets presented above reveals, the
+value of the components $\beta_{os}$ and $\beta_{st}$ will respond to two family
+of mechanisms: the probability of sharing a species between the two networks,
+noted $p$, which will impose bounds on the value of $T$; and the probability of
+an interactions between shared species *not* being rewired, noted $q$, which
+will impose bounds on the value of $C$. These two probabilities represent,
+respectively, mechanisms involved in species turnover and link turnover, as per
+@Poisot2015SpeWhy, and the aim of this numerical experiment is to describe how
+these families of processes drive network dissimilarity.
+
+In order to simplify the calculations, I make the assumptions that the networks
+have equal species richness (noted $S$), so that $S_1 = S_2 = S$, and the same
+connectance (noted $\rho$), so that $\rho_1 = \rho_2 = \rho$. As a consequence,
+the two networks have the same number of links $L = \rho\times S_1 = \rho\times
+S_2$. The assumption of equal connectance will be relaxed in a subsequent
+numerical experiment. These simplifications allow to express the size of $C$,
+$R$, and $T$ only as functions of $p$ and $q$, as they would all be multiplied
+by $L$, which can therefore be dropped from the calculation.
 
 ![Values of $\beta_{os}$, $\beta_{wn}$, $\beta_{st}$, and
-$\beta_{st}/\beta_{wn}$ as a function of the proportion of rewired links and the
-proportion of shared links.](figures/numexp1.png){#fig:numexp1}
+$\beta_{st}/\beta_{wn}$ as a function of the probability $q$ or sharing a link
+($x$-axis), and the probability $p$ of sharing a species ($y$-axis). Larger
+values indicate *more* dissimilarity, such that for $p=q=1$ the dissimilarity as
+measured by $\beta_{wn}=0$, and for $p=q=0$ the dissimilarity as measured by
+$\beta_{wn}=1$.](figures/sharing_v_rewiring/components.png){#fig:numexp1}
 
 The rewiring component $\beta_{os}$ varies as a function of the proportion of
 shared links that are rewired; by contrast, $\beta_{wn}$ varies *only* as a
