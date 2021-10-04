@@ -415,11 +415,11 @@ and
 \[\mathcal{N} = (V_c \cup V_n, E_c \cup E_{sn} \cup E_{un}) \,,\]
 
 where \(V_c\) is the set of common species, \(V_m\) and \(V_n\) are the
-species belonging only to network \(m\) and \(n\) (respectivly), \(E_c\)
-are the common edges, and \(E_{sm}\) and \(E_{um}\) are the interactions
-unique to \(k\) involving, respectively, only species in \(V_c\), and at
-least one species from \(V_m\) (the same notation applies for the
-subscript \(_{n}\)).
+species belonging only to network \(m\) and \(n\) (respectively),
+\(E_c\) are the common edges, and \(E_{sm}\) and \(E_{um}\) are the
+interactions unique to \(k\) involving, respectively, only species in
+\(V_c\), and at least one species from \(V_m\) (the same notation
+applies for the subscript \(_{n}\)).
 
 \hypertarget{defining-the-partitions-from-networks-as-sets}{%
 \subsubsection{Defining the partitions from networks as
@@ -480,7 +480,7 @@ code for \emph{Julia} (\textbf{Bezanson2017JulFre?}), used to produce
 the figures.
 
 \hypertarget{quantifying-the-importance-of-species-turnover}{%
-\subsection{Quantifying the importance of species
+\subsubsection{Quantifying the importance of species
 turnover}\label{quantifying-the-importance-of-species-turnover}}
 
 The difference between \(\beta_{os}\) and \(\beta_{wn}\) stems from the
@@ -491,10 +491,6 @@ dissimilarity measure to work as an exemplar. We will use
 framework is (Wilson \& Shmida 1984). This measure returns values in
 \([0,1]\), with \(0\) meaning complete similarity, and \(1\) meaning
 complete dissimilarity.
-
-\hypertarget{establishing-that-beta_wn-ge-beta_os}{%
-\subsubsection{\texorpdfstring{Establishing that
-\(\beta_{wn} \ge \beta_{os}\)}{Establishing that \textbackslash beta\_\{wn\} \textbackslash ge \textbackslash beta\_\{os\}}}\label{establishing-that-beta_wn-ge-beta_os}}
 
 Based on a partition between three sets of cardinality \(a\), \(b\), and
 \(c\),
@@ -522,16 +518,16 @@ on the result. This is a desirable property of the approach: whatever
 quantitative value of the components of dissimilarity can be interpreted
 in the light of the connectance and species turnover \emph{without} any
 risk of circularity; indeed, I present a numerical experiment where
-connectance varies independently later in this manuscript.
+connectance varies independently later in this manuscript, reinforcing
+this point.
 
 The final component of network dissimilarity in Poisot \emph{et al.}
 (2012) is \(\beta_{st}\), \emph{i.e.} the part of \(\beta_{wn}\) that is
 not explained by changes in interactions between shared species
 (\(\beta_{os}\)), and therefore stems from species turnover. This
-fraction is defined as \(\beta_{st} = \beta_{wn}-\beta_{os}\).
-
-The expression of \(\beta_{st}\) does not involve a partition into sets
-that can be plugged into the framework of Koleff \emph{et al.} (2003),
+fraction is defined as \(\beta_{st} = \beta_{wn}-\beta_{os}\). The
+expression of \(\beta_{st}\) does not involve a partition into sets that
+can be plugged into the framework of Koleff \emph{et al.} (2003),
 because the part of \(\mathcal{M}\) and \(\mathcal{N}\) that are
 composed of their unique species cannot, by definition, share
 interactions. One could, theoretically, express these as
@@ -543,72 +539,90 @@ trivially maximal for the measures considered.
 Using the \(\beta_t\) measure of dissimilarity, we can re-write (using
 the notation with \(A\), \(S\), and \(U\))
 
-\[\beta_{os} = \frac{S}{2A+S}\,,\]
+\[\beta_{os} = \frac{R}{2C+R}\,,\]
 
 and
 
-\[\beta_{wn} = \frac{S+U}{2A+S+U}\,.\]
+\[\beta_{wn} = \frac{R+T}{2C+R+T}\,.\]
 
 Note that \(\beta_{os}\) has the form \(x/y\) with \(x = S\) and
 \(y = 2A+S\), and \(\beta_{wn}\) has the form \((x+k)/(y+k)\), with
 \(k = U\). As long as \(k \ge 0\), it is guaranteed that
 \(\beta_{wn} \ge \beta_{os}\), and therefore that
-\(0 \ge \beta_{st} \ge 1\); as \(A\), \(S\), and \(U\) are cardinalities
+\(0 \ge \beta_{st} \ge 1\); as \(C\), \(T\), and \(R\) are cardinalities
 of sets, they are necessarily satisfying this condition.
 
 We can get an expression for \(\beta_{st}\), by bringing \(\beta_{os}\)
 and \(\beta_{wn}\) to a common denominator and simplifying the
 numerator:
 
-\[\beta_{st} = \frac{2AU}{(2A+S)(2A+S+U)}\,.\]
+\[\beta_{st} = \frac{2CT}{(2C+R)(2C+R+T)}\,.\]
 
 Note that this value varies in a non-monotonic way with regards to the
 number of interactions that are part of the common set of species --
 this is obvious when developing the denominator into
+\(4C^2 + R^2 + 4CR + 2CT + RT\). As such, we expect that the value of
+\(\beta_{st}\) will vary in a hump-shaped way with the proportion of
+shared interactions. For this reason, Poisot \emph{et al.} (2012)
+suggest that \(\beta_{st}/\beta{wn}\) (alt. \(1-\beta_{os}/\beta_{wn}\))
+is a better indicator of the \emph{relative} importance of turnover
+processes on network dissimilarity. This can be calculated as
 
-\[4A^2 + S^2 + 4AS + 2AU + SU\,,\]
-
-As such, we expect that the value of \(\beta_{st}\) will vary in a
-hump-shaped way with the proportion of shared interactions. For this
-reason, Poisot \emph{et al.} (2012) suggest that
-\(\beta_{st}/\beta{wn}\) (alt. \(1-\beta_{os}/\beta_{wn}\)) is a better
-indicator of the \emph{relative} importance of turnover processes on
-network dissimilarity. This can be calculated as
-
-\[\frac{\beta_{st}}{\beta_{wn}} = \frac{2AU}{(2A+S)(2A+S+U)}\times\frac{S+U}{2A+S+U}\,,\]
+\[\frac{\beta_{st}}{\beta_{wn}} = \frac{2CT}{(2C+S)(2C+R+T)}\times\frac{R+T}{2C+R+T}\,,\]
 
 which reduces to
 
-\[\frac{\beta_{st}}{\beta_{wn}} = \frac{2AU}{(2A+S)(S+U)}\,.\]
+\[\frac{\beta_{st}}{\beta_{wn}} = \frac{2CT}{(2C+R)(R+T)}\,.\]
 
-The roots of this expression are \(A=0\) (the turnover of species has no
+The roots of this expression are \(C=0\) (the turnover of species has no
 contribution to the difference between \(\beta_{wn}\) and \(\beta_{os}\)
 if there are no shared species, and therefore no rewiring), and for
-\(U = 0\) (the turnover of species has no contribution if all species
+\(T = 0\) (the turnover of species has no contribution if all species
 are shared).
 
-\hypertarget{numerical-experiment-response-of-the-components-to-different-sources-of-network-variation}{%
-\subsubsection{Numerical experiment: response of the components to
-different sources of network
-variation}\label{numerical-experiment-response-of-the-components-to-different-sources-of-network-variation}}
+\hypertarget{quantifying-the-response-of-network-beta-diversity-to-souces-of-variation}{%
+\subsection{Quantifying the response of network beta-diversity to souces
+of
+variation}\label{quantifying-the-response-of-network-beta-diversity-to-souces-of-variation}}
 
-To illustrate the behavior of \(\beta_{st}\), I conducted a simple
-numerical experiment in which two networks have the same number of
-interactions \(L\) (recall from the previous section that we do not need
-to set a number of species yet), and these interactions are partitionned
-according to proportions \(p_s\) and \(p_r\) into shared (\(A\)),
-rewired (\(S\)), and unique (\(U\)) links, with \(A = p_s\times L\),
-\(S = (1-p_s)\times p_r\times L\), and
-\(U = (1-p_s)\times (1-p_r)\times L\). The results are represented in
-fig.~\ref{fig:numexp1}.
+\hypertarget{the-relative-effect-of-species-turnover-and-link-rewiring}{%
+\subsubsection{The relative effect of species turnover and link
+rewiring}\label{the-relative-effect-of-species-turnover-and-link-rewiring}}
+
+As the decomposition of beta diversity into sets presented above
+reveals, the value of the components \(\beta_{os}\) and \(\beta_{st}\)
+will respond to two family of mechanisms: the probability of sharing a
+species between the two networks, noted \(p\), which will impose bounds
+on the value of \(T\); and the probability of an interactions between
+shared species \emph{not} being rewired, noted \(q\), which will impose
+bounds on the value of \(C\). These two probabilities represent,
+respectively, mechanisms involved in species turnover and link turnover,
+as per Poisot \emph{et al.} (2015), and the aim of this numerical
+experiment is to describe how these families of processes drive network
+dissimilarity.
+
+In order to simplify the calculations, I make the assumptions that the
+networks have equal species richness (noted \(S\)), so that
+\(S_1 = S_2 = S\), and the same connectance (noted \(\rho\)), so that
+\(\rho_1 = \rho_2 = \rho\). As a consequence, the two networks have the
+same number of links \(L = \rho\times S_1 = \rho\times S_2\). The
+assumption of equal connectance will be relaxed in a subsequent
+numerical experiment. These simplifications allow to express the size of
+\(C\), \(R\), and \(T\) only as functions of \(p\) and \(q\), as they
+would all be multiplied by \(L\), which can therefore be dropped from
+the calculation.
 
 \begin{figure}
 \hypertarget{fig:numexp1}{%
 \centering
-\includegraphics{figures/numexp1.png}
+\includegraphics{figures/sharing_v_rewiring/components.png}
 \caption{Values of \(\beta_{os}\), \(\beta_{wn}\), \(\beta_{st}\), and
-\(\beta_{st}/\beta_{wn}\) as a function of the proportion of rewired
-links and the proportion of shared links.}\label{fig:numexp1}
+\(\beta_{st}/\beta_{wn}\) as a function of the probability \(q\) or
+sharing a link (\(x\)-axis), and the probability \(p\) of sharing a
+species (\(y\)-axis). Larger values indicate \emph{more} dissimilarity,
+such that for \(p=q=1\) the dissimilarity as measured by
+\(\beta_{wn}=0\), and for \(p=q=0\) the dissimilarity as measured by
+\(\beta_{wn}=1\).}\label{fig:numexp1}
 }
 \end{figure}
 
@@ -626,65 +640,9 @@ of \(\beta_{st}\) may seem low, the normalization using
 maximized when the rewiring is lower, \emph{i.e.} all of the network
 variation stems from turnover processes.
 
-\hypertarget{is-this-decomposition-over-estimating-the-effect-of-rewiring}{%
-\subsection{Is this decomposition over-estimating the effect of
-``rewiring?''}\label{is-this-decomposition-over-estimating-the-effect-of-rewiring}}
-
-One of the arguments put forth by Fründ (2021) is that the decomposition
-outlined above will overestimate the effect of rewiring; I argue that
-this is based on a misunderstanding of what \(\beta_{st}\) achieves. It
-is paramount to clarify that \(\beta_{st}\) is not a direct measure of
-the importance of turnover: it is a quantification of the relative
-impact of rewiring to overall dissimilarity, which, all non-turnover
-mechanisms being accounted for in the decomposition, can be explained by
-turnover mechanisms. In this section, I present two numerical
-experiments showing (i) that the \(\beta_{os}\) component is in fact an
-accurate measure of rewiring, and (ii) that \(\beta_{st}\) captures the
-consequences of species turnover, and of the interactions brought by
-unique species.
-
-\hypertarget{illustrations-on-arbitrarily-small-networks-are-biased}{%
-\subsubsection{Illustrations on arbitrarily small networks are
-biased}\label{illustrations-on-arbitrarily-small-networks-are-biased}}
-
-We can re-calculate the illustration of Fründ (2021), wherein a pair of
-networks with two shared interactions (\(A = 2\)) receive either an
-interaction in \(S\), in \(U\), or in both:
-
-\begin{longtable}[]{@{}lllllll@{}}
-\toprule
-\(A\) & \(S\) & \(U\) & \(\beta_{os}\) & \(\beta_{wn}\) & \(\beta_{st}\)
-& \(\beta_{st}/\beta_{wn}\)\tabularnewline
-\midrule
-\endhead
-2 & 0 & 0 & 0 & 0 & 0 &\tabularnewline
-2 & 1 & 0 & \(1/5\) & \(1/5\) & 0 & 0\tabularnewline
-2 & 0 & 1 & 0 & \(1/5\) & \(1/5\) & 0\tabularnewline
-2 & 1 & 1 & \(1/5\) & \(1/3\) & \(2/15\) & \(2/5\)\tabularnewline
-\bottomrule
-\end{longtable}
-
-The over-estimation argument hinges on the fact that
-\(\beta_{st} < \beta_{os}\) in the last situation (one interaction as
-rewiring, one as turnover). Reaching the conclusion of an overestimation
-from this is based on a mis-interpretation of what \(\beta_{st}\) means.
-The correct interpretation is that, out of the entire network
-dissimilarity, only three-fifths are explained by re-wiring. The fact
-that this fraction is not exactly one-half comes from the fact that the
-Wilson \& Shmida (1984) measure counts shared interactions \emph{twice}
-(\emph{i.e.} it has a \(2A\) term), which over-amplifies the effect of
-shared interactions as the network is really small. Running the same
-calculations with \(A = 10\) gives a relative importance of the turnover
-processes of 47\%, and \(\beta_{st}\) goes to \(1/2\) as \(A/(S+U)\)
-increases. As an additional caveat, the value of \(\beta_{st}\) will
-depend on the measure of beta-diversity used. Measures that do not count
-the shared interaction twice are not going to amplify the effect of
-rewiring.
-
-\hypertarget{numerical-experiment-the-decomposition-captures-the-roles-of-rewiring-and-turnover-accurately}{%
-\subsubsection{Numerical experiment: the decomposition captures the
-roles of rewiring and turnover
-accurately}\label{numerical-experiment-the-decomposition-captures-the-roles-of-rewiring-and-turnover-accurately}}
+\hypertarget{sensibility-of-the-decomposition-to-differences-in-connectance}{%
+\subsubsection{Sensibility of the decomposition to differences in
+connectance}\label{sensibility-of-the-decomposition-to-differences-in-connectance}}
 
 Consider two bipartite networks, each with \(R\) species on either side,
 and each with the same connectance \(\rho\). We will assume that these
@@ -753,7 +711,90 @@ is magnified for low probabilities of re-wiring.
 In conclusion, this numerical experiment shows that the decomposition as
 initially presented by Poisot \emph{et al.} (2012), \emph{i.e.} using
 denominators that make sense from a network composition point of view,
-succeeds at capturing the relative effect of turnover and rewiring.
+succeeds at capturing the relative effect of turnover and rewiring. \#\#
+Does the partition of network dissimilarity needs a new normalization?
+
+\hypertarget{is-this-decomposition-over-estimating-the-effect-of-rewiring}{%
+\subsubsection{Is this decomposition over-estimating the effect of
+``rewiring?''}\label{is-this-decomposition-over-estimating-the-effect-of-rewiring}}
+
+One of the arguments put forth by Fründ (2021) is that the decomposition
+outlined above will overestimate the effect of rewiring; I argue that
+this is based on a misunderstanding of what \(\beta_{st}\) achieves. It
+is paramount to clarify that \(\beta_{st}\) is not a direct measure of
+the importance of turnover: it is a quantification of the relative
+impact of rewiring to overall dissimilarity, which, all non-turnover
+mechanisms being accounted for in the decomposition, can be explained by
+turnover mechanisms. In this section, I present two numerical
+experiments showing (i) that the \(\beta_{os}\) component is in fact an
+accurate measure of rewiring, and (ii) that \(\beta_{st}\) captures the
+consequences of species turnover, and of the interactions brought by
+unique species.
+
+\hypertarget{illustrations-on-arbitrarily-small-networks-are-biased}{%
+\subsubsection{Illustrations on arbitrarily small networks are
+biased}\label{illustrations-on-arbitrarily-small-networks-are-biased}}
+
+We can re-calculate the illustration of Fründ (2021), wherein a pair of
+networks with two shared interactions (\(A = 2\)) receive either an
+interaction in \(S\), in \(U\), or in both:
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule
+\(A\) & \(S\) & \(U\) & \(\beta_{os}\) & \(\beta_{wn}\) & \(\beta_{st}\)
+& \(\beta_{st}/\beta_{wn}\)\tabularnewline
+\midrule
+\endhead
+2 & 0 & 0 & 0 & 0 & 0 &\tabularnewline
+2 & 1 & 0 & \(1/5\) & \(1/5\) & 0 & 0\tabularnewline
+2 & 0 & 1 & 0 & \(1/5\) & \(1/5\) & 0\tabularnewline
+2 & 1 & 1 & \(1/5\) & \(1/3\) & \(2/15\) & \(2/5\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+The over-estimation argument hinges on the fact that
+\(\beta_{st} < \beta_{os}\) in the last situation (one interaction as
+rewiring, one as turnover). Reaching the conclusion of an overestimation
+from this is based on a mis-interpretation of what \(\beta_{st}\) means.
+The correct interpretation is that, out of the entire network
+dissimilarity, only three-fifths are explained by re-wiring. The fact
+that this fraction is not exactly one-half comes from the fact that the
+Wilson \& Shmida (1984) measure counts shared interactions \emph{twice}
+(\emph{i.e.} it has a \(2A\) term), which over-amplifies the effect of
+shared interactions as the network is really small. Running the same
+calculations with \(A = 10\) gives a relative importance of the turnover
+processes of 47\%, and \(\beta_{st}\) goes to \(1/2\) as \(A/(S+U)\)
+increases. As an additional caveat, the value of \(\beta_{st}\) will
+depend on the measure of beta-diversity used. Measures that do not count
+the shared interaction twice are not going to amplify the effect of
+rewiring.
+
+Based on the arguments presented above, I do not think the suggestion of
+Fründ (2021) to change the denominator of \(\beta_{os}\) makes sense as
+a default; the strength of the original approach by Poisot \emph{et al.}
+(2012) is indeed that the effect of turnover is based on a rigorous
+definition of networks as graphs (as opposed to networks as matrices),
+in which the induction of vertices from the edgelist being compared
+gives rise to biologically meaningful denominators. The advantage of
+this approach is that at no time does the turnover of species itself (or
+indeed, as shown in many places in this manuscript, the network
+richness), or the connectance of the network, enter into the
+calculation. As such, it is possible to use \(\beta_{os}\) and
+\(\beta_{wn}\) in relationship to these terms, calculated externally (as
+was recently done by \emph{e.g.} Higino \& Poisot 2021), without
+creating circularities.
+
+\textbf{TK} Therefore the argument of Fründ (2021), whereby the
+\(\beta_{os}\) component should decrease with turnover, and be invariant
+to connectance, does not hold: the very point of the approach is to
+provide measures that can be interpreted in the light of connectance and
+species turnover.
+
+\textbf{TK} Adopting the perspective developed in the previous section,
+wherein networks are sets and the measures of \(\beta\)-diversity
+operates on these sets, highlights the conceptual issue in the Fründ
+(2021) alternative normalization: they are using components of the
+networks that are \emph{not} part of the networks being compared.
 
 \hypertarget{numerical-experiment-the-decomposition-captures-the-roles-of-species-turnover-and-connectance-accurately}{%
 \subsubsection{Numerical experiment: the decomposition captures the
@@ -835,36 +876,9 @@ explained by non-turnover mechanisms (here, changes in connectance).
 Relying on the \(\beta_{st}/\beta_{wn}\) correction again magnifies this
 effect, without changing their interpretation.
 
-\hypertarget{does-the-partition-of-network-dissimilarity-needs-a-new-normalization}{%
-\subsection{Does the partition of network dissimilarity needs a new
-normalization?}\label{does-the-partition-of-network-dissimilarity-needs-a-new-normalization}}
-
-Based on the arguments presented above, I do not think the suggestion of
-Fründ (2021) to change the denominator of \(\beta_{os}\) makes sense as
-a default; the strength of the original approach by Poisot \emph{et al.}
-(2012) is indeed that the effect of turnover is based on a rigorous
-definition of networks as graphs (as opposed to networks as matrices),
-in which the induction of vertices from the edgelist being compared
-gives rise to biologically meaningful denominators. The advantage of
-this approach is that at no time does the turnover of species itself (or
-indeed, as shown in many places in this manuscript, the network
-richness), or the connectance of the network, enter into the
-calculation. As such, it is possible to use \(\beta_{os}\) and
-\(\beta_{wn}\) in relationship to these terms, calculated externally (as
-was recently done by \emph{e.g.} Higino \& Poisot 2021), without
-creating circularities.
-
-\textbf{TK} Therefore the argument of Fründ (2021), whereby the
-\(\beta_{os}\) component should decrease with turnover, and be invariant
-to connectance, does not hold: the very point of the approach is to
-provide measures that can be interpreted in the light of connectance and
-species turnover.
-
-\textbf{TK} Adopting the perspective developed in the previous section,
-wherein networks are sets and the measures of \(\beta\)-diversity
-operates on these sets, highlights the conceptual issue in the Fründ
-(2021) alternative normalization: they are using components of the
-networks that are \emph{not} part of the networks being compared.
+\hypertarget{measuring-network-beta-diversity-recommendations}{%
+\subsection{Measuring network beta-diversity:
+recommendations}\label{measuring-network-beta-diversity-recommendations}}
 
 The choice of changing the denominator hinges on what one admits as a
 definition for \(\beta_{st}\). If the point of \(\beta_{st}\) is to be a

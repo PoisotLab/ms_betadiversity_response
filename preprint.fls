@@ -1362,6 +1362,11 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text-b
 INPUT /opt/texlive/texdir/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
+INPUT ./figures/sharing_v_rewiring/components.png
+INPUT ./figures/sharing_v_rewiring/components.png
+INPUT figures/sharing_v_rewiring/components.png
+INPUT ./figures/sharing_v_rewiring/components.png
+INPUT ./figures/sharing_v_rewiring/components.png
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text-italic.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.tfm

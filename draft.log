@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 OCT 2021 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 OCT 2021 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,32 +868,23 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 AED: lastpage setting LastPage
 [16] AED endfloat: Processing end Figures and Tables (./draft.fff
-<figures/betadiv_response_figure.png, id=180, 963.6pt x 542.025pt>
+<figures/betadiv_response_figure.png, id=178, 963.6pt x 542.025pt>
 File: figures/betadiv_response_figure.png Graphic file (type png)
 <use figures/betadiv_response_figure.png>
 Package pdftex.def Info: figures/betadiv_response_figure.png  used on input lin
 e 15.
 (pdftex.def)             Requested size: 489.10307pt x 275.11406pt.
  [17 <./figures/betadiv_response_figure.png (PNG copy)>]
+<figures/sharing_v_rewiring/components.png, id=184, 4013.99625pt x 4013.99625pt
+>
+File: figures/sharing_v_rewiring/components.png Graphic file (type png)
+<use figures/sharing_v_rewiring/components.png>
+Package pdftex.def Info: figures/sharing_v_rewiring/components.png  used on inp
+ut line 30.
+(pdftex.def)             Requested size: 489.10307pt x 489.06985pt.
+ [18 <./figures/sharing_v_rewiring/components.png>]
 
-LaTeX Warning: File `figures/numexp1.png' not found on input line 26.
-
-
-! Package pdftex.def Error: File `figures/numexp1.png' not found: using draft s
-etting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 }
-      
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[18]
-
-LaTeX Warning: File `figures/numexp2.png' not found on input line 43.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 47.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -903,14 +894,14 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.43 }
+l.47 }
       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [19]
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 59.
+LaTeX Warning: File `figures/numexp3.png' not found on input line 63.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -920,23 +911,23 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 }
+l.63 }
       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ) [20] (./draft.aux)
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: ECF0844928EF7BC416DD8AA49FDEFE38;4289.
+(rerunfilecheck)             Checksum: 9DDAFD697CFB77F8437B30B28434FA0A;3968.
  ) 
 Here is how much of TeX's memory you used:
- 18282 strings out of 478599
- 285270 string characters out of 5856104
- 574323 words of memory out of 5000000
- 35783 multiletter control sequences out of 15000+600000
+ 18258 strings out of 478599
+ 284555 string characters out of 5856104
+ 574438 words of memory out of 5000000
+ 35759 multiletter control sequences out of 15000+600000
  504687 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,12n,117p,772b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,12n,117p,772b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm-bold
 .enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.
 enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathscr.e
@@ -956,10 +947,10 @@ st/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/te
 xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
 /fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (20 pages, 786080 bytes).
+Output written on draft.pdf (20 pages, 1426992 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
+ 232 compressed objects within 3 object streams
  75 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

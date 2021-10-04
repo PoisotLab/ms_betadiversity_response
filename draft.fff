@@ -19,10 +19,14 @@ component tied to species turnover, which is
 \begin{figure}
 \hypertarget{fig:numexp1}{%
 \centering
-\includegraphics{figures/numexp1.png}
+\includegraphics{figures/sharing_v_rewiring/components.png}
 \caption{Values of \(\beta_{os}\), \(\beta_{wn}\), \(\beta_{st}\), and
-\(\beta_{st}/\beta_{wn}\) as a function of the proportion of rewired
-links and the proportion of shared links.}\label{fig:numexp1}
+\(\beta_{st}/\beta_{wn}\) as a function of the probability \(q\) or
+sharing a link (\(x\)-axis), and the probability \(p\) of sharing a
+species (\(y\)-axis). Larger values indicate \emph{more} dissimilarity,
+such that for \(p=q=1\) the dissimilarity as measured by
+\(\beta_{wn}=0\), and for \(p=q=0\) the dissimilarity as measured by
+\(\beta_{wn}=1\).}\label{fig:numexp1}
 }
 \end{figure}
 \efloatseparator
