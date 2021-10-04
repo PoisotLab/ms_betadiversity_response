@@ -34,7 +34,8 @@ challenging the recent paper of Fründ,
 seems that each method can be justified and used in an appropriate context.
 
 > Same answer as above. In addition, I have clarified the mathematical notation
-> throughout, so that it will hopefully be easier to follow.
+> throughout, so that it will hopefully be easier to follow. I have also added a
+> conceptual cartoon in the introduction, which I hope will help guide readers.
 
 # Reviewer 1
 
@@ -57,6 +58,12 @@ can be interpreted unambiguously as interaction rewiring among shared species.
 To me, this is the key index to interpret for most ecological questions and can
 be interpreted as a single index (probably along with the proportion of shared
 species for context).
+
+> Drawing on the numerical experiments, I have emphasized how $\beta_{os}$
+> relates to the rewiring probability, and now give an expression to estimate
+> the rewiring probability based on $\beta_{os}$ for networks of difference
+> connectances. I hope this will further re-inforce the usefulness of this
+> measure.
 
 Next, Beta WN is also intuitive, but as depicted in Fig 2 it needs to be clearly
 stated that it depends on both interaction rewiring and the proportion of shared
