@@ -109,7 +109,7 @@ end
 
 # ╔═╡ b074d4e7-7006-438e-abda-e38f94af530e
 begin
-	p_os = contour(_values, _values, rotl90(os), levels=9, fill=true)
+	p_os = contour(_values, _values, os, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta os")
@@ -117,7 +117,7 @@ end
 
 # ╔═╡ a6b0715d-66fc-4d80-828d-bf80b1c36426
 begin
-	p_wn = contour(_values, _values, rotl90(wn), levels=9, fill=true)
+	p_wn = contour(_values, _values, wn, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta wn")
@@ -125,7 +125,7 @@ end
 
 # ╔═╡ 9a2ceb4e-7ebe-4b0e-b942-79f33340ee94
 begin
-	p_st = contour(_values, _values, rotl90(st), levels=9, fill=true)
+	p_st = contour(_values, _values, st, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta st")
@@ -133,7 +133,7 @@ end
 
 # ╔═╡ 855e65e1-a7bb-470d-861b-534b4d80ad17
 begin
-	p_ratio = contour(_values, _values, rotl90(ratio), levels=9, fill=true)
+	p_ratio = contour(_values, _values, ratio, levels=9, fill=true)
 	xaxis!((0, 1), "Probability of sharing a link")
 	yaxis!((0, 1), "Relative connectance")	
 	title!("\\beta st / \\beta wn")

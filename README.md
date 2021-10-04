@@ -367,50 +367,40 @@ $r_2 = p^2 - aqp^2 = p^2(1-aq)$, leading to $R = r_1 + r_2 = p^2
 \left[a(1-q)+1\right]$. Using the same approach, we can get $t_1 = a(1-p^2)$ and
 $t_2 = (1-p^2)$, leading to $T = t_1 + t_2 = (1-p^2)(1+a)$.
 
-$$U = 2\rho(1-p)R^2\,.$$
+As in the previous section, we can use these values to write
 
-The part of both networks composed of overlapping species has $\rho pR^2$
-interactions, of which $\rho (1-q) p R^2$ are shared, and $\rho qp R^2$
-underwent rewiring. This leads to
+$$\beta_{os} = 1 - 2\frac{aq}{1+a}\,,$$
 
-$$A = \rho (1-q) p R^2\,,$$
+$$\beta_{wn} = 1 - 2\frac{ap^2q}{1+a}\,,$$
 
 and
 
-$$S = \rho pq R^2\,.$$
+$$\beta_{st} = 2aq\frac{(1-p^2)(1+a)}{a^2 + 2a + 1}\,.$$
 
-Note that we can drop the multiplicative constant $R^2$, making the result
-independent of the size of the network. Based on these components, we can get
-the values of $\beta_{os}$ and $\beta_{wn}$, as presented in @fig:numexp2.
+![Consequences of changing the ratio of connectances between two equally
+species-rich networks on the decomposition of network beta-diversity, assuming
+$p = 0.8$. Networks with stronger differences in connectance will tend to be
+more similar, because the differences in number of links becomes extreme enough
+that the chances of all the links in the sparser network being in the denser
+network increases.](figures/connectance/components.png){#fig:connectance}
 
-![Response of $\beta_{os}$ and $\beta_{wn}$, and the consequences on
-$\beta_{st}$, to changes in rewiring probability ($q$) and probability of
-species sharing ($p$). As expected, $\beta_{os}$ is not affected by species
-turnover, but increases with the rewiring probability. By contrast, $\beta_{wn}$
-increases when the rewiring probability is higher *and* when fewer species are
-shared. This has important consequences for $\beta_{st}$: its value is maximized
-for low species sharing, and decreases for high rewiring
-probability.](figures/numexp2.png){#fig:numexp2}
+The values of these components are visualized in @fig:connectance. The
+introduction of the connectance ratio makes these expressions marginally more
+complex than in the case without differences in connectance, but the noteworthy
+result remains that in the presence of differences of connectance, the value of
+$\beta_{os}$ is still independent from species turnover. In fact, there is an
+important conclusion to be drawn from this expression. The shared species
+component is by definition square, meaning that from an actual measurement of
+$\beta_{os}$ between two networks for which we know the connectance, noted
+$\mathbf{b}_{os}$, we can get the probability of rewiring by reorganizing the
+terms of $\mathbf{b}_{os} = 1 - 2aq/(1+a)$ as
 
-The value of $\beta_{os}$ is entirely unchanged by variations in $p$ (species
-sharing), and responds *only* to changes in $q$ (the probability of rewiring),
-whereas as expected, $\beta_{wn}$ responded to changes in both of these
-parameters: the most dissimilar networks have low species sharing (interactions
-are dissimilar because brought by unique species), and high rewiring (shared
-species do not share interactions). The relative changes in $\beta_{os}$ and
-$\beta_{wn}$ lead to predictable changes in $\beta_{st}$: its value is maximized
-when both rewiring *and* species sharing are low. Increasing rewiring decreases
-the impact of species turnover (because, for an equal number of interactions,
-the dissimilarity of interactins in shared species contributes more to
-$\beta_{wn}$); increasing the chance of sharing species also does decrease
-$\beta_{st}$, trivially because there is no species turnover anymore. Note that
-when using the correction of $\beta_{st}/\beta_{wn}$, the effect of species
-turnover is magnified for low probabilities of re-wiring.
+$$q \approx \frac{(1-\mathbf{b}_{os})(a+1)}{2a}\,,$$
 
-In conclusion, this numerical experiment shows that the decomposition as
-initially presented by @Poisot2012DisSpe, *i.e.* using denominators that make
-sense from a network composition point of view, succeeds at capturing the
-relative effect of turnover and rewiring.
+which gives the probability of rewiring as $1-q$; note that this is an
+*approximation*, as it assumes that the connectances of the entire network and
+the connectances of the shared components are the same.
+
 ## Does the partition of network dissimilarity needs a new normalization?
 
 ### Is this decomposition over-estimating the effect of "rewiring"?
@@ -525,7 +515,7 @@ components. As expected, $\beta_{os}$ is still independent of species turnover,
 and $\beta_{wn}$ increases when species turnover increases, or when the
 connectances become more dissimilar. These figures have been generated with
 $\rho_1 = 0.25$ and $q = 0.15$, and the results are qualitatively robust to
-changes in these parameters.](figures/numexp3.png){#fig:numexp3}
+changes in these parameters.](figures/common_denominator/components.png){#fig:commden}
 
 Although $\beta_{os}$ is only responding to changes in connectance (as is
 expected, seeing that the relative connectances of both networks appear in the
