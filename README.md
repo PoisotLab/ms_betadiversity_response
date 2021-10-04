@@ -283,8 +283,8 @@ these families of processes drive network dissimilarity.
 In order to simplify the calculations, I make the assumptions that the networks
 have equal species richness (noted $S$), so that $S_1 = S_2 = S$, and the same
 connectance (noted $\rho$), so that $\rho_1 = \rho_2 = \rho$. As a consequence,
-the two networks have the same number of links $L = \rho\times S_1 = \rho\times
-S_2$. The assumption of equal connectance will be relaxed in a subsequent
+the two networks have the same number of links $L = \rho\times S_1^2 = \rho\times
+S_2^2$. The assumption of equal connectance will be relaxed in a subsequent
 numerical experiment. These simplifications allow to express the size of $C$,
 $R$, and $T$ only as functions of $p$ and $q$, as they would all be multiplied
 by $L$, which can therefore be dropped from the calculation.
@@ -294,7 +294,53 @@ $\beta_{st}/\beta_{wn}$ as a function of the probability $q$ or sharing a link
 ($x$-axis), and the probability $p$ of sharing a species ($y$-axis). Larger
 values indicate *more* dissimilarity, such that for $p=q=1$ the dissimilarity as
 measured by $\beta_{wn}=0$, and for $p=q=0$ the dissimilarity as measured by
-$\beta_{wn}=1$.](figures/sharing_v_rewiring/components.png){#fig:numexp1}
+$\beta_{wn}=1$.](figures/sharing_v_rewiring/components.png){#fig:turnrew}
+
+The value of $C$ is the proportion of shared species $p^2$, as per
+@fig:conceptual, times the proportion of shared links, $q$, giving $C = qp^2$.
+Each network has $r = p^2-(qp^2)$ rewired links, which leads to $R = 2r =
+2p^2(1-q)$. Finally, we can get the number of unique links in each network $t$
+by substracting $C+r$ from the total number of links (which, since we scale
+everything by $L$, is 1), yielding $t = 1 - qp^2 - p^2 + qp^2$, which is $t =
+1-p^2$. The total number of unique links due to turnover is $T = 2t = 2(1-p^2)$.
+It is important to note that $C$ and $R$, namely the number of links that are
+kept or rewired, depends on species sharing ($p$), as the possible size of the
+overlap between the two networks does, but the quantity of links that are
+different due to turnover does not depends on rewiring.
+
+With the values of $C$, $R$, and $T$, we can write
+
+$$\beta_{os} = \frac{2p^2(1-q)}{2p^2q+2p^2(1-q)} = \frac{1-q}{q + 1 -q} =
+(1-q)\,.$$
+
+This is a first noteworthy result: the value of $\beta_{os}$, in the ideal
+scenario of equal links and richness, is the probability of link re-wiring.
+Because this is true regardless of the value of $p$ (species turnover), this
+makes $\beta_{os}$ a strongly ecologically informative component.
+
+Similarly, we can write
+
+$$\beta_{wn} = \frac{2p^2(1-q)+2(1-p^2)}{2p^2q + 2p^2(1-q)+2(1-p^2)} = \frac{p^2(1-q)+(1-p^2)}{p^2q+p^2(1-q)+(1-p^2)} = 1-qp^2\,.$$
+
+The overall dissimilarity responds to $q$ (rewiring) linerarly, and to $p$
+quadratically (which is expected assuming unipartite networks, in which species
+are present on both sides).
+
+Expressing $\beta_{os}$ and $\beta_{wn}$ as functions of $p$ and $q$ trivializes
+the search for the expression of $\beta_{st}$, which is
+
+$$\beta_{st} = 1 - p^2q - 1 + q = q\times(1-p^2)\,.$$
+
+It is worth examining this solution in some detail. $\beta_{st}$ scales linearly
+with the probability that a link will *not* be rewired -- in other words, in a
+pair of networks for which rewiring is important ($q$ goes to 0), species
+turnover is going to be a *relatively* less important mechanism to
+dissimilarity. $\beta_{st}$ increases when turnover is important ($p$ goes to
+0), and therefore $\beta_{st}$ represents a *balance* between species turnover
+and link rewiring.
+
+These three values, as well as $\beta_{st}/\beta_{wn}$, are represented in
+@fig:turnrew.
 
 The rewiring component $\beta_{os}$ varies as a function of the proportion of
 shared links that are rewired; by contrast, $\beta_{wn}$ varies *only* as a
