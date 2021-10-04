@@ -38,7 +38,15 @@ ecological networks [@Poisot2016StrPro], and the integration into the Local
 Contribution to Beta Diversity [@Legendre2013BetDiv] approach to understand how
 environment changes drive network dissimilarity [@Poisot2017HosPar].
 
-![The dissimilarity of two networks (green and orange) of equal richness $S$ (this also holds for unequal richness) depends on three families of interactions: those that are unique because of species turnover (in a pale color), those that are unique because of rewiring (in a saturated color), and those that are shared (in black). Assuming that the chance of sharing a species between the two networks is $p$, then there can be at most $p^2\times S^2$ shared links -- for this reason, overall network dissimilarity ($\beta_{wn}$) will have a component tied to species turnover, which is $\beta_{st}$.](figures/betadiv_response_figure.png){#fig:conceptual}
+![The dissimilarity of two networks (green and orange) of equal richness $S$
+(this also holds for unequal richness) depends on three families of
+interactions: those that are unique because of species turnover (in a pale
+color), those that are unique because of rewiring (in a saturated color), and
+those that are shared (in black). Assuming that the chance of sharing a species
+between the two networks is $p$, then there can be at most $p^2\times S^2$
+shared links -- for this reason, overall network dissimilarity ($\beta_{wn}$)
+will have a component tied to species turnover, which is
+$\beta_{st}$.](figures/betadiv_response_figure.png){#fig:conceptual}
 
 Yet, the precise meaning of $\beta_{st}$, namely the importance of species
 turnover in the overall dissimilarity, has been difficult to capture, and a
