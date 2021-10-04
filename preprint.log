@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  29 SEP 2021 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 OCT 2021 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -285,7 +285,7 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 \zifour@ocount=\count271
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/lastpage/lastpage.sty
-Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -1348,10 +1348,10 @@ Package rerunfilecheck Info: File `preprint.out' has not changed.
 (rerunfilecheck)             Checksum: 127457C576DAC1606E34D1B0499C9E73;4397.
  ) 
 Here is how much of TeX's memory you used:
- 30024 strings out of 478599
- 531442 string characters out of 5856105
- 837834 words of memory out of 5000000
- 47287 multiletter control sequences out of 15000+600000
+ 30027 strings out of 478599
+ 531487 string characters out of 5856104
+ 838028 words of memory out of 5000000
+ 47290 multiletter control sequences out of 15000+600000
  553768 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,12n,117p,773b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1375,7 +1375,7 @@ f-dist/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir
 texdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/f
 onts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (9 pages, 969979 bytes).
+Output written on preprint.pdf (9 pages, 969737 bytes).
 PDF statistics:
  243 PDF objects out of 1000 (max. 8388607)
  201 compressed objects within 3 object streams
