@@ -34,26 +34,24 @@ increases.}\label{fig:turnrew}
 \efloatseparator
  
 \begin{figure}
-\hypertarget{fig:numexp2}{%
+\hypertarget{fig:connectance}{%
 \centering
-\includegraphics{figures/numexp2.png}
-\caption{Response of \(\beta_{os}\) and \(\beta_{wn}\), and the
-consequences on \(\beta_{st}\), to changes in rewiring probability
-(\(q\)) and probability of species sharing (\(p\)). As expected,
-\(\beta_{os}\) is not affected by species turnover, but increases with
-the rewiring probability. By contrast, \(\beta_{wn}\) increases when the
-rewiring probability is higher \emph{and} when fewer species are shared.
-This has important consequences for \(\beta_{st}\): its value is
-maximized for low species sharing, and decreases for high rewiring
-probability.}\label{fig:numexp2}
+\includegraphics{figures/connectance/components.png}
+\caption{Consequences of changing the ratio of connectances between two
+equally species-rich networks on the decomposition of network
+beta-diversity, assuming \(p = 0.8\). Networks with stronger differences
+in connectance will tend to be more similar, because the differences in
+number of links becomes extreme enough that the chances of all the links
+in the sparser network being in the denser network
+increases.}\label{fig:connectance}
 }
 \end{figure}
 \efloatseparator
  
 \begin{figure}
-\hypertarget{fig:numexp3}{%
+\hypertarget{fig:commden}{%
 \centering
-\includegraphics{figures/numexp3.png}
+\includegraphics{figures/common_denominator/components.png}
 \caption{Effects of varying the connectance of the second network
 (\(\rho_2\)) and the proportion of shared species (\(p\)) on the values
 of the \(\beta\)-diversity components. As expected, \(\beta_{os}\) is
@@ -61,6 +59,6 @@ still independent of species turnover, and \(\beta_{wn}\) increases when
 species turnover increases, or when the connectances become more
 dissimilar. These figures have been generated with \(\rho_1 = 0.25\) and
 \(q = 0.15\), and the results are qualitatively robust to changes in
-these parameters.}\label{fig:numexp3}
+these parameters.}\label{fig:commden}
 }
 \end{figure}
