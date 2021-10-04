@@ -17,7 +17,7 @@ component tied to species turnover, which is
 \efloatseparator
  
 \begin{figure}
-\hypertarget{fig:numexp1}{%
+\hypertarget{fig:turnrew}{%
 \centering
 \includegraphics{figures/sharing_v_rewiring/components.png}
 \caption{Values of \(\beta_{os}\), \(\beta_{wn}\), \(\beta_{st}\), and
@@ -26,7 +26,9 @@ sharing a link (\(x\)-axis), and the probability \(p\) of sharing a
 species (\(y\)-axis). Larger values indicate \emph{more} dissimilarity,
 such that for \(p=q=1\) the dissimilarity as measured by
 \(\beta_{wn}=0\), and for \(p=q=0\) the dissimilarity as measured by
-\(\beta_{wn}=1\).}\label{fig:numexp1}
+\(\beta_{wn}=1\). As expected, the relative importance of turnover
+(\(\beta_{st}\)) is maximal when there is no rewiring, and when turnover
+increases.}\label{fig:turnrew}
 }
 \end{figure}
 \efloatseparator

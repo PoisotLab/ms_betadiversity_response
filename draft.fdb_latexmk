@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1633369796 "draft.tex" "draft.pdf" "draft" 1633369799
+["pdflatex"] 1633371946 "draft.tex" "draft.pdf" "draft" 1633371948
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc" 1610747736 3356 2818ff063f8b5d0d850e1203330b9fda ""
@@ -153,17 +153,17 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1633051641 4362020 df53dff395cdafc3e490f0f0201ac6de ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1633051662 2798039 5301874c0000aa4009a39e22bcc9f648 ""
   "/opt/texlive/texdir/texmf.cnf" 1633051634 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "draft.aux" 1633369798 10863 7af3928c47d3ae754118facfb5aee934 "pdflatex"
-  "draft.fff" 1633369797 2715 ebe9607be686668018d07f246dec4e8c "pdflatex"
-  "draft.out" 1633369798 3968 9ddafd697cfb77f8437b30b28434fa0a "pdflatex"
-  "draft.tex" 1633369790 45634 34891c9088bfad8d8d0e22fb3a257900 ""
-  "figures/betadiv_response_figure.png" 1633369791 35300 fd1ec84f0597d3a9d6a5ad66ff124a8e ""
+  "draft.aux" 1633371948 11131 7cb6e5306b881945f678244b465c74ed "pdflatex"
+  "draft.fff" 1633371947 2848 af3c435d90c386d9ffabd6793e2af658 "pdflatex"
+  "draft.out" 1633371948 3968 9ddafd697cfb77f8437b30b28434fa0a "pdflatex"
+  "draft.tex" 1633371941 48226 e3dffb63e733def2b3897103c346571f ""
+  "figures/betadiv_response_figure.png" 1633371942 35300 fd1ec84f0597d3a9d6a5ad66ff124a8e ""
   "figures/numexp2.png" 0 -1 0 ""
   "figures/numexp3.png" 0 -1 0 ""
-  "figures/sharing_v_rewiring/components.png" 1633369792 657199 ee07690b8eea4599c9745a7ddfcfe506 ""
+  "figures/sharing_v_rewiring/components.png" 1633371943 657199 ee07690b8eea4599c9745a7ddfcfe506 ""
   (generated)
+  "draft.aux"
+  "draft.out"
   "draft.log"
   "draft.fff"
-  "draft.out"
-  "draft.aux"
   "draft.pdf"

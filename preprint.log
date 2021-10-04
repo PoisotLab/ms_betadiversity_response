@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 OCT 2021 17:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 OCT 2021 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1268,11 +1268,11 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 File: figures/sharing_v_rewiring/components.png Graphic file (type png)
 <use figures/sharing_v_rewiring/components.png>
 Package pdftex.def Info: figures/sharing_v_rewiring/components.png  used on inp
-ut line 626.
+ut line 628.
 (pdftex.def)             Requested size: 386.67299pt x 386.66223pt.
+ [5] [6 <./figures/sharing_v_rewiring/components.png>]
 
-
-LaTeX Warning: File `figures/numexp2.png' not found on input line 691.
+LaTeX Warning: File `figures/numexp2.png' not found on input line 741.
 
 
 ! Package pdftex.def Error: File `figures/numexp2.png' not found: using draft s
@@ -1282,36 +1282,36 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.691 }
+l.741 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 691--691
+Underfull \hbox (badness 2680) in paragraph at lines 741--741
 \T1/stix2/m/n/8.21255 ing ($\LS1/stix2/m/it/8.21255 p$\T1/stix2/m/n/8.21255 ). 
 As ex-pected, $\LS1/stix2/m/it/8.21255 ^^L[]$ \T1/stix2/m/n/8.21255 is not af-f
 ected
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 691--691
+Underfull \hbox (badness 1354) in paragraph at lines 741--741
 \T1/stix2/m/n/8.21255 by species turnover, but in-creases with the
  []
 
-[5] [6 <./figures/sharing_v_rewiring/components.png>]
-Underfull \hbox (badness 10000) in alignment at lines 742--747
-[] [] [] [] [] [] []
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 747--753
-[] [] [] [] [] [] []
- []
-
 [7]
+Underfull \hbox (badness 10000) in alignment at lines 792--797
+[] [] [] [] [] [] []
+ []
 
-LaTeX Warning: File `figures/numexp3.png' not found on input line 858.
+
+Underfull \hbox (badness 10000) in alignment at lines 797--803
+[] [] [] [] [] [] []
+ []
+
+[8]
+
+LaTeX Warning: File `figures/numexp3.png' not found on input line 908.
 
 
 ! Package pdftex.def Error: File `figures/numexp3.png' not found: using draft s
@@ -1321,18 +1321,18 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.858 }
+l.908 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[8]
-Overfull \hbox (0.46379pt too wide) in paragraph at lines 918--924
+[9]
+Overfull \hbox (0.46379pt too wide) in paragraph at lines 968--974
 \T1/stix2/m/n/9 Im-por-tance of in-ter-ac-tion rewiring in de-ter-min-ing spa-t
 ial and tem-po-ral turnover of tritrophic (Piper-
  []
 
-[9] 
+
 AED: lastpage setting LastPage
 [10] (./preprint.aux)
 Package rerunfilecheck Info: File `preprint.out' has not changed.
@@ -1341,7 +1341,7 @@ Package rerunfilecheck Info: File `preprint.out' has not changed.
 Here is how much of TeX's memory you used:
  30004 strings out of 478599
  530789 string characters out of 5856104
- 839095 words of memory out of 5000000
+ 838292 words of memory out of 5000000
  47266 multiletter control sequences out of 15000+600000
  553768 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1366,10 +1366,10 @@ f-dist/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb></opt/texlive/texdir
 texdir/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/f
 onts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (10 pages, 1611487 bytes).
+Output written on preprint.pdf (10 pages, 1614885 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
+ 250 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  64 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
