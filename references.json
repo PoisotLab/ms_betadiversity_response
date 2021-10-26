@@ -73,6 +73,41 @@
         "volume": "281"
     },
     {
+        "DOI": "10.1137/141000671",
+        "author": [
+            {
+                "family": "Bezanson",
+                "given": "J."
+            },
+            {
+                "family": "Edelman",
+                "given": "A."
+            },
+            {
+                "family": "Karpinski",
+                "given": "S."
+            },
+            {
+                "family": "Shah",
+                "given": "V."
+            }
+        ],
+        "container-title": "SIAM Review",
+        "id": "Bezanson2017JulFre",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "page": "65-98",
+        "title": "Julia: A Fresh Approach to Numerical Computing",
+        "type": "article-journal",
+        "volume": "59"
+    },
+    {
         "DOI": "10.1111/btp.12946",
         "author": [
             {
