@@ -697,10 +697,6 @@ network and the connectances of the shared components are the same.
 \subsection{Does the partition of network dissimilarity needs a new
 normalization?}\label{does-the-partition-of-network-dissimilarity-needs-a-new-normalization}}
 
-\hypertarget{is-this-decomposition-over-estimating-the-effect-of-rewiring}{%
-\subsubsection{Is this decomposition over-estimating the effect of
-``rewiring?''}\label{is-this-decomposition-over-estimating-the-effect-of-rewiring}}
-
 One of the arguments put forth in a recent paper by Fründ (2021) is that
 the decomposition outlined above will overestimate the effect of
 rewiring; I argue that this is based on a misunderstanding of what
@@ -778,112 +774,59 @@ operates on these sets, highlights the conceptual issue in the Fründ
 interactions) of the networks that are \emph{not} directly part of the
 two networks being compared.
 
-\hypertarget{numerical-experiment-the-decomposition-captures-the-roles-of-species-turnover-and-connectance-accurately}{%
-\subsubsection{Numerical experiment: the decomposition captures the
-roles of species turnover and connectance
-accurately}\label{numerical-experiment-the-decomposition-captures-the-roles-of-species-turnover-and-connectance-accurately}}
+\hypertarget{using-an-alternative-normalization-trivializes-the-results}{%
+\subsubsection{Using an alternative normalization trivializes the
+results}\label{using-an-alternative-normalization-trivializes-the-results}}
 
-Consider now two bipartite networks, which still have \(R\) species on
-either side, but differ in their connectance (\(\rho_1\) and \(\rho_2\))
--- by maintaining the assumption that species on one side are shared
-with probability \(p\), and that interactions between shared species are
-rewired at probability \(q\), we can examine the effect of varying both
-connectance and turnover on the value of the \(\beta\)-diversity
-components. Note that, although not presented, we will drop the
-multiplicative constant \(R^2\) from all calculations, as it is a common
-factor for all values; again, this implies that the results presented
-here are independant of network richness.
-
-The number of unique links due to species turnover is
-
-\[U = (1-p)(\rho_1 + \rho_2)\,,\]
-
-which decreases with the proportion of shared species, but increases
-with connectance. The number of links between shared species takes a
-little more steps to calculate. First, amongst the \(pR^2\) species in
-both sub-graphs, network 1 will have \(\rho_1 pR^2\), and network 2 will
-have \(\rho_2 pR^2\). Because \(\rho_1 \neq \rho_2\), there are only
-\(\text{min}(\rho_1, \rho_2)pR^2\) links that can be shared, a
-proportion \(q\) of which will undergo re-wiring, and a proportion
-\((1-q)\) of which will be shared. This leads to the expression (after
-dropping \(R^2\)) for the number of shared links:
-
-\[A = p (1-q) \text{min}(\rho_1, \rho_2)\,.\]
-
-The number of unique links due to shared species is the sum of all links
-in network 1 (\(\rho_1 R^2\)), minus the sum of the shared links
-(\(AR^2\)) and the unique links due to species turnover
-(\((1-p)\rho_1R^2\)); this same quantity is calculated in the same way
-for the second networks, leading to (after dropping the multiplicative
-constant \(R^2\) and some simplifications)
-
-\[S = p (\rho_1 + \rho_2) - 2A\,.\]
-
-Note that as expected, this last quantity scales with the proportion of
-shared species (\(p\)) \emph{and} with connectance (as shared species
-bring more of their interactions), but decreases with the size of the
-shared links components. The consequences of varying \(\rho_2\) and
-\(p\) are presented in fig.~\ref{fig:numexp3}.
+In this numerical experiment, we reproduce the results in
+fig.~\ref{fig:turnrew}, but using the alternative normalization
+described above. The results are presented in fig.~\ref{fig:commden}.
+Producing the analytical solutions for the various components, following
+the expressions for \(C\), \(T\), and \(R\) given for
+fig.~\ref{fig:turnrew}, yields a similar value for \(\beta_{wn}\)
+(\emph{i.e.} the two approaches estimate the same value for total
+dissimiliarity), but different values for \(\beta_{st}\) and
+\(\beta_{os}\). Specifically, \(\beta_{os}\) becomes \(p^2(1-q)\), which
+becomes dependent on species turnover. This, from an ecological point of
+view, makes no sense: the quantification of how much shared species
+interact in a similar way should not depend on how much species actually
+overlap. The opposite problem arises for \(\beta_{st}\), which becomes
+\(1-p^2\). In short, the relative importance of species turnover is
+simply species turnover itself, and has no information on interaction
+dissimilarity. Therefore the core issue of the Fründ (2021) alternative
+is that, by attempting to fix a non-issue (namely the over-estimate of
+the importance of re-wiring, which is only true in trivially small
+networks), it blurs the meaning of \(\beta_{os}\), and renders
+\(\beta_{st}\) useless as it is a re-expression of species
+beta-diversity.
 
 \begin{figure}
 \hypertarget{fig:commden}{%
 \centering
 \includegraphics{figures/common_denominator/components.png}
-\caption{Effects of varying the connectance of the second network
-(\(\rho_2\)) and the proportion of shared species (\(p\)) on the values
-of the \(\beta\)-diversity components. As expected, \(\beta_{os}\) is
-still independent of species turnover, and \(\beta_{wn}\) increases when
-species turnover increases, or when the connectances become more
-dissimilar. These figures have been generated with \(\rho_1 = 0.25\) and
-\(q = 0.15\), and the results are qualitatively robust to changes in
-these parameters.}\label{fig:commden}
+\caption{Reproduction of fig.~\ref{fig:turnrew} with the alternative
+denominators proposed by Fründ (2021).}\label{fig:commden}
 }
 \end{figure}
-
-Although \(\beta_{os}\) is only responding to changes in connectance (as
-is expected, seeing that the relative connectances of both networks
-appear in the expression for \(S\) and \(A\)), \(\beta_{wn}\) changes in
-response to both parameters. Specifically, increasing the difference in
-connectance between the two networks, especially when also increasing
-the species dissimilarity, results in more dissimilar networks -- this
-is because unique species from both networks bring their own
-interactions (at rate \(\rho_1\) and \(\rho_2\)), and therefore
-contribute to dissimilarity. It is particularly noteworthy that
-\(\beta_{st}\), regardless of the differences in connectance, increases
-with the proportion of unique species. At an equal proportion of shared
-species, \(\beta_{st}\) \emph{decreases} with differences in
-connectance: this is an equally expected result, which indicates that
-the difference between \(\beta_{os}\) and \(\beta_{wn}\) is in part
-explained by non-turnover mechanisms (here, changes in connectance).
-Relying on the \(\beta_{st}/\beta_{wn}\) correction again magnifies this
-effect, without changing their interpretation.
 
 \hypertarget{measuring-network-beta-diversity-recommendations}{%
 \subsection{Measuring network beta-diversity:
 recommendations}\label{measuring-network-beta-diversity-recommendations}}
 
-The choice of changing the denominator hinges on what one admits as a
-definition for \(\beta_{st}\). If the point of \(\beta_{st}\) is to be a
-component of overall \(\beta\)-diversity as advocated by Fründ (2021)
-and Novotny (2009), a change of numerator \emph{might} be acceptable.
-Nevertheless, this change of numerator contributes to blurring the
-frontier between a measure of interaction dissimilarity and a measure of
-community dissimilarity which starts to add the effect of relative
-richness; this later case warrants a thorough methodological assessment.
-Conversely, if as we argue in Poisot \emph{et al.} (2012),
-\(\beta_{st}\) is to be meant as a \emph{guide} to the interpretation of
-\(\beta_{wn}\) and \(\beta_{os}\), and related to actual measures of
-species turnover and network connectance, one must not change the
-denominator.
-
-It is essential to recognize that there are multiple reasons to
-calculate network dissimilarity, and it is our opinion that the
-arguments levied by Fründ (2021) against the original partition stem
-from a misunderstanding of what it intends to do (and does, indeed, do
-well), not from intrinsic methodological issues in the partition itself.
-Based on the results presented in this contribution, I argue that the
-original partition of network \(\beta\)-diversity from Poisot \emph{et
-al.} (2012) should remain the default.
+Based on the numerical experiments and the derivations presented in this
+paper, we can establish a number of recommendations for the measurement
+and analysis of network dissimilarity. First, \(\beta_{os}\) allows to
+estimate the rate of rewiring, which is an important ecological
+information to have; quantifying it properly can give insights as to how
+networks differ. Second, \(\beta_{st}\) captures both turnover and
+rewiring mechanisms, but its interpretation is easier to accomplish in
+the context of total network dissimilarity, and therefore
+\(\beta_{st}/\beta_{wn}\) should be interpreted more thoroughly.
+Finally, because the alternative denominator from Fründ (2021) removes
+the interesting property of \(\beta_{os}\) (independent estimate of
+rewiring rate), and trivializes the meaning of \(\beta_{st}\) (by
+turning it into species dissimilarity), there seems to be no valid
+reason to use it.
 
 \hypertarget{references}{%
 \subsection*{References}\label{references}}
@@ -939,11 +882,6 @@ Magrach, A., Holzschuh, A., Bartomeus, I., Riedinger, V., Roberts,
 S.P.M., Rundlöf, M., \emph{et al.} (2017). Plant-pollinator networks in
 semi-natural grasslands are resistant to the loss of pollinators during
 blooming of mass-flowering crops. \emph{Ecography}, n/a--n/a.
-
-\leavevmode\hypertarget{ref-Novotny2009BetDiv}{}%
-Novotny, V. (2009). Beta diversity of plant--insect food webs in
-tropical forests: A conceptual framework. \emph{Insect Conservation and
-Diversity}, 2, 5--9.
 
 \leavevmode\hypertarget{ref-Olsson2021IntPla}{}%
 Olsson, R.L., Brousil, M.R., Clark, R.E., Baine, Q. \& Crowder, D.W.

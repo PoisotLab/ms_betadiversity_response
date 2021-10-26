@@ -52,13 +52,7 @@ increases.}\label{fig:connectance}
 \hypertarget{fig:commden}{%
 \centering
 \includegraphics{figures/common_denominator/components.png}
-\caption{Effects of varying the connectance of the second network
-(\(\rho_2\)) and the proportion of shared species (\(p\)) on the values
-of the \(\beta\)-diversity components. As expected, \(\beta_{os}\) is
-still independent of species turnover, and \(\beta_{wn}\) increases when
-species turnover increases, or when the connectances become more
-dissimilar. These figures have been generated with \(\rho_1 = 0.25\) and
-\(q = 0.15\), and the results are qualitatively robust to changes in
-these parameters.}\label{fig:commden}
+\caption{Reproduction of fig.~\ref{fig:turnrew} with the alternative
+denominators proposed by Fründ (2021).}\label{fig:commden}
 }
 \end{figure}
