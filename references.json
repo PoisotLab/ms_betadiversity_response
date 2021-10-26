@@ -21,9 +21,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2021,
-                    5,
-                    5
+                    2021
                 ]
             ]
         },
@@ -65,9 +63,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2021,
-                    8,
-                    1
+                    2021
                 ]
             ]
         },
@@ -161,8 +157,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2014,
-                    4
+                    2014
                 ]
             ]
         },
@@ -226,6 +221,50 @@
         "volume": "12"
     },
     {
+        "URL": "http://arxiv.org/abs/2105.03949",
+        "author": [
+            {
+                "family": "Gowda",
+                "given": "Shashi"
+            },
+            {
+                "family": "Ma",
+                "given": "Yingbo"
+            },
+            {
+                "family": "Cheli",
+                "given": "Alessandro"
+            },
+            {
+                "family": "Gwozdz",
+                "given": "Maja"
+            },
+            {
+                "family": "Shah",
+                "given": "Viral B."
+            },
+            {
+                "family": "Edelman",
+                "given": "Alan"
+            },
+            {
+                "family": "Rackauckas",
+                "given": "Christopher"
+            }
+        ],
+        "container-title": "arXiv:2105.03949 [cs]",
+        "id": "Gowda2021HigSym",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "title": "High-performance symbolic-numerics via multiple dispatch",
+        "type": "article-journal"
+    },
+    {
         "DOI": "10.1017/S0031182021000391",
         "author": [
             {
@@ -242,9 +281,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2021,
-                    3,
-                    8
+                    2021
                 ]
             ]
         },
@@ -275,14 +312,12 @@
         "issued": {
             "date-parts": [
                 [
-                    2003,
-                    5,
-                    1
+                    2003
                 ]
             ]
         },
         "page": "367-382",
-        "title": "Measuring beta diversity for presence\u2013absence data",
+        "title": "Measuring beta diversity for presenceabsence data",
         "type": "article-journal",
         "volume": "72"
     },
@@ -310,8 +345,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2013,
-                    8
+                    2013
                 ]
             ]
         },
@@ -342,9 +376,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2017,
-                    8,
-                    1
+                    2017
                 ]
             ]
         },
@@ -422,9 +454,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2017,
-                    2,
-                    1
+                    2017
                 ]
             ]
         },
@@ -451,9 +481,76 @@
             ]
         },
         "page": "5-9",
-        "title": "Beta diversity of plant\u2013insect food webs in tropical forests: A conceptual framework",
+        "title": "Beta diversity of plantinsect food webs in tropical forests: A conceptual framework",
         "type": "article-journal",
         "volume": "2"
+    },
+    {
+        "DOI": "10.1111/ele.13143",
+        "author": [
+            {
+                "family": "Ohlmann",
+                "given": "Marc"
+            },
+            {
+                "family": "Mazel",
+                "given": "Florent"
+            },
+            {
+                "family": "Chalmandrier",
+                "given": "Lo\u00efc"
+            },
+            {
+                "family": "Bec",
+                "given": "St\u00e9phane"
+            },
+            {
+                "family": "Coissac",
+                "given": "Eric"
+            },
+            {
+                "family": "Gielly",
+                "given": "Ludovic"
+            },
+            {
+                "family": "Pansu",
+                "given": "Johan"
+            },
+            {
+                "family": "Schilling",
+                "given": "Vincent"
+            },
+            {
+                "family": "Taberlet",
+                "given": "Pierre"
+            },
+            {
+                "family": "Zinger",
+                "given": "Lucie"
+            },
+            {
+                "family": "Chave",
+                "given": "J\u00e9rome"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Ohlmann2018MapImp",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2018
+                ]
+            ]
+        },
+        "page": "1660-1669",
+        "title": "Mapping the imprint of biotic interactions on \\beta-diversity",
+        "type": "article-journal",
+        "volume": "21"
     },
     {
         "DOI": "10.1016/j.fooweb.2021.e00194",
@@ -484,9 +581,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2021,
-                    6,
-                    1
+                    2021
                 ]
             ]
         },
@@ -605,8 +700,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2016,
-                    3
+                    2016
                 ]
             ]
         },
@@ -749,9 +843,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2016,
-                    7,
-                    1
+                    2016
                 ]
             ]
         },
@@ -774,9 +866,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2010,
-                    2,
-                    1
+                    2010
                 ]
             ]
         },
@@ -787,7 +877,6 @@
     },
     {
         "DOI": "10.2307/2259551",
-        "URL": "http://www.jstor.org/stable/2259551",
         "author": [
             {
                 "family": "Wilson",
