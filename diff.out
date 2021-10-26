@@ -1,0 +1,12 @@
+\BOOKMARK [2][-]{section*.1}{Partitioning network dissimilarity}{}% 1
+\BOOKMARK [3][-]{section*.2}{Re-expressing networks as sets}{section*.1}% 2
+\BOOKMARK [3][-]{section*.3}{Defining the partitions from networks as sets}{section*.1}% 3
+\BOOKMARK [3][-]{section*.4}{Quantifying the importance of species turnover}{section*.1}% 4
+\BOOKMARK [2][-]{section*.5}{Quantifying the response of network beta-diversity to souces of variation}{}% 5
+\BOOKMARK [3][-]{section*.6}{The relative effect of species turnover and link rewiring}{section*.5}% 6
+\BOOKMARK [3][-]{section*.7}{Sensibility of the decomposition to differences in connectance}{section*.5}% 7
+\BOOKMARK [2][-]{section*.8}{Does the partition of network dissimilarity needs a new normalization?}{}% 8
+\BOOKMARK [3][-]{section*.9}{Illustrations on arbitrarily small networks are biased}{section*.8}% 9
+\BOOKMARK [3][-]{section*.10}{Using an alternative normalization trivializes the results}{section*.8}% 10
+\BOOKMARK [2][-]{section*.11}{Measuring network beta-diversity: recommendations}{}% 11
+\BOOKMARK [2][-]{section*.12}{References}{}% 12

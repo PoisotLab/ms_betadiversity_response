@@ -1,0 +1,70 @@
+\begin{figure}
+\hypertarget{fig:conceptual}{%
+\centering
+\includegraphics{figures/betadiv_response_figure.png}
+\caption{The dissimilarity of two networks (green and orange) of equal
+richness \(S\) (this also holds for unequal richness) depends on three
+families of interactions: those that are unique because of species
+turnover (in a pale color), those that are unique because of rewiring
+(in a saturated color), and those that are shared (in black). Assuming
+that the chance of sharing a species between the two networks is \(p\),
+then there can be at most \(p^2\times S^2\) shared links -- for this
+reason, overall network dissimilarity (\(\beta_{wn}\)) will have a
+component tied to species turnover, which is
+\(\beta_{st}\).}\label{fig:conceptual}
+}
+
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\DIFdelbeginFL %DIFDELCMD < \hypertarget{fig:numexp1}{%
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{figures/numexp1.png}
+%DIFDELCMD < \caption{Values of \(\beta_{os}\), \(\beta_{wn}\), \(\beta_{st}\), and
+%DIFDELCMD < \(\beta_{st}/\beta_{wn}\) as a function of the proportion of rewired
+%DIFDELCMD < links and the proportion of shared links.}\label{fig:numexp1}
+%DIFDELCMD < }
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \hypertarget{fig:turnrew}{%
+\centering
+\includegraphics{figures/sharing_v_rewiring/components.png}
+\caption{Values of \(\beta_{os}\), \(\beta_{wn}\), \(\beta_{st}\), and
+\(\beta_{st}/\beta_{wn}\) as a function of the probability \(q\) or
+sharing a link (\(x\)-axis), and the probability \(p\) of sharing a
+species (\(y\)-axis). Larger values indicate \emph{more} dissimilarity,
+such that for \(p=q=1\) the dissimilarity as measured by
+\(\beta_{wn}=0\), and for \(p=q=0\) the dissimilarity as measured by
+\(\beta_{wn}=1\). As expected, the relative importance of turnover
+(\(\beta_{st}\)) is maximal when there is no rewiring, and when turnover
+increases.}\label{fig:turnrew}
+}
+\DIFaddendFL
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:connectance}{%
+\centering
+\includegraphics{figures/connectance/components.png}
+\caption{Consequences of changing the ratio of connectances between two
+equally species-rich networks on the decomposition of network
+beta-diversity, assuming \(p = 0.8\). Networks with stronger differences
+in connectance will tend to be more similar, because the differences in
+number of links becomes extreme enough that the chances of all the links
+in the sparser network being in the denser network
+increases.}\label{fig:connectance}
+}
+
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:commden}{%
+\centering
+\includegraphics{figures/common_denominator/components.png}
+\caption{Reproduction of fig.~\ref{fig:turnrew} with the alternative
+denominators proposed by Fründ (2021).}\label{fig:commden}
+}
+
+\end{figure}
