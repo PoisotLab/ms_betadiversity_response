@@ -508,4 +508,8 @@ property of $\beta_{os}$ (independent estimate of rewiring rate), and
 trivializes the meaning of $\beta_{st}$ (by turning it into species
 dissimilarity), there seems to be no valid reason to use it.
 
+**Conflict of interest disclosure**: the authors of this article declare that
+they have no financial conflict of interest with the content of this article; TP
+is one of the PCIEcology recommenders.
+
 ## References
