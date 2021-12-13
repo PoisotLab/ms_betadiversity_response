@@ -21,9 +21,13 @@ one unique species. This framework is expressed as the decomposition $\beta_{wn}
 = \beta_{os} + \beta_{st}$, namely the fact that network dissimilarity
 ($\beta_{wn}$) has a component that can be calculated directly from the
 dissimilarity of interactions between shared species ($\beta_{os}$), and a
-component that cannot ($\beta_{st}$). Presumably, the value of these components
-for a pair of networks can generate insights about the mechanisms involved in
-dissimilarity.
+component that cannot ($\beta_{st}$). The $\beta_{st}$ component differs
+slightly from the others, in that it is a quantification of the *relative*
+rewiring to overall dissimilarity, and not an *absolute* measure of interaction
+turnover. Presumably, the value of these components for a pair of networks can
+generate insights about the mechanisms involved in dissimilarity, when
+interpreted within the context of species turnover and differences in network
+connectance.
 
 This approach has been widely adopted since its publication, with recent
 examples using it to understand the effect of fire on pollination systems
@@ -53,7 +57,7 @@ turnover in the overall dissimilarity, has been difficult to capture, and a
 source of confusion for some practitioners. This is not particularly surprising,
 as this component of the decomposition responds to unique species introducing
 their unique interactions both between themselves, and with species that are
-common to both networks [@fig:conceptual]. For this reason, it is important to
+common to both networks (@fig:conceptual). For this reason, it is important to
 come up with guidelines for the interpretation of this measure, and how to use
 it to extract ecological insights.
 
@@ -191,10 +195,11 @@ Based on a partition between three sets of cardinality $a$, $b$, and $c$,
 
 $$\beta_t = \frac{b+c}{2a+b+c}\,.$$
 
-So as to simplify the notation of the following section, I will introduce a
-series of new variables. Let $C = |E_c|$ be the number of links that are
-identical between networks (as a mnemonic, $C$ stands for "common"); $R =
-|E_{sn} \cup E_{sm}|$ be the number of links that are not shared, but only
+Note that this measure is written as $\beta_t$ for consistency with
+@Koleff2003MeaBet. So as to simplify the notation of the following section, I
+will introduce a series of new variables. Let $C = |E_c|$ be the number of links
+that are identical between networks (as a mnemonic, $C$ stands for "common"); $R
+= |E_{sn} \cup E_{sm}|$ be the number of links that are not shared, but only
 involve shared species (*i.e.* links from $\mathcal{M}\cup\mathcal{N}$
 established between species from $\mathcal{M}\cap\mathcal{N}$; as a mnemonic,
 $R$ stands for "rewired"); and $T = |E_{un} \cup E_{um}|$ the number of links
@@ -204,7 +209,7 @@ stands for "turnover").
 There are two important points to note here. First, as mentionned earlier, the
 number or proportion of species that are shared is not involved in the
 calculation. Second, the connectance of either network is not involved in the
-calculation. That all links counted in *e.g.* $U$ come from $\mathcal{M}$, or
+calculation. That all links counted in *e.g.* $T$ come from $\mathcal{M}$, or
 that they are evenly distributed between $\mathcal{M}$ and $\mathcal{N}$, has no
 impact on the result. This is a desirable property of the approach: whatever
 quantitative value of the components of dissimilarity can be interpreted in the
@@ -226,7 +231,7 @@ non-commutativity here), but the dissimilarity between these networks is
 trivially maximal for the measures considered.
 
 Using the $\beta_t$ measure of dissimilarity, we can re-write (using the
-notation with $A$, $S$, and $U$)
+notation with $R$, $C$, and $T$)
 
 $$\beta_{os} = \frac{R}{2C+R}\,,$$
 
@@ -338,8 +343,8 @@ pair of networks for which rewiring is important ($q$ goes to 0), species
 turnover is going to be a *relatively* less important mechanism to
 dissimilarity. $\beta_{st}$ increases when turnover is important ($p$ goes to
 0), and therefore $\beta_{st}$ represents a *balance* between species turnover
-and link rewiring. These three values, as well as $\beta_{st}/\beta_{wn}$, are represented in
-@fig:turnrew.
+and link rewiring. These three values, as well as $\beta_{st}/\beta_{wn}$, are
+represented in @fig:turnrew.
 
 ### Sensibility of the decomposition to differences in connectance
 
